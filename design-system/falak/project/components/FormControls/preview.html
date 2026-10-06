@@ -1,0 +1,19 @@
+<!-- @dsCard group="Primitives" height=500 -->
+<!doctype html>
+<html lang="id">
+<head><meta charset="utf-8"><title>FormControls</title></head>
+<body>
+<div class="fk fk-ground fk-pv"><div class="fk-pv-col">
+<div class="fk-field"><label class="fk-label" for="f1">Nama</label><input class="fk-input" id="f1" placeholder="Nama panggilan"></div>
+<div class="fk-pv-row"><input class="fk-input is-hover" style="flex:1" value="Hover" aria-label="hover"><input class="fk-input is-focus" style="flex:1" value="Focus" aria-label="focus"></div>
+<div class="fk-pv-row"><input class="fk-input" style="flex:1" value="Disabled" disabled aria-label="disabled"><input class="fk-input" style="flex:1" aria-invalid="true" value="" aria-label="error"></div>
+<span class="fk-error">Judulnya diisi dulu, ya.</span>
+<div class="fk-field"><label class="fk-label" for="f2">Catatan</label><textarea class="fk-textarea" id="f2" placeholder="Tulis pelan-pelan…"></textarea><span class="fk-help">Hanya kamu yang bisa membaca ini.</span></div>
+<div class="fk-pv-row"><span class="fk-badge primary">Wajib</span><span class="fk-badge">Sunnah</span><span class="fk-badge outline">Harian</span><span class="fk-chip done">Selesai</span><span class="fk-chip live">Berikutnya</span><span class="fk-chip">Dilewati</span></div>
+</div></div>
+<script>
+Falak.boot();
+
+</script>
+</body>
+</html>

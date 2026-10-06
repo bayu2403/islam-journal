@@ -1,0 +1,642 @@
+<title>Muslim Berislam</title>
+<meta name="description" content="Pendamping ibadah harian yang tenang: satu tugas pada satu waktu, diurutkan jadwal sholat.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500&family=Lora:ital,wght@0,500;0,600;0,700;1,500&display=swap">
+<style>
+:root, [data-palette="ikhwan-light"] {
+  --background: oklch(0.985 0.01 95);
+  --foreground: oklch(0.22 0.02 160);
+  --card: oklch(1 0 0);
+  --card-foreground: var(--foreground);
+  --popover: oklch(1 0 0);
+  --popover-foreground: var(--foreground);
+  --primary: oklch(0.4 0.09 168);
+  --primary-foreground: oklch(0.98 0.01 95);
+  --secondary: oklch(0.94 0.05 120);
+  --secondary-foreground: oklch(0.3 0.05 150);
+  --muted: oklch(0.95 0.02 100);
+  --muted-foreground: oklch(0.5 0.02 140);
+  --accent: oklch(0.9 0.15 125);
+  --accent-foreground: oklch(0.28 0.06 140);
+  --border: oklch(0.9 0.02 100);
+  --input: oklch(0.64 0.02 120);
+  --ring: oklch(0.4 0.09 168);
+  --destructive: oklch(0.5 0.16 35);
+  --card-inverse: oklch(0.28 0.04 180);
+  --card-inverse-foreground: oklch(0.97 0.01 95);
+  --card-inverse-muted: oklch(0.8 0.02 170);
+  --card-inverse-border: oklch(0.28 0.04 180);
+  --reward: oklch(0.75 0.15 65);
+  --reward-ink: oklch(0.52 0.13 55);
+  --scrim: oklch(0.22 0.02 160 / 0.45);
+  --shadow-float: 0 4px 12px -2px rgb(20 30 25 / 0.18);
+  --shadow-sheet: 0 -8px 32px -8px rgb(10 15 12 / 0.28);
+}
+[data-palette="ikhwan-dark"] {
+  --background: oklch(0.16 0.015 170);
+  --foreground: oklch(0.95 0.01 95);
+  --card: oklch(0.24 0.025 172);
+  --card-foreground: var(--foreground);
+  --popover: oklch(0.24 0.025 172);
+  --popover-foreground: var(--foreground);
+  --primary: oklch(0.75 0.1 160);
+  --primary-foreground: oklch(0.16 0.02 170);
+  --secondary: oklch(0.28 0.03 170);
+  --secondary-foreground: oklch(0.95 0.01 95);
+  --muted: oklch(0.26 0.025 172);
+  --muted-foreground: oklch(0.72 0.02 160);
+  --accent: oklch(0.85 0.16 125);
+  --accent-foreground: oklch(0.2 0.05 140);
+  --border: oklch(1 0 0 / 0.12);
+  --input: oklch(0.56 0.02 165);
+  --ring: oklch(0.75 0.1 160);
+  --destructive: oklch(0.72 0.14 35);
+  --card-inverse: oklch(0.09 0.02 180);
+  --card-inverse-foreground: oklch(0.97 0.01 95);
+  --card-inverse-muted: oklch(0.75 0.02 170);
+  --card-inverse-border: oklch(1 0 0 / 0.1);
+  --reward: oklch(0.8 0.15 70);
+  --reward-ink: oklch(0.8 0.15 70);
+  --scrim: oklch(0.05 0.01 170 / 0.7);
+  --shadow-float: 0 4px 12px -2px rgb(20 30 25 / 0.18);
+  --shadow-sheet: 0 -8px 32px -8px rgb(10 15 12 / 0.28);
+}
+[data-palette="akhwat-light"] {
+  --background: oklch(0.985 0.008 350);
+  --foreground: oklch(0.24 0.03 345);
+  --card: oklch(1 0 0);
+  --card-foreground: var(--foreground);
+  --popover: oklch(1 0 0);
+  --popover-foreground: var(--foreground);
+  --primary: oklch(0.45 0.12 350);
+  --primary-foreground: oklch(0.98 0.008 350);
+  --secondary: oklch(0.95 0.03 10);
+  --secondary-foreground: oklch(0.32 0.06 348);
+  --muted: oklch(0.96 0.015 10);
+  --muted-foreground: oklch(0.5 0.04 348);
+  --accent: oklch(0.88 0.08 10);
+  --accent-foreground: oklch(0.33 0.06 350);
+  --border: oklch(0.91 0.02 350);
+  --input: oklch(0.64 0.03 350);
+  --ring: oklch(0.45 0.12 350);
+  --destructive: oklch(0.5 0.16 35);
+  --card-inverse: oklch(0.3 0.06 340);
+  --card-inverse-foreground: oklch(0.97 0.008 350);
+  --card-inverse-muted: oklch(0.82 0.03 345);
+  --card-inverse-border: oklch(0.3 0.06 340);
+  --reward: oklch(0.78 0.12 85);
+  --reward-ink: oklch(0.52 0.1 75);
+  --scrim: oklch(0.24 0.03 345 / 0.45);
+  --shadow-float: 0 4px 12px -2px rgb(20 30 25 / 0.18);
+  --shadow-sheet: 0 -8px 32px -8px rgb(10 15 12 / 0.28);
+}
+[data-palette="akhwat-dark"] {
+  --background: oklch(0.17 0.025 340);
+  --foreground: oklch(0.95 0.01 350);
+  --card: oklch(0.25 0.035 342);
+  --card-foreground: var(--foreground);
+  --popover: oklch(0.25 0.035 342);
+  --popover-foreground: var(--foreground);
+  --primary: oklch(0.76 0.09 350);
+  --primary-foreground: oklch(0.2 0.04 345);
+  --secondary: oklch(0.29 0.04 344);
+  --secondary-foreground: oklch(0.95 0.01 350);
+  --muted: oklch(0.27 0.035 342);
+  --muted-foreground: oklch(0.73 0.02 350);
+  --accent: oklch(0.8 0.1 10);
+  --accent-foreground: oklch(0.22 0.04 350);
+  --border: oklch(1 0 0 / 0.12);
+  --input: oklch(0.58 0.03 345);
+  --ring: oklch(0.76 0.09 350);
+  --destructive: oklch(0.72 0.14 35);
+  --card-inverse: oklch(0.1 0.03 340);
+  --card-inverse-foreground: oklch(0.97 0.008 350);
+  --card-inverse-muted: oklch(0.76 0.02 345);
+  --card-inverse-border: oklch(1 0 0 / 0.1);
+  --reward: oklch(0.82 0.12 85);
+  --reward-ink: oklch(0.82 0.12 85);
+  --scrim: oklch(0.05 0.02 340 / 0.7);
+  --shadow-float: 0 4px 12px -2px rgb(20 30 25 / 0.18);
+  --shadow-sheet: 0 -8px 32px -8px rgb(10 15 12 / 0.28);
+}
+:root {
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-10: 40px;
+  --radius-sm: 0.375rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 0.625rem;
+  --radius-xl: 0.875rem;
+  --radius-2xl: 1.125rem;
+  --radius-3xl: 1.375rem;
+  --radius-4xl: 1.625rem;
+  --radius-full: 9999px;
+  --duration-fast: 150ms;
+  --duration-base: 200ms;
+  --font-serif: Lora, Georgia, serif;
+  --font-sans: Geist, ui-sans-serif, system-ui, sans-serif;
+  --font-arabic: Amiri, "Noto Naskh Arabic", "Traditional Arabic", serif;
+  --font-mono: "Geist Mono", ui-monospace, monospace;
+}
+
+[data-palette$="-dark"] { color-scheme: dark; }
+html, body { background: var(--background); }
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+
+/* Muslim Berislam — component styles. Every colour comes from tokens.css.
+   Prefix: mb-. Forced-state classes (.is-hover, .is-active, .is-focus,
+   .is-disabled) exist only so previews can show states side by side. */
+
+html, body { background: var(--background); color: var(--foreground); }
+body { margin: 0; font-family: var(--font-sans); font-size: 14px; line-height: 1.5; -webkit-font-smoothing: antialiased; }
+.mb { font-family: var(--font-sans); font-size: 14px; line-height: 1.5; color: var(--foreground); }
+.mb *, .mb *::before, .mb *::after { box-sizing: border-box; }
+.mb svg.mb-i { width: 16px; height: 16px; flex: none; stroke: currentColor; fill: none; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
+.mb svg.mb-i.sm { width: 14px; height: 14px; }
+.mb svg.mb-i.lg { width: 20px; height: 20px; }
+
+/* preview scaffolding */
+.mb-pv { padding: 16px; display: flex; flex-direction: column; gap: 16px; }
+.mb-pv-row { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
+.mb-pv-cap { font-size: 11px; line-height: 14px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted-foreground); font-weight: 600; min-width: 84px; }
+.mb-pv-col { width: 100%; max-width: 390px; display: flex; flex-direction: column; gap: 12px; }
+
+/* ── type ─────────────────────────────────────────────── */
+.mb-display { font-family: var(--font-serif); font-weight: 700; font-size: 30px; line-height: 36px; margin: 0; text-wrap: balance; }
+.mb-h1 { font-family: var(--font-serif); font-weight: 700; font-size: 24px; line-height: 30px; margin: 0; }
+.mb-h2 { font-family: var(--font-serif); font-weight: 700; font-size: 20px; line-height: 26px; margin: 0; }
+.mb-h3 { font-weight: 700; font-size: 18px; line-height: 24px; letter-spacing: -0.01em; margin: 0; text-wrap: balance; }
+.mb-title { font-weight: 600; font-size: 15px; line-height: 22px; margin: 0; }
+.mb-small { font-size: 13px; line-height: 19px; }
+.mb-muted { color: var(--muted-foreground); }
+.mb-eyebrow { display: inline-flex; align-items: center; gap: 8px; font-size: 11px; line-height: 14px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; }
+.mb-eyebrow-chip { display: inline-grid; place-items: center; width: 24px; height: 24px; border-radius: var(--radius-sm); background: var(--muted); color: var(--primary); }
+.mb-caption { font-size: 12px; line-height: 16px; font-variant-numeric: tabular-nums; }
+.mb-arabic { font-family: var(--font-arabic); font-size: 26px; line-height: 52px; direction: rtl; text-align: right; margin: 0; }
+.mb-arabic.md { font-size: 21px; line-height: 40px; }
+.mb-num { font-variant-numeric: tabular-nums; }
+
+/* ── buttons ──────────────────────────────────────────── */
+.mb-btn { appearance: none; display: inline-flex; align-items: center; justify-content: center; gap: 6px; height: 32px; padding: 0 12px; border-radius: var(--radius-lg); border: 1px solid transparent; font: 500 13px/1 var(--font-sans); cursor: pointer; text-decoration: none; transition: background-color var(--duration-fast) ease-out, color var(--duration-fast) ease-out, border-color var(--duration-fast) ease-out; }
+.mb-btn.lg { height: 40px; padding: 0 16px; font-size: 14px; }
+.mb-btn.icon { width: 32px; padding: 0; }
+.mb-btn-primary { background: var(--primary); color: var(--primary-foreground); }
+.mb-btn-primary:hover, .mb-btn-primary.is-hover { background: color-mix(in oklch, var(--primary) 86%, var(--foreground)); }
+.mb-btn-primary:active, .mb-btn-primary.is-active { background: color-mix(in oklch, var(--primary) 76%, var(--foreground)); }
+.mb-btn-secondary { background: var(--secondary); color: var(--secondary-foreground); }
+.mb-btn-secondary:hover, .mb-btn-secondary.is-hover { background: color-mix(in oklch, var(--secondary) 92%, var(--foreground)); }
+.mb-btn-secondary:active, .mb-btn-secondary.is-active { background: color-mix(in oklch, var(--secondary) 84%, var(--foreground)); }
+.mb-btn-outline { background: transparent; color: var(--foreground); border-color: var(--input); }
+.mb-btn-outline:hover, .mb-btn-outline.is-hover, .mb-btn-ghost:hover, .mb-btn-ghost.is-hover { background: var(--muted); }
+.mb-btn-outline:active, .mb-btn-outline.is-active, .mb-btn-ghost:active, .mb-btn-ghost.is-active { background: color-mix(in oklch, var(--muted) 88%, var(--foreground)); }
+.mb-btn-ghost { background: transparent; color: var(--foreground); }
+.mb-btn:focus-visible, .mb-btn.is-focus,
+.mb-pill:focus-visible, .mb-pill.is-focus,
+.mb-link:focus-visible, .mb-link.is-focus,
+.mb-day:focus-visible, .mb-day.is-focus,
+.mb-seg button:focus-visible, .mb-seg button.is-focus,
+.mb-nav a:focus-visible, .mb-nav a.is-focus { outline: 2px solid var(--ring); outline-offset: 2px; }
+.mb-btn:disabled, .mb-btn.is-disabled, .mb-pill:disabled, .mb-pill.is-disabled { opacity: 0.5; pointer-events: none; }
+
+/* Dikerjakan / Lewati: same height, same padding, same weight. */
+.mb-pill { appearance: none; display: inline-flex; align-items: center; gap: 6px; height: 32px; padding: 0 16px; border-radius: var(--radius-full); font: 500 12px/1 var(--font-sans); letter-spacing: 0.02em; cursor: pointer; border: 1px solid transparent; color: inherit; background: transparent; transition: background-color var(--duration-fast) ease-out, border-color var(--duration-fast) ease-out; }
+.mb-pill-done { background: var(--accent); color: var(--accent-foreground); border-color: var(--accent); }
+.mb-pill-done:hover, .mb-pill-done.is-hover { background: color-mix(in oklch, var(--accent) 88%, var(--foreground)); }
+.mb-pill-done:active, .mb-pill-done.is-active { background: color-mix(in oklch, var(--accent) 78%, var(--foreground)); }
+.mb-pill-skip { border-color: var(--input); color: var(--foreground); }
+.mb-pill-skip:hover, .mb-pill-skip.is-hover { background: var(--muted); }
+.mb-pill-skip:active, .mb-pill-skip.is-active { background: color-mix(in oklch, var(--muted) 88%, var(--foreground)); }
+.mb-task-akhirat .mb-pill-skip { border-color: var(--card-inverse-muted); color: var(--card-inverse-foreground); }
+.mb-task-akhirat .mb-pill-skip:hover, .mb-task-akhirat .mb-pill-skip.is-hover { background: color-mix(in oklch, var(--card-inverse-foreground) 10%, transparent); }
+.mb-task-akhirat .mb-pill-done:focus-visible, .mb-task-akhirat .mb-pill-skip:focus-visible, .mb-task-akhirat .is-focus { outline-color: var(--card-inverse-foreground); }
+
+.mb-link { display: inline-flex; align-items: center; gap: 4px; font: 500 12px/16px var(--font-sans); color: var(--primary); text-decoration: underline; text-underline-offset: 3px; text-decoration-thickness: 1px; background: none; border: 0; padding: 0; cursor: pointer; }
+.mb-task-akhirat .mb-link { color: var(--card-inverse-foreground); }
+
+/* ── cards ────────────────────────────────────────────── */
+.mb-card { background: var(--card); color: var(--card-foreground); border: 1px solid var(--border); border-radius: var(--radius-xl); padding: 16px; }
+.mb-task { border-radius: var(--radius-2xl); padding: 20px; display: flex; flex-direction: column; gap: 8px; border: 1px solid; }
+.mb-task-akhirat { background: var(--card-inverse); color: var(--card-inverse-foreground); border-color: var(--card-inverse-border); }
+.mb-task-dunia { background: var(--card); color: var(--card-foreground); border-color: var(--border); }
+.mb-task-top { display: flex; align-items: center; justify-content: space-between; gap: 8px; }
+.mb-task-akhirat .mb-eyebrow { color: var(--card-inverse-muted); }
+.mb-task-akhirat .mb-eyebrow-chip { background: color-mix(in oklch, var(--card-inverse-foreground) 12%, transparent); color: var(--card-inverse-foreground); }
+.mb-task-dunia .mb-eyebrow { color: var(--muted-foreground); }
+.mb-task-time { display: inline-flex; align-items: center; gap: 4px; font-size: 12px; line-height: 16px; font-variant-numeric: tabular-nums; }
+.mb-task-akhirat .mb-task-time { color: var(--card-inverse-muted); }
+.mb-task-dunia .mb-task-time { color: var(--muted-foreground); }
+.mb-task-sum { margin: 0; font-size: 13px; line-height: 19px; }
+.mb-task-akhirat .mb-task-sum { color: var(--card-inverse-muted); }
+.mb-task-akhirat .mb-task-sum b { color: var(--card-inverse-foreground); font-weight: 600; }
+.mb-task-dunia .mb-task-sum { color: var(--muted-foreground); }
+.mb-src { color: var(--reward); font-weight: 500; white-space: nowrap; }
+.mb-src-ink { color: var(--reward-ink); font-weight: 500; }
+.mb-task-actions { display: flex; align-items: center; gap: 8px; margin-top: 8px; }
+.mb-task-actions .mb-link { margin-left: auto; }
+
+/* date panel */
+.mb-panel { background: var(--secondary); color: var(--secondary-foreground); border-radius: var(--radius-3xl); padding: 20px; display: flex; flex-direction: column; gap: 12px; }
+.mb-dates { display: grid; grid-template-columns: 1fr auto 1fr; gap: 16px; align-items: end; }
+.mb-dates hr { width: 1px; height: 100%; margin: 0; border: 0; background: color-mix(in oklch, var(--secondary-foreground) 18%, transparent); }
+.mb-date { display: flex; flex-direction: column; gap: 2px; }
+.mb-date.hijri { text-align: right; }
+.mb-date .n { font-family: var(--font-serif); font-weight: 700; font-size: 40px; line-height: 40px; font-variant-numeric: lining-nums tabular-nums; }
+.mb-date .m { font-family: var(--font-serif); font-weight: 600; font-size: 17px; line-height: 22px; }
+.mb-date .y { font-size: 12px; line-height: 16px; opacity: 0.8; }
+.mb-prayer { display: flex; align-items: center; justify-content: space-between; gap: 8px; padding-top: 12px; border-top: 1px solid color-mix(in oklch, var(--secondary-foreground) 14%, transparent); font-size: 13px; line-height: 19px; }
+.mb-prayer strong { font-weight: 600; font-variant-numeric: tabular-nums; }
+
+/* week strip */
+.mb-week { display: grid; grid-template-columns: repeat(7, 1fr); gap: 4px; }
+.mb-day { appearance: none; background: none; border: 0; padding: 4px 0; display: flex; flex-direction: column; align-items: center; gap: 4px; color: var(--foreground); font-family: var(--font-sans); cursor: pointer; border-radius: var(--radius-md); }
+.mb-day .dn { font-size: 12px; line-height: 16px; color: var(--muted-foreground); }
+.mb-day .c { width: 40px; height: 40px; border-radius: var(--radius-full); display: grid; place-items: center; font: 600 15px/1 var(--font-sans); font-variant-numeric: tabular-nums; border: 1px solid transparent; transition: background-color var(--duration-fast) ease-out; }
+.mb-day .h { font-size: 11px; line-height: 14px; color: var(--muted-foreground); font-variant-numeric: tabular-nums; }
+.mb-day:hover .c, .mb-day.is-hover .c { background: var(--muted); }
+.mb-day.today .c { background: var(--accent); color: var(--accent-foreground); }
+.mb-day.selected .c { border-color: var(--primary); box-shadow: inset 0 0 0 1px var(--primary); }
+.mb-day.selected .dn { color: var(--primary); font-weight: 600; }
+
+/* status chip + list */
+.mb-chip { display: inline-flex; align-items: center; gap: 4px; height: 22px; padding: 0 8px; border-radius: var(--radius-full); font: 500 11px/1 var(--font-sans); letter-spacing: 0.02em; background: var(--muted); color: var(--muted-foreground); white-space: nowrap; }
+.mb-chip.done { background: var(--secondary); color: var(--secondary-foreground); }
+.mb-list { list-style: none; margin: 0; padding: 0; background: var(--card); border: 1px solid var(--border); border-radius: var(--radius-xl); }
+.mb-row { display: grid; grid-template-columns: 44px 1fr auto; gap: 12px; align-items: center; padding: 12px 16px; }
+.mb-row + .mb-row { border-top: 1px solid var(--border); }
+.mb-row .t { font-size: 12px; font-variant-numeric: tabular-nums; color: var(--muted-foreground); }
+.mb-row .name { font-weight: 500; }
+.mb-row .sub { display: block; font-size: 12px; line-height: 16px; color: var(--muted-foreground); }
+.mb-row .end { display: flex; align-items: center; gap: 8px; }
+.mb-check { appearance: none; width: 28px; height: 28px; border-radius: var(--radius-full); border: 1px solid var(--input); background: transparent; display: grid; place-items: center; color: var(--primary-foreground); cursor: pointer; padding: 0; }
+.mb-check.on { background: var(--primary); border-color: var(--primary); }
+.mb-check:focus-visible { outline: 2px solid var(--ring); outline-offset: 2px; }
+
+/* dua card */
+.mb-dua { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius-xl); padding: 16px; display: flex; flex-direction: column; gap: 8px; }
+.mb-dua .translit { font-size: 13px; line-height: 19px; font-style: italic; color: var(--muted-foreground); margin: 0; }
+.mb-dua .meaning { margin: 0; }
+.mb-dua .foot { display: flex; justify-content: space-between; align-items: center; gap: 8px; font-size: 12px; color: var(--muted-foreground); }
+
+/* story card */
+.mb-story { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius-xl); padding: 16px; display: flex; flex-direction: column; gap: 8px; }
+.mb-story textarea { width: 100%; min-height: 128px; resize: vertical; border: 0; outline: 0; background: transparent; color: var(--foreground); font: 400 15px/28px var(--font-serif); padding: 0; background-image: linear-gradient(to bottom, transparent 27px, var(--border) 27px, var(--border) 28px); background-size: 100% 28px; background-attachment: local; }
+.mb-story textarea::placeholder { color: var(--muted-foreground); font-style: italic; }
+.mb-story:focus-within { border-color: var(--ring); }
+.mb-story .foot { display: flex; justify-content: space-between; align-items: center; font-size: 12px; color: var(--muted-foreground); }
+
+/* activity feed */
+.mb-feed { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; }
+.mb-feed li { display: grid; grid-template-columns: 52px 12px 1fr; gap: 8px; align-items: start; padding: 8px 0; }
+.mb-feed .t { font: 500 12px/20px var(--font-mono); color: var(--muted-foreground); font-variant-numeric: tabular-nums; }
+.mb-feed .dot { width: 7px; height: 7px; border-radius: var(--radius-full); background: var(--primary); margin-top: 7px; }
+.mb-feed .dot.skip { background: transparent; border: 1px solid var(--muted-foreground); }
+.mb-feed .x { line-height: 20px; }
+
+/* template card */
+.mb-tpl-row { display: flex; gap: 12px; overflow-x: auto; padding-bottom: 4px; scroll-snap-type: x mandatory; }
+.mb-tpl { flex: 0 0 148px; scroll-snap-align: start; background: var(--card); border: 1px solid var(--border); border-radius: var(--radius-xl); padding: 16px; display: flex; flex-direction: column; gap: 24px; min-height: 144px; color: var(--foreground); text-decoration: none; }
+.mb-tpl:hover, .mb-tpl.is-hover { background: color-mix(in oklch, var(--card) 94%, var(--primary)); }
+.mb-tpl .ic { width: 32px; height: 32px; border-radius: var(--radius-sm); background: var(--secondary); color: var(--secondary-foreground); display: grid; place-items: center; }
+.mb-tpl p { margin: 0; }
+
+/* planner tile (Rencana esok hari) */
+.mb-plan { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.mb-plan .mb-card { display: flex; flex-direction: column; gap: 8px; min-height: 148px; }
+.mb-plan ul { margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 4px; font-size: 13px; line-height: 19px; }
+
+/* inputs */
+.mb-field { display: flex; flex-direction: column; gap: 6px; }
+.mb-label { font: 500 12px/16px var(--font-sans); letter-spacing: 0.02em; color: var(--foreground); }
+.mb-help { font-size: 12px; line-height: 16px; color: var(--muted-foreground); }
+.mb-input, .mb-textarea { width: 100%; height: 40px; padding: 0 12px; border-radius: var(--radius-lg); border: 1px solid var(--input); background: var(--card); color: var(--foreground); font: 400 14px/1.5 var(--font-sans); transition: border-color var(--duration-fast) ease-out; }
+.mb-textarea { height: auto; min-height: 88px; padding: 10px 12px; resize: vertical; }
+.mb-input::placeholder, .mb-textarea::placeholder { color: var(--muted-foreground); }
+.mb-input:hover, .mb-input.is-hover { border-color: color-mix(in oklch, var(--input) 70%, var(--foreground)); }
+.mb-input:focus-visible, .mb-input.is-focus, .mb-textarea:focus-visible { outline: 2px solid var(--ring); outline-offset: 1px; border-color: var(--ring); }
+.mb-input:disabled, .mb-input.is-disabled { opacity: 0.5; pointer-events: none; }
+.mb-input[aria-invalid="true"] { border-color: var(--destructive); }
+.mb-error { font-size: 12px; line-height: 16px; color: var(--destructive); }
+
+/* badge */
+.mb-badge { display: inline-flex; align-items: center; gap: 4px; height: 20px; padding: 0 8px; border-radius: var(--radius-sm); font: 500 11px/1 var(--font-sans); background: var(--secondary); color: var(--secondary-foreground); }
+.mb-badge.outline { background: transparent; border: 1px solid var(--input); color: var(--foreground); }
+.mb-badge.primary { background: var(--primary); color: var(--primary-foreground); }
+
+/* segmented / tabs */
+.mb-seg { display: inline-flex; padding: 3px; border-radius: var(--radius-lg); background: var(--muted); gap: 2px; }
+.mb-seg button { appearance: none; border: 0; background: transparent; height: 30px; padding: 0 14px; border-radius: var(--radius-md); font: 500 13px/1 var(--font-sans); color: var(--muted-foreground); cursor: pointer; display: inline-flex; align-items: center; gap: 6px; transition: background-color var(--duration-fast) ease-out, color var(--duration-fast) ease-out; }
+.mb-seg button:hover { color: var(--foreground); }
+.mb-seg button[aria-selected="true"], .mb-seg button[aria-pressed="true"] { background: var(--card); color: var(--foreground); box-shadow: 0 0 0 1px var(--border); }
+.mb-seg.full { display: flex; }
+.mb-seg.full button { flex: 1; justify-content: center; }
+.mb-sep { border: 0; height: 1px; background: var(--border); margin: 0; }
+
+/* dropdown menu */
+.mb-menu { background: var(--popover); color: var(--popover-foreground); border: 1px solid var(--border); border-radius: var(--radius-xl); padding: 4px; min-width: 200px; box-shadow: var(--shadow-sheet); }
+.mb-menu-item { display: flex; align-items: center; gap: 8px; height: 34px; padding: 0 10px; border-radius: var(--radius-md); font-size: 13px; cursor: pointer; }
+.mb-menu-item:hover, .mb-menu-item.is-hover { background: var(--muted); }
+.mb-menu-item .k { margin-left: auto; font-size: 11px; color: var(--muted-foreground); }
+.mb-menu-label { padding: 6px 10px 4px; font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 600; color: var(--muted-foreground); }
+
+/* dialog / sheet */
+.mb-scrim { background: var(--scrim); display: flex; align-items: flex-end; justify-content: center; }
+.mb-sheet { background: var(--popover); color: var(--popover-foreground); width: 100%; max-width: 448px; border-radius: var(--radius-3xl) var(--radius-3xl) 0 0; box-shadow: var(--shadow-sheet); display: flex; flex-direction: column; max-height: 100%; }
+.mb-sheet-head { display: flex; align-items: flex-start; justify-content: space-between; gap: 12px; padding: 20px 20px 12px; border-bottom: 1px solid var(--border); }
+.mb-sheet-body { padding: 16px 20px 20px; overflow-y: auto; display: flex; flex-direction: column; gap: 16px; }
+.mb-sheet-foot { display: flex; gap: 8px; justify-content: flex-end; padding: 12px 20px 20px; }
+.mb-grab { width: 36px; height: 4px; border-radius: var(--radius-full); background: var(--border); margin: 8px auto 0; }
+.mb-cite { padding-top: 12px; border-top: 1px solid var(--border); font-size: 13px; line-height: 19px; }
+
+/* recurrence picker */
+.mb-dow { display: grid; grid-template-columns: repeat(7, 1fr); gap: 6px; }
+.mb-dow button { appearance: none; height: 36px; border-radius: var(--radius-full); border: 1px solid var(--input); background: transparent; color: var(--foreground); font: 500 12px/1 var(--font-sans); cursor: pointer; }
+.mb-dow button[aria-pressed="true"] { background: var(--primary); border-color: var(--primary); color: var(--primary-foreground); }
+.mb-dow button:focus-visible { outline: 2px solid var(--ring); outline-offset: 2px; }
+
+/* top bar + bottom nav */
+.mb-top { position: sticky; top: env(safe-area-inset-top, 0px); height: 48px; display: flex; align-items: center; gap: 8px; padding: 0 8px 0 16px; background: color-mix(in oklch, var(--background) 94%, transparent); border-bottom: 1px solid var(--border); }
+.mb-top .ttl { font: 600 15px/1 var(--font-sans); flex: 1; }
+.mb-nav { display: flex; background: color-mix(in oklch, var(--card) 95%, transparent); backdrop-filter: blur(8px); border-top: 1px solid var(--border); padding-bottom: env(safe-area-inset-bottom, 0px); }
+.mb-nav a { flex: 1; display: flex; flex-direction: column; align-items: center; gap: 2px; padding: 10px 0; font-size: 12px; line-height: 16px; color: var(--muted-foreground); text-decoration: none; }
+.mb-nav a svg.mb-i { width: 20px; height: 20px; stroke-width: 1.8; }
+.mb-nav a[aria-current="page"] { color: var(--primary); font-weight: 500; }
+.mb-nav a[aria-current="page"] svg.mb-i { stroke-width: 2.4; }
+.mb-nav a:hover { color: var(--foreground); }
+.mb-fab { width: 48px; height: 48px; border-radius: var(--radius-full); background: var(--primary); color: var(--primary-foreground); border: 0; display: grid; place-items: center; box-shadow: var(--shadow-float); cursor: pointer; }
+.mb-fab svg.mb-i { width: 22px; height: 22px; stroke-width: 2; }
+
+/* states */
+.mb-empty { display: flex; flex-direction: column; align-items: center; text-align: center; gap: 8px; padding: 32px 20px; border: 1px dashed var(--border); border-radius: var(--radius-2xl); background: var(--card); }
+.mb-empty .ic { width: 40px; height: 40px; border-radius: var(--radius-full); background: var(--secondary); color: var(--secondary-foreground); display: grid; place-items: center; }
+.mb-empty p { margin: 0; max-width: 30ch; }
+.mb-skel { background: var(--muted); border-radius: var(--radius-md); animation: mb-breathe 1.6s ease-in-out infinite; }
+@keyframes mb-breathe { 50% { opacity: 0.55; } }
+.mb-note { display: flex; gap: 12px; align-items: flex-start; padding: 12px 16px; border-radius: var(--radius-xl); background: var(--muted); color: var(--foreground); font-size: 13px; line-height: 19px; }
+.mb-note .ic { color: var(--muted-foreground); margin-top: 1px; }
+
+/* avatar + upgrade prompt */
+.mb-avatar { width: 72px; height: 72px; border-radius: var(--radius-full); background: var(--secondary); color: var(--secondary-foreground); display: grid; place-items: center; font: 700 26px/1 var(--font-serif); position: relative; flex: none; }
+.mb-avatar .cam { position: absolute; right: -2px; bottom: -2px; width: 28px; height: 28px; border-radius: var(--radius-full); background: var(--card); border: 1px solid var(--border); display: grid; place-items: center; color: var(--foreground); }
+
+/* phone mock */
+.mb-phone { width: 390px; height: 844px; border-radius: var(--radius-4xl); border: 1px solid var(--border); background: var(--background); color: var(--foreground); overflow: hidden; display: flex; flex-direction: column; position: relative; flex: none; }
+.mb-phone-scroll { flex: 1; overflow: hidden; padding: 32px 16px 16px; display: flex; flex-direction: column; gap: 24px; }
+.mb-sect { display: flex; flex-direction: column; gap: 12px; }
+.mb-sect-head { display: flex; align-items: baseline; justify-content: space-between; gap: 8px; }
+.mb-phone .mb-fab { position: absolute; right: 16px; bottom: 76px; }
+
+@media (prefers-reduced-motion: reduce) {
+  .mb *, .mb *::before, .mb *::after { transition-duration: 0ms !important; animation: none !important; }
+}
+
+
+.ql { background: var(--background); color: var(--foreground); font-family: var(--font-sans); font-size: 15px; line-height: 1.6; }
+.ql *, .ql *::before, .ql *::after { box-sizing: border-box; }
+.ql-wrap { max-width: 1120px; margin: 0 auto; padding-inline: max(16px, 4vw); }
+.ql a { color: inherit; }
+.ql-nav { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 10; background: color-mix(in oklch, var(--background) 92%, transparent); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); border-bottom: 1px solid var(--border); }
+.ql-nav .ql-wrap { display: flex; align-items: center; gap: 24px; height: 64px; }
+.ql-mark { font: 700 19px/1 var(--font-serif); text-decoration: none; display: inline-flex; align-items: center; gap: 10px; }
+.ql-mark .dot { width: 26px; height: 26px; border-radius: 9px 9px 13px 13px; background: var(--card-inverse); display: grid; place-items: center; color: var(--card-inverse-foreground); }
+.ql-links { display: flex; gap: 24px; margin-left: auto; font-size: 14px; }
+.ql-links a { text-decoration: none; color: var(--muted-foreground); }
+.ql-links a:hover { color: var(--foreground); }
+.ql-nav .mb-btn { margin-left: 8px; }
+.ql-hero { padding-block: 72px 88px; display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 56px; align-items: center; }
+.ql-eyebrow { font: 600 11px/14px var(--font-sans); letter-spacing: 0.14em; text-transform: uppercase; color: var(--primary); display: inline-flex; gap: 10px; align-items: center; }
+.ql-eyebrow::before { content: ""; width: 24px; height: 1px; background: currentColor; }
+.ql-h1 { font: 700 clamp(38px, 5.4vw, 60px)/1.08 var(--font-serif); letter-spacing: -0.015em; margin: 18px 0 20px; text-wrap: balance; }
+.ql-h1 em { font-style: italic; font-weight: 500; color: var(--primary); }
+.ql-lead { font-size: 18px; line-height: 1.6; color: var(--muted-foreground); max-width: 34em; margin: 0 0 32px; }
+.ql-ctas { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
+.ql-note { margin-top: 18px; font-size: 13px; color: var(--muted-foreground); }
+.ql-dates { display: flex; gap: 18px; margin-top: 36px; padding-top: 20px; border-top: 1px solid var(--border); font-size: 13px; color: var(--muted-foreground); flex-wrap: wrap; }
+.ql-dates b { display: block; font: 600 16px/1.3 var(--font-serif); color: var(--foreground); }
+.ql-phone-wrap { display: flex; justify-content: center; }
+.ql-phone { width: 360px; max-width: 100%; border-radius: 36px; border: 1px solid var(--border); background: var(--background); padding: 28px 16px 20px; display: flex; flex-direction: column; gap: 16px; box-shadow: 0 30px 60px -30px color-mix(in oklch, var(--foreground) 35%, transparent); }
+.ql-sect { padding-block: 88px; border-top: 1px solid var(--border); }
+.ql-sect-head { max-width: 40em; margin-bottom: 44px; }
+.ql-h2 { font: 700 clamp(28px, 3.4vw, 38px)/1.15 var(--font-serif); margin: 14px 0 12px; text-wrap: balance; letter-spacing: -0.01em; }
+.ql-sect-head p { color: var(--muted-foreground); margin: 0; font-size: 16px; }
+.ql-princ { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+.ql-princ article { display: flex; flex-direction: column; gap: 16px; }
+.ql-princ .demo { min-height: 188px; display: flex; flex-direction: column; justify-content: center; }
+.ql-princ h3 { font: 700 20px/1.3 var(--font-serif); margin: 0; }
+.ql-princ p { margin: 0; color: var(--muted-foreground); }
+.ql-feat { display: grid; grid-template-columns: repeat(3, 1fr); border-top: 1px solid var(--border); border-left: 1px solid var(--border); }
+.ql-feat div { padding: 28px 24px; border-right: 1px solid var(--border); border-bottom: 1px solid var(--border); display: flex; flex-direction: column; gap: 10px; }
+.ql-feat .ic { width: 36px; height: 36px; border-radius: var(--radius-md); background: var(--secondary); color: var(--secondary-foreground); display: grid; place-items: center; }
+.ql-feat h3 { font: 600 16px/1.35 var(--font-sans); margin: 4px 0 0; }
+.ql-feat p { margin: 0; font-size: 14px; color: var(--muted-foreground); }
+.ql-steps { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; counter-reset: s; }
+.ql-steps li { counter-increment: s; display: flex; flex-direction: column; gap: 10px; }
+.ql-steps li::before { content: counter(s); font: 700 44px/1 var(--font-serif); color: var(--primary); }
+.ql-steps h3 { font: 700 19px/1.3 var(--font-serif); margin: 0; }
+.ql-steps p { margin: 0; color: var(--muted-foreground); }
+.ql-pal { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center; }
+.ql-swatches { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; }
+.ql-sw { border-radius: var(--radius-xl); border: 1px solid var(--border); overflow: hidden; background: var(--card); text-align: left; padding: 0; cursor: pointer; font: inherit; color: inherit; }
+.ql-sw[aria-pressed="true"] { outline: 2px solid var(--ring); outline-offset: 3px; }
+.ql-sw .bars { display: flex; height: 64px; }
+.ql-sw .bars span { flex: 1; }
+.ql-sw .lbl { display: block; padding: 12px 14px; font-size: 13px; font-weight: 500; }
+.ql-faq { max-width: 760px; }
+.ql-faq details { border-bottom: 1px solid var(--border); padding: 20px 0; }
+.ql-faq summary { cursor: pointer; list-style: none; display: flex; justify-content: space-between; gap: 16px; font: 600 17px/1.4 var(--font-serif); }
+.ql-faq summary::-webkit-details-marker { display: none; }
+.ql-faq summary::after { content: "+"; font: 400 22px/1 var(--font-sans); color: var(--muted-foreground); transition: transform var(--duration-fast) ease-out; }
+.ql-faq details[open] summary::after { transform: rotate(45deg); }
+.ql-faq p { margin: 12px 0 0; color: var(--muted-foreground); max-width: 60ch; }
+.ql-cta { margin-block: 24px 88px; background: var(--secondary); color: var(--secondary-foreground); border-radius: var(--radius-4xl); padding: clamp(32px, 6vw, 72px); display: grid; grid-template-columns: 1.4fr 1fr; gap: 32px; align-items: center; }
+.ql-cta .ql-h2 { margin-top: 0; }
+.ql-cta p { margin: 0; }
+.ql-cta .mb-arabic { text-align: right; color: var(--secondary-foreground); }
+.ql-foot { border-top: 1px solid var(--border); padding-block: 32px 48px; font-size: 13px; color: var(--muted-foreground); }
+.ql-foot .ql-wrap { display: flex; flex-wrap: wrap; gap: 16px 32px; justify-content: space-between; align-items: center; }
+.ql-switch { display: flex; gap: 8px; flex-wrap: wrap; }
+@media (max-width: 880px) {
+  .ql-hero, .ql-pal, .ql-cta { grid-template-columns: 1fr; }
+  .ql-princ, .ql-feat, .ql-steps { grid-template-columns: 1fr; }
+  .ql-links { display: none; }
+  .ql-nav .mb-btn { margin-left: auto; }
+  .ql-hero { padding-block: 40px 56px; }
+  .ql-sect { padding-block: 56px; }
+}
+@media (min-width: 881px) and (max-width: 1040px) { .ql-feat { grid-template-columns: repeat(2, 1fr); } }
+
+</style>
+<div class="ql mb">
+<header class="ql-nav"><div class="ql-wrap">
+  <a class="ql-mark" href="#top"><span class="dot"><i data-i="landmark" class="sm"></i></span>Muslim Berislam</a>
+  <nav class="ql-links" aria-label="Halaman"><a href="#prinsip">Prinsip</a><a href="#fitur">Fitur</a><a href="#cara">Cara kerja</a><a href="#tanya">Tanya jawab</a></nav>
+  <a class="mb-btn mb-btn-primary" href="#mulai">Mulai sekarang</a>
+</div></header>
+
+<main id="top">
+<section class="ql-wrap ql-hero">
+  <div>
+    <span class="ql-eyebrow">Pendamping ibadah harian</span>
+    <h1 class="ql-h1">Satu langkah kecil, <em>di waktu yang tepat.</em></h1>
+    <p class="ql-lead">Muslim Berislam menunjukkan satu hal saja yang perlu kamu kerjakan sekarang — diurutkan menurut waktu sholat yang sebenarnya, lengkap dengan dalilnya. Tanpa daftar panjang, tanpa rasa bersalah.</p>
+    <div class="ql-ctas"><a class="mb-btn mb-btn-primary lg" href="#mulai">Mulai sebagai tamu</a><a class="mb-btn mb-btn-outline lg" href="#cara">Lihat cara kerjanya</a></div>
+    <p class="ql-note">Tanpa daftar akun. Simpan dengan email kapan saja — catatanmu ikut pindah.</p>
+    <div class="ql-dates"><span><b>Sabtu, 26 Juli 2025</b>Masehi</span><span><b>1 Safar 1447 H</b>Hijriah</span><span><b>Ashar · 15:21</b>Sholat berikutnya</span></div>
+  </div>
+  <div class="ql-phone-wrap"><div class="ql-phone" aria-label="Contoh tampilan Beranda">
+    <div><h2 class="mb-display" style="font-size:24px;line-height:30px">Assalamu'alaikum, Jessica</h2><p class="mb-small mb-muted" style="margin:4px 0 0">Ayo mulai hari dengan berdoa.</p></div>
+    <section class="mb-panel" style="padding:16px">
+      <div class="mb-dates"><div class="mb-date"><span class="n" style="font-size:32px;line-height:32px">26</span><span class="m">Juli 2025</span></div><hr><div class="mb-date hijri"><span class="n" style="font-size:32px;line-height:32px">1</span><span class="m">Safar 1447</span></div></div>
+      <article class="mb-task mb-task-akhirat" style="padding:16px">
+        <div class="mb-task-top"><span class="mb-eyebrow"><span class="mb-eyebrow-chip"><i data-i="landmark" class="sm"></i></span>Akhirat</span><span class="mb-task-time">Ashar · 15:21</span></div>
+        <h3 class="mb-h3">Sholat Ashar berjamaah.</h3>
+        <p class="mb-task-sum">Jaga takbir pertama 40 hari, dicatat <b>2 pembebasan.</b> <span class="mb-src">(HR. Tirmidzi no. 241)</span></p>
+        <div class="mb-task-actions"><button class="mb-pill mb-pill-done"><i data-i="check" class="sm"></i>Dikerjakan</button><button class="mb-pill mb-pill-skip">Lewati dulu</button></div>
+      </article>
+      <article class="mb-task mb-task-dunia" style="padding:16px">
+        <div class="mb-task-top"><span class="mb-eyebrow"><span class="mb-eyebrow-chip"><i data-i="activity" class="sm"></i></span>Dunia</span><span class="mb-task-time">16:30</span></div>
+        <h3 class="mb-h3">Olahraga 30 menit.</h3>
+      </article>
+    </section>
+  </div></div>
+</section>
+
+<section class="ql-sect" id="prinsip"><div class="ql-wrap">
+  <div class="ql-sect-head"><span class="ql-eyebrow">Prinsip</span><h2 class="ql-h2">Dibuat untuk ketenangan, bukan untuk dikejar.</h2><p>Aplikasi ibadah tidak perlu terasa seperti game. Tiga hal ini kami jaga di setiap layar.</p></div>
+  <div class="ql-princ">
+    <article><div class="demo mb-card" style="gap:10px;display:flex;flex-direction:column">
+      <span class="mb-eyebrow mb-muted">Sekarang</span><p class="mb-title">Sholat Ashar berjamaah</p><p class="mb-small mb-muted" style="margin:0">Berikutnya: Dzikir petang, lalu Maghrib 17:55.</p></div>
+      <h3>Satu tugas pada satu waktu</h3><p>Beranda hanya menampilkan tugas berikutnya, diurutkan oleh jadwal sholat — bukan dinding daftar yang menunggu dicentang.</p></article>
+    <article><div class="demo mb-card" style="gap:8px;display:flex;flex-direction:column">
+      <p class="mb-arabic md" dir="rtl" lang="ar" style="font-size:20px;line-height:36px">كُتِبَتْ لَهُ بَرَاءَتَانِ</p><p class="mb-small" style="margin:0">“…dicatat baginya dua pembebasan.”</p><p class="mb-small" style="margin:0"><span class="mb-src-ink">HR. Tirmidzi no. 241</span></p></div>
+      <h3>Dalil utuh, bukan potongan</h3><p>Setiap amalan akhirat membawa hadits lengkap — teks Arab, terjemahan, dan sumbernya. Tidak pernah dipotong demi tata letak.</p></article>
+    <article><div class="demo mb-card" style="gap:12px;display:flex;flex-direction:column;align-items:flex-start">
+      <div class="mb-task-actions" style="margin:0"><button class="mb-pill mb-pill-done"><i data-i="check" class="sm"></i>Dikerjakan</button><button class="mb-pill mb-pill-skip">Lewati dulu</button></div><span class="mb-chip">Dilewati</span></div>
+      <h3>Melewati itu boleh</h3><p>"Lewati dulu" sama besarnya dengan "Dikerjakan". Tidak ada warna merah, tidak ada streak yang putus. Kamu bisa menandainya nanti.</p></article>
+  </div>
+</div></section>
+
+<section class="ql-sect" id="fitur"><div class="ql-wrap">
+  <div class="ql-sect-head"><span class="ql-eyebrow">Fitur</span><h2 class="ql-h2">Semua yang dibutuhkan untuk hari yang lurus.</h2></div>
+  <div class="ql-feat">
+    <div><span class="ic"><i data-i="clock"></i></span><h3>Jadwal sholat sesuai kotamu</h3><p>Dihitung dengan metode KEMENAG untuk kota di profilmu. Tetap berjalan dengan waktu perkiraan saat offline.</p></div>
+    <div><span class="ic"><i data-i="book-open"></i></span><h3>Masehi dan Hijriah berdampingan</h3><p>Setiap tanggal ditampilkan dalam dua kalender, sama besar. Tidak ada yang jadi catatan kaki.</p></div>
+    <div><span class="ic"><i data-i="landmark"></i></span><h3>Template ibadah bersumber</h3><p>Solat fardhu, tahajud, dzikir pagi-petang — masing-masing dengan manfaat singkat dan dalil sahih.</p></div>
+    <div><span class="ic"><i data-i="activity"></i></span><h3>Todo dunia di tempat yang sama</h3><p>Olahraga, pekerjaan, keluarga. Atur jam dan hari ulangnya, tampil di sela jadwal ibadah.</p></div>
+    <div><span class="ic"><i data-i="pen-line"></i></span><h3>Cerita hari ini</h3><p>Satu halaman jurnal per hari untuk bersyukur dan merenung. Tersimpan otomatis.</p></div>
+    <div><span class="ic"><i data-i="rotate-ccw"></i></span><h3>Doa sesuai waktu</h3><p>Rekomendasi doa berganti mengikuti waktu — pagi, siang, petang, malam — lengkap dengan artinya.</p></div>
+  </div>
+</div></section>
+
+<section class="ql-sect" id="cara"><div class="ql-wrap">
+  <div class="ql-sect-head"><span class="ql-eyebrow">Cara kerja</span><h2 class="ql-h2">Beberapa detik, beberapa kali sehari.</h2></div>
+  <ol class="ql-steps">
+    <li><h3>Buka saat ada jeda</h3><p>Setelah subuh, di sela kerja, atau sebelum tidur. Beranda langsung menunjukkan satu hal berikutnya.</p></li>
+    <li><h3>Kerjakan atau lewati</h3><p>Ketuk salah satu. Kartu berikutnya muncul dengan tenang. Yang terlewat bisa ditandai belakangan.</p></li>
+    <li><h3>Tutup hari dengan cerita</h3><p>Tulis satu-dua kalimat di Profil. Riwayat ibadahmu tersusun sendiri, tanpa angka yang menghakimi.</p></li>
+  </ol>
+</div></section>
+
+<section class="ql-sect" id="tema"><div class="ql-wrap ql-pal">
+  <div><span class="ql-eyebrow">Tema</span><h2 class="ql-h2">Ikhwan atau Akhwat, terang atau gelap.</h2><p class="ql-lead" style="margin:0">Empat palet dengan struktur yang sama: zamrud dan emas untuk Ikhwan, plum dan sampanye untuk Akhwat. Coba ganti — halaman ini ikut berubah.</p></div>
+  <div class="ql-swatches"><button class="ql-sw" data-set-g="ikhwan" data-set-m="light" aria-label="Pakai tema Ikhwan · Terang"><span class="bars"><span style="background:oklch(0.985 0.01 95)"></span><span style="background:oklch(0.4 0.09 168)"></span><span style="background:oklch(0.9 0.15 125)"></span><span style="background:oklch(0.28 0.04 180)"></span><span style="background:oklch(0.75 0.15 65)"></span></span><span class="lbl">Ikhwan · Terang</span></button><button class="ql-sw" data-set-g="ikhwan" data-set-m="dark" aria-label="Pakai tema Ikhwan · Gelap"><span class="bars"><span style="background:oklch(0.16 0.015 170)"></span><span style="background:oklch(0.75 0.1 160)"></span><span style="background:oklch(0.85 0.16 125)"></span><span style="background:oklch(0.09 0.02 180)"></span><span style="background:oklch(0.8 0.15 70)"></span></span><span class="lbl">Ikhwan · Gelap</span></button><button class="ql-sw" data-set-g="akhwat" data-set-m="light" aria-label="Pakai tema Akhwat · Terang"><span class="bars"><span style="background:oklch(0.985 0.008 350)"></span><span style="background:oklch(0.45 0.12 350)"></span><span style="background:oklch(0.88 0.08 10)"></span><span style="background:oklch(0.3 0.06 340)"></span><span style="background:oklch(0.78 0.12 85)"></span></span><span class="lbl">Akhwat · Terang</span></button><button class="ql-sw" data-set-g="akhwat" data-set-m="dark" aria-label="Pakai tema Akhwat · Gelap"><span class="bars"><span style="background:oklch(0.17 0.025 340)"></span><span style="background:oklch(0.76 0.09 350)"></span><span style="background:oklch(0.8 0.1 10)"></span><span style="background:oklch(0.1 0.03 340)"></span><span style="background:oklch(0.82 0.12 85)"></span></span><span class="lbl">Akhwat · Gelap</span></button></div>
+</div></section>
+
+<section class="ql-sect" id="tanya"><div class="ql-wrap">
+  <div class="ql-sect-head"><span class="ql-eyebrow">Tanya jawab</span><h2 class="ql-h2">Yang sering ditanyakan.</h2></div>
+  <div class="ql-faq">
+    <details open><summary>Apakah harus membuat akun?</summary><p>Tidak. Kamu langsung masuk sebagai tamu dan semua fitur bisa dipakai. Kapan pun mau, tambahkan email dan kata sandi di Profil — seluruh data tamu tetap tersimpan.</p></details>
+    <details><summary>Dari mana jadwal sholatnya?</summary><p>Dari layanan Aladhan dengan metode KEMENAG, berdasarkan kota dan negara di profilmu. Jika layanan tidak bisa dihubungi, aplikasi memakai waktu perkiraan dan memberi tahu kamu.</p></details>
+    <details><summary>Bagaimana kalau aku melewatkan sesuatu?</summary><p>Tidak apa-apa. Buka "Semua task hari ini" dan tandai kapan saja. Tidak ada streak yang putus dan tidak ada pengingat yang menyalahkan.</p></details>
+    <details><summary>Apakah hadits yang ditampilkan dipotong?</summary><p>Di kartu hanya ada ringkasan manfaat dan sumbernya. Ketuk kartu untuk membaca dalil lengkap: teks Arab, terjemahan, dan rujukan.</p></details>
+    <details><summary>Bahasa apa saja yang tersedia?</summary><p>Bahasa Indonesia, English, dan Bahasa Melayu.</p></details>
+  </div>
+</div></section>
+
+<section class="ql-wrap" id="mulai"><div class="ql-cta">
+  <div><h2 class="ql-h2">Mulai dari satu langkah hari ini.</h2><p>Tanpa daftar, tanpa iklan yang mengejar. Buka, kerjakan, tenang.</p><div class="ql-ctas" style="margin-top:24px"><a class="mb-btn mb-btn-primary lg" href="#top">Mulai sebagai tamu</a></div></div>
+  <div><p class="mb-arabic" dir="rtl" lang="ar">أَحَبُّ الأَعْمَالِ إِلَى اللَّهِ أَدْوَمُهَا وَإِنْ قَلَّ</p><p class="mb-small" style="text-align:right;margin:0">“Amalan yang paling dicintai Allah adalah yang paling rutin, meskipun sedikit.” — HR. Bukhari dan Muslim</p></div>
+</div></section>
+</main>
+
+<footer class="ql-foot"><div class="ql-wrap">
+  <span>Muslim Berislam · The Quiet Ritual</span>
+  <div class="ql-switch">
+    <div class="mb-seg" aria-label="Gender"><button data-set-g="ikhwan">Ikhwan</button><button data-set-g="akhwat">Akhwat</button></div>
+    <div class="mb-seg" aria-label="Mode"><button data-set-m="light"><i data-i="sun" class="sm"></i>Terang</button><button data-set-m="dark"><i data-i="moon" class="sm"></i>Gelap</button></div>
+  </div>
+</div></footer>
+</div>
+<script>
+/* @ds-bundle: {"format":4,"namespace":"MB","components":[]} */
+(function () {
+  // Lucide paths (ISC licence) for the icons the app uses. 1.5 stroke by default.
+  var P = {
+    landmark: '<path d="M10 18v-7"/><path d="M11.12 2.198a2 2 0 0 1 1.76.006l7.866 3.847c.476.233.31.949-.22.949H3.474c-.53 0-.695-.716-.22-.949z"/><path d="M14 18v-7"/><path d="M18 18v-7"/><path d="M3 22h18"/><path d="M6 18v-7"/>',
+    activity: '<path d="M22 12h-4l-3 9L9 3l-3 9H2"/>',
+    leaf: '<path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"/><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/>',
+    house: '<path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"/><path d="M3 10a2 2 0 0 1 .709-1.528l7-5.999a2 2 0 0 1 2.582 0l7 5.999A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>',
+    'notebook-pen': '<path d="M13.4 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-7.4"/><path d="M2 6h4"/><path d="M2 10h4"/><path d="M2 14h4"/><path d="M2 18h4"/><path d="M21.378 5.626a1 1 0 1 0-3.004-3.004l-5.01 5.012a2 2 0 0 0-.506.854l-.837 2.87a.5.5 0 0 0 .62.62l2.87-.837a2 2 0 0 0 .854-.506z"/>',
+    user: '<path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/>',
+    plus: '<path d="M5 12h14"/><path d="M12 5v14"/>',
+    check: '<path d="M20 6 9 17l-5-5"/>',
+    clock: '<circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/>',
+    'arrow-left': '<path d="m12 19-7-7 7-7"/><path d="M19 12H5"/>',
+    'chevron-right': '<path d="m9 18 6-6-6-6"/>',
+    'chevron-down': '<path d="m6 9 6 6 6-6"/>',
+    x: '<path d="M18 6 6 18"/><path d="m6 6 12 12"/>',
+    'book-open': '<path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/>',
+    moon: '<path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/>',
+    sun: '<circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/>',
+    sunset: '<path d="M12 10V2"/><path d="m4.93 10.93 1.41 1.41"/><path d="M2 18h2"/><path d="M20 18h2"/><path d="m19.07 10.93-1.41 1.41"/><path d="M22 22H2"/><path d="m16 6-4 4-4-4"/><path d="M16 18a4 4 0 0 0-8 0"/>',
+    languages: '<path d="m5 8 6 6"/><path d="m4 14 6-6 2-3"/><path d="M2 5h12"/><path d="M7 2h1"/><path d="m22 22-5-10-5 10"/><path d="M14 18h6"/>',
+    camera: '<path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z"/><circle cx="12" cy="13" r="3"/>',
+    'pen-line': '<path d="M12 20h9"/><path d="M16.376 3.622a1 1 0 0 1 3.002 3.002L7.368 18.635a2 2 0 0 1-.855.506l-2.872.838a.5.5 0 0 1-.62-.62l.838-2.872a2 2 0 0 1 .506-.854z"/>',
+    'refresh-cw': '<path d="M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8"/><path d="M21 3v5h-5"/><path d="M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16"/><path d="M8 16H3v5"/>',
+    'cloud-off': '<path d="m2 2 20 20"/><path d="M5.782 5.782A7 7 0 0 0 9 19h8.5a4.5 4.5 0 0 0 1.307-.193"/><path d="M21.532 16.5A4.5 4.5 0 0 0 17.5 10h-1.79A7.008 7.008 0 0 0 10 5.07"/>',
+    minus: '<path d="M5 12h14"/>',
+    'rotate-ccw': '<path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/>',
+    'hand-heart': '<path d="M11 14h2a2 2 0 1 0 0-4h-3c-.6 0-1.1.2-1.4.6L3 16"/><path d="m7 20 1.6-1.4c.3-.4.8-.6 1.4-.6h4c1.1 0 2.1-.4 2.8-1.2l4.6-4.4a2 2 0 0 0-2.75-2.91l-4.2 3.9"/><path d="m2 15 6 6"/><path d="M19.5 8.5c.7-.7 1.5-1.6 1.5-2.7A2.73 2.73 0 0 0 16 4a2.78 2.78 0 0 0-5 1.8c0 1.2.8 2 1.5 2.8L16 12Z"/>'
+  };
+  function icon(name, cls) {
+    return '<svg class="mb-i ' + (cls || '') + '" viewBox="0 0 24 24" aria-hidden="true">' + (P[name] || '') + '</svg>';
+  }
+  // Replaces every <i data-i="name" class="sm|lg"></i> under root with its SVG.
+  function icons(root) {
+    (root || document).querySelectorAll('i[data-i]').forEach(function (el) {
+      el.outerHTML = icon(el.getAttribute('data-i'), el.className);
+    });
+  }
+  window.MB = { icon: icon, icons: icons, paths: P };
+})();
+
+MB.icons();
+(function(){
+  var ATTR="data-palette", root=document.documentElement;
+  function viewerMode(){var t=root.getAttribute('data-theme');if(t==='dark'||t==='light')return t;try{return matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';}catch(e){return 'light';}}
+  var cur=root.getAttribute(ATTR)||'';
+  var gender=/akhwat/.test(cur)?'akhwat':'ikhwan';
+  var mode=viewerMode();
+  try{var s=JSON.parse(localStorage.getItem('mb.landing')||'null');if(s){gender=s.g||gender;}}catch(e){}
+  function apply(){
+    root.setAttribute(ATTR,gender+'-'+mode);
+    root.style.colorScheme=mode;
+    document.querySelectorAll('[data-set-g]').forEach(function(b){b.setAttribute('aria-pressed',b.getAttribute('data-set-g')===gender?'true':'false');});
+    document.querySelectorAll('[data-set-m]').forEach(function(b){b.setAttribute('aria-pressed',b.getAttribute('data-set-m')===mode?'true':'false');});
+    try{localStorage.setItem('mb.landing',JSON.stringify({g:gender,m:mode}));}catch(e){}
+    document.querySelectorAll('.fk-seg').forEach(function(g){var ind=g.querySelector('.ind'),a=g.querySelector('[aria-pressed="true"],[aria-selected="true"]');if(!ind||!a)return;ind.style.width=a.offsetWidth+'px';ind.style.transform='translateX('+(a.offsetLeft-parseFloat(getComputedStyle(ind).left))+'px)';});
+  }
+  document.addEventListener('click',function(e){
+    var g=e.target.closest&&e.target.closest('[data-set-g]'), m=e.target.closest&&e.target.closest('[data-set-m]');
+    if(g){gender=g.getAttribute('data-set-g');apply();}
+    if(m){mode=m.getAttribute('data-set-m');apply();}
+  });
+  new MutationObserver(function(){var v=viewerMode();if(v!==mode){mode=v;apply();}}).observe(root,{attributes:true,attributeFilter:['data-theme']});
+  apply();
+})();
+</script>

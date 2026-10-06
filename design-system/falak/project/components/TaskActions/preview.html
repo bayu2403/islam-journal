@@ -1,0 +1,19 @@
+<!-- @dsCard group="Actions" height=300 -->
+<!doctype html>
+<html lang="id">
+<head><meta charset="utf-8"><title>TaskActions</title></head>
+<body>
+<div class="fk fk-ground fk-pv">
+<div class="fk-pv-row"><span class="fk-pv-cap">rest</span><button class="fk-pill fk-pill-done"><i data-i="check" class="sm"></i>Dikerjakan</button><button class="fk-pill fk-pill-skip">Lewati dulu</button></div>
+<div class="fk-pv-row"><span class="fk-pv-cap">hover</span><button class="fk-pill fk-pill-done is-hover"><i data-i="check" class="sm"></i>Dikerjakan</button><button class="fk-pill fk-pill-skip is-hover">Lewati dulu</button></div>
+<div class="fk-pv-row"><span class="fk-pv-cap">pressed</span><button class="fk-pill fk-pill-done is-active"><i data-i="check" class="sm"></i>Dikerjakan</button><button class="fk-pill fk-pill-skip is-active">Lewati dulu</button></div>
+<div class="fk-pv-row"><span class="fk-pv-cap">focus</span><button class="fk-pill fk-pill-done is-focus"><i data-i="check" class="sm"></i>Dikerjakan</button><button class="fk-pill fk-pill-skip is-focus">Lewati dulu</button></div>
+<div class="fk-pv-row"><span class="fk-pv-cap">disabled</span><button class="fk-pill fk-pill-done" disabled><i data-i="check" class="sm"></i>Dikerjakan</button><button class="fk-pill fk-pill-skip" disabled>Lewati dulu</button></div>
+<div class="fk-pv-row"><span class="fk-pv-cap">tap me</span><button class="fk-pill fk-pill-done" id="demo"><i data-i="check" class="sm"></i>Dikerjakan</button><span class="fk-small fk-muted">Check draws itself, a light sweep passes.</span></div>
+</div>
+<script>
+Falak.boot();
+var d=document.getElementById('demo');d.addEventListener('click',function(){d.classList.remove('is-done');void d.offsetWidth;d.classList.add('is-done');});
+</script>
+</body>
+</html>

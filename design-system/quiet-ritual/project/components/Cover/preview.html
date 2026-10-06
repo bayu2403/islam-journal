@@ -1,0 +1,50 @@
+<!-- @dsCard height=288 -->
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<title>Muslim Berislam</title>
+<style>
+  html, body { margin:0; height:100%; }
+  body { background:var(--background); color:var(--foreground); font-family:var(--font-sans); overflow:hidden; }
+  .cover { position:relative; height:288px; width:960px; overflow:hidden; }
+  .art { position:absolute; top:0; left:480px; width:480px; height:288px; overflow:hidden; }
+  .art svg { display:block; width:480px; height:288px; }
+  .primary { fill:var(--primary); }
+  .well { fill:var(--card-inverse); stroke:var(--card-inverse-border); stroke-width:1; }
+  .mihrab { fill:none; stroke:var(--card-inverse-muted); stroke-width:1.5; }
+  .tint { fill:var(--secondary); }
+  .lamp { fill:var(--accent); }
+  .rule { stroke:var(--border); stroke-width:1; }
+  .words { position:absolute; left:var(--space-6); bottom:var(--space-6); max-width:440px; }
+  .name { margin:0; font-family:var(--font-serif); font-size:96px; line-height:.95; font-weight:700; letter-spacing:-.01em; color:var(--foreground); }
+  .tag { margin:var(--space-2) 0 0 4px; font-size:14px; line-height:20px; color:var(--muted-foreground); }
+</style>
+</head>
+<body>
+<div class="cover">
+<div class="art" aria-hidden="true">
+<svg viewBox="0 0 480 288" width="480" height="288">
+<!--
+  blocks      primary arch 144×264 · card-inverse arch 160×232 (the Akhirat well) · secondary arch 136×168 bleeding right · accent disc r12 once — ≈40% of 960×288
+  arrangement three mihrab arches on one ground line, all bleeding off the bottom edge, stepping down left to right like a row of prayer niches; space-4 gutters
+  pattern     "a literal motif" row — the brand's landmark/masjid icon and the dalil it frames become arches with half-width radii; one inner mihrab line in card-inverse-muted inside the well, and three border hairlines (the system's "borders not shadows") crossing the base
+  scales      widths in space-2 multiples; gutters space-4; arch radius = half width (radius-full logic); rule pitch space-8; stroke 1.5 = lucide stroke
+-->
+<path class="primary" d="M24 288 V96 A72 72 0 0 1 168 96 V288 Z"/>
+<circle class="lamp" cx="96" cy="112" r="12"/>
+<path class="well" d="M184 288 V136 A80 80 0 0 1 344 136 V288 Z"/>
+<path class="mihrab" d="M216 288 V152 A48 48 0 0 1 312 152 V288"/>
+<path class="tint" d="M360 288 V188 A68 68 0 0 1 496 188 V288 Z"/>
+<line class="rule" x1="0" y1="224" x2="480" y2="224"/>
+<line class="rule" x1="0" y1="256" x2="480" y2="256"/>
+<line class="rule" x1="0" y1="287.5" x2="480" y2="287.5"/>
+</svg>
+</div>
+<div class="words">
+  <h1 class="name">Muslim Berislam</h1>
+  <p class="tag">The Quiet Ritual — tenang, khusyuk, premium.</p>
+</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!-- @dsCard group="Jurnal" height=660 -->
+<!doctype html>
+<html lang="id">
+<head><meta charset="utf-8"><title>QuickAdd</title></head>
+<body>
+<div class="fk fk-ground" style="height:660px;display:flex;flex-direction:column"><div class="fk-scrim" style="flex:1;padding-top:24px">
+<form class="fk-sheet" role="dialog" aria-modal="true" aria-labelledby="qa" onsubmit="event.preventDefault()">
+  <div class="fk-grab"></div>
+  <div class="fk-sheet-head"><div style="display:flex;flex-direction:column;gap:8px"><span class="fk-hud fk-muted"><i data-i="activity" class="sm"></i>Dunia</span><h2 class="fk-h1" id="qa">Todo baru</h2></div><button type="button" class="fk-btn fk-btn-glass icon" aria-label="Tutup"><i data-i="x"></i></button></div>
+  <div class="fk-sheet-body">
+    <div class="fk-field"><label class="fk-label" for="qa-t">Judul</label><input class="fk-input" id="qa-t" value="Olahraga 30 menit"></div>
+    <div class="fk-field"><label class="fk-label" for="qa-w">Waktu · opsional</label><input class="fk-input" id="qa-w" type="time" value="16:30"></div>
+    <div class="fk-field"><span class="fk-label" id="rp">Ulangi</span>
+      <div class="fk-seg full" role="tablist" aria-labelledby="rp"><button type="button" role="tab" aria-selected="false">Setiap hari</button><button type="button" role="tab" aria-selected="true">Hari tertentu</button></div>
+      <div class="fk-dow" aria-label="Pilih hari"><button type="button" aria-pressed="true" aria-label="Senin">S</button><button type="button" aria-pressed="false" aria-label="Selasa">S</button><button type="button" aria-pressed="true" aria-label="Rabu">R</button><button type="button" aria-pressed="false" aria-label="Kamis">K</button><button type="button" aria-pressed="true" aria-label="Jumat">J</button><button type="button" aria-pressed="false" aria-label="Sabtu">S</button><button type="button" aria-pressed="false" aria-label="Ahad">A</button></div>
+      <span class="fk-help">Senin, Rabu, Jumat</span></div>
+  </div>
+  <div class="fk-sheet-foot"><button type="button" class="fk-btn fk-btn-glass">Batal</button><button class="fk-btn fk-btn-primary">Simpan</button></div>
+</form></div></div>
+<script>
+Falak.boot();
+
+</script>
+</body>
+</html>

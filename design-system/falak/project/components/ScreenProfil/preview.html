@@ -1,0 +1,35 @@
+<!-- @dsCard group="Screens" height=1180 width=450 page -->
+<!doctype html>
+<html lang="id">
+<head><meta charset="utf-8"><title>ScreenProfil</title><style>.wall{display:flex;gap:28px;padding:28px;align-items:flex-start;background:var(--background)}.cap{font:500 11px/14px var(--font-mono);letter-spacing:.14em;text-transform:uppercase;color:var(--muted-foreground);margin:0 0 10px}</style></head>
+<body>
+<div class="fk wall"><div class="fk-phone fk-ground"><div class="fk-phone-scroll">
+  <div class="fk-enter" style="--i:0;display:flex;gap:18px;align-items:center"><div class="fk-avatar">J<span class="cam"><i data-i="camera" class="sm"></i></span></div><div style="display:flex;flex-direction:column;gap:6px"><h1 class="fk-h1">Jessica Pribadi</h1><span class="fk-hud fk-muted">Jakarta · Tamu</span></div></div>
+  <div class="fk-note fk-glass fk-enter" style="--i:1"><i data-i="user" class="ic"></i><div style="display:flex;flex-direction:column;gap:10px;flex:1"><span class="fk-small">Simpan catatanmu dengan email, supaya tetap ada di perangkat lain.</span><button class="fk-btn fk-btn-primary sm" style="align-self:flex-start">Buat akun</button></div></div>
+  <div class="fk-enter" style="--i:2"><section class="fk-story fk-glass" aria-label="Cerita hari ini">
+  <label class="fk-hud fk-muted" for="story"><i data-i="pen-line" class="sm"></i>Cerita hari ini</label>
+  <textarea id="story" placeholder="Apa yang kamu syukuri hari ini?">Alhamdulillah, sempat ikut kajian ba'da Maghrib. Pelan-pelan saja.</textarea>
+  <div class="foot"><span class="fk-data fk-muted fk-saved">Tersimpan</span><span class="fk-data fk-muted">26.07 · 01 SAFAR</span></div>
+</section></div>
+  <section class="fk-sect fk-enter" style="--i:3"><h2 class="fk-h2">Aktivitasku</h2><div class="fk-glass"><span class="fk-hud fk-muted">Riwayat ibadah</span><ul class="fk-feed" aria-label="Riwayat ibadah">
+  <li class="fk-enter" style="--i:0"><span class="t">14:00</span><span class="dot"></span><span class="x">Sudah sholat Dzuhur</span></li>
+  <li class="fk-enter" style="--i:1"><span class="t">09:12</span><span class="dot skip"></span><span class="x fk-muted">Tilawah dilewati dulu</span></li>
+  <li class="fk-enter" style="--i:2"><span class="t">04:58</span><span class="dot"></span><span class="x">Sudah dzikir pagi</span></li>
+  <li class="fk-enter" style="--i:3"><span class="t">04:45</span><span class="dot"></span><span class="x">Sudah sholat Subuh</span></li>
+</ul></div></section>
+  <section class="fk-sect fk-enter" style="--i:4"><h2 class="fk-h2">Pengaturan</h2>
+    <div class="fk-seg full"><button aria-pressed="true">Ikhwan</button><button aria-pressed="false">Akhwat</button></div>
+    <div class="fk-seg full"><button aria-pressed="true"><i data-i="moon" class="sm"></i>Malam</button><button aria-pressed="false"><i data-i="sun" class="sm"></i>Siang</button></div>
+    <div class="fk-seg full"><button aria-pressed="true">ID</button><button aria-pressed="false">EN</button><button aria-pressed="false">MS</button></div>
+  </section>
+</div><nav class="fk-dock" aria-label="Navigasi utama">
+  <a href="#"><i data-i="orbit"></i>Beranda</a>
+  <a href="#"><i data-i="notebook-pen"></i>Jurnal</a>
+  <a href="#" aria-current="page"><i data-i="user"></i>Profil</a>
+</nav></div></div>
+<script>
+Falak.boot();
+
+</script>
+</body>
+</html>

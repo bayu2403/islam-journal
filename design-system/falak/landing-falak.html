@@ -1,0 +1,954 @@
+<title>Muslim Berislam Falak</title>
+<meta name="description" content="Ibadah harian, dihitung dari langit: orbit waktu sholat, satu tugas pada satu waktu, dalil utuh.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;500;600;700&family=Onest:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Noto+Naskh+Arabic:wght@400;500&family=Reem+Kufi:wght@500;600&display=swap">
+<style>
+:root, [data-palette="ikhwan-dark"] {
+  --background: oklch(0.16 0.025 230);
+  --foreground: oklch(0.96 0.01 200);
+  --card: oklch(0.21 0.03 228);
+  --card-foreground: var(--foreground);
+  --popover: oklch(0.22 0.03 228);
+  --popover-foreground: var(--foreground);
+  --primary: oklch(0.85 0.14 172);
+  --primary-foreground: oklch(0.18 0.04 200);
+  --secondary: oklch(0.27 0.035 225);
+  --secondary-foreground: oklch(0.95 0.01 200);
+  --muted: oklch(0.25 0.03 228);
+  --muted-foreground: oklch(0.74 0.03 215);
+  --accent: oklch(0.8 0.12 220);
+  --accent-foreground: oklch(0.17 0.03 230);
+  --border: oklch(0.9 0.03 200 / 0.12);
+  --input: oklch(0.52 0.04 220);
+  --ring: oklch(0.85 0.14 172);
+  --destructive: oklch(0.74 0.15 30);
+  --card-inverse: oklch(0.12 0.03 240);
+  --card-inverse-foreground: oklch(0.97 0.01 200);
+  --card-inverse-muted: oklch(0.77 0.03 210);
+  --card-inverse-border: oklch(0.85 0.14 172 / 0.3);
+  --reward: oklch(0.86 0.14 85);
+  --reward-ink: oklch(0.86 0.14 85);
+  --glow: oklch(0.85 0.14 172 / 0.3);
+  --glow-2: oklch(0.72 0.14 225 / 0.35);
+  --glass: oklch(0.24 0.03 228 / 0.62);
+  --grid: oklch(0.85 0.14 172 / 0.07);
+  --scrim: oklch(0.08 0.02 230 / 0.72);
+  --shadow-glow: 0 0 0 1px oklch(0.85 0.14 172 / 0.25), 0 8px 32px -8px oklch(0.85 0.14 172 / 0.45);
+  --shadow-float: 0 18px 40px -12px rgb(3 8 20 / 0.55);
+}
+[data-palette="akhwat-dark"] {
+  --background: oklch(0.16 0.03 330);
+  --foreground: oklch(0.96 0.01 330);
+  --card: oklch(0.21 0.035 330);
+  --card-foreground: var(--foreground);
+  --popover: oklch(0.22 0.035 330);
+  --popover-foreground: var(--foreground);
+  --primary: oklch(0.83 0.12 350);
+  --primary-foreground: oklch(0.2 0.05 340);
+  --secondary: oklch(0.27 0.04 330);
+  --secondary-foreground: oklch(0.95 0.01 330);
+  --muted: oklch(0.25 0.035 330);
+  --muted-foreground: oklch(0.75 0.03 330);
+  --accent: oklch(0.84 0.1 55);
+  --accent-foreground: oklch(0.2 0.04 40);
+  --border: oklch(0.92 0.03 340 / 0.12);
+  --input: oklch(0.54 0.05 330);
+  --ring: oklch(0.83 0.12 350);
+  --destructive: oklch(0.74 0.15 30);
+  --card-inverse: oklch(0.12 0.035 330);
+  --card-inverse-foreground: oklch(0.97 0.01 330);
+  --card-inverse-muted: oklch(0.78 0.03 330);
+  --card-inverse-border: oklch(0.83 0.12 350 / 0.3);
+  --reward: oklch(0.87 0.12 85);
+  --reward-ink: oklch(0.87 0.12 85);
+  --glow: oklch(0.83 0.12 350 / 0.32);
+  --glow-2: oklch(0.84 0.1 55 / 0.3);
+  --glass: oklch(0.24 0.035 330 / 0.62);
+  --grid: oklch(0.83 0.12 350 / 0.07);
+  --scrim: oklch(0.08 0.02 330 / 0.72);
+  --shadow-glow: 0 0 0 1px oklch(0.83 0.12 350 / 0.25), 0 8px 32px -8px oklch(0.83 0.12 350 / 0.42);
+  --shadow-float: 0 18px 40px -12px rgb(3 8 20 / 0.55);
+}
+[data-palette="ikhwan-light"] {
+  --background: oklch(0.975 0.008 200);
+  --foreground: oklch(0.2 0.03 230);
+  --card: oklch(1 0 0);
+  --card-foreground: var(--foreground);
+  --popover: oklch(1 0 0);
+  --popover-foreground: var(--foreground);
+  --primary: oklch(0.47 0.1 182);
+  --primary-foreground: oklch(0.99 0.005 200);
+  --secondary: oklch(0.93 0.03 190);
+  --secondary-foreground: oklch(0.28 0.05 210);
+  --muted: oklch(0.945 0.012 210);
+  --muted-foreground: oklch(0.5 0.03 225);
+  --accent: oklch(0.87 0.12 172);
+  --accent-foreground: oklch(0.24 0.05 190);
+  --border: oklch(0.2 0.03 230 / 0.1);
+  --input: oklch(0.63 0.03 220);
+  --ring: oklch(0.47 0.1 182);
+  --destructive: oklch(0.52 0.17 30);
+  --card-inverse: oklch(0.19 0.035 232);
+  --card-inverse-foreground: oklch(0.97 0.01 200);
+  --card-inverse-muted: oklch(0.78 0.03 210);
+  --card-inverse-border: oklch(0.85 0.14 172 / 0.35);
+  --reward: oklch(0.86 0.14 85);
+  --reward-ink: oklch(0.52 0.12 70);
+  --glow: oklch(0.75 0.14 172 / 0.32);
+  --glow-2: oklch(0.7 0.13 225 / 0.26);
+  --glass: oklch(1 0 0 / 0.66);
+  --grid: oklch(0.47 0.1 182 / 0.07);
+  --scrim: oklch(0.2 0.03 230 / 0.45);
+  --shadow-glow: 0 0 0 1px oklch(0.47 0.1 182 / 0.18), 0 10px 30px -10px oklch(0.47 0.1 182 / 0.4);
+  --shadow-float: 0 18px 40px -12px rgb(3 8 20 / 0.55);
+}
+[data-palette="akhwat-light"] {
+  --background: oklch(0.975 0.008 340);
+  --foreground: oklch(0.22 0.04 335);
+  --card: oklch(1 0 0);
+  --card-foreground: var(--foreground);
+  --popover: oklch(1 0 0);
+  --popover-foreground: var(--foreground);
+  --primary: oklch(0.5 0.15 350);
+  --primary-foreground: oklch(0.99 0.005 340);
+  --secondary: oklch(0.94 0.03 345);
+  --secondary-foreground: oklch(0.3 0.06 340);
+  --muted: oklch(0.95 0.012 340);
+  --muted-foreground: oklch(0.5 0.04 340);
+  --accent: oklch(0.87 0.09 55);
+  --accent-foreground: oklch(0.3 0.06 40);
+  --border: oklch(0.22 0.04 335 / 0.1);
+  --input: oklch(0.63 0.04 340);
+  --ring: oklch(0.5 0.15 350);
+  --destructive: oklch(0.52 0.17 30);
+  --card-inverse: oklch(0.2 0.04 330);
+  --card-inverse-foreground: oklch(0.97 0.01 330);
+  --card-inverse-muted: oklch(0.79 0.03 335);
+  --card-inverse-border: oklch(0.83 0.12 350 / 0.38);
+  --reward: oklch(0.87 0.12 85);
+  --reward-ink: oklch(0.52 0.1 70);
+  --glow: oklch(0.68 0.15 350 / 0.28);
+  --glow-2: oklch(0.78 0.1 55 / 0.3);
+  --glass: oklch(1 0 0 / 0.66);
+  --grid: oklch(0.5 0.15 350 / 0.07);
+  --scrim: oklch(0.22 0.04 335 / 0.45);
+  --shadow-glow: 0 0 0 1px oklch(0.5 0.15 350 / 0.18), 0 10px 30px -10px oklch(0.5 0.15 350 / 0.38);
+  --shadow-float: 0 18px 40px -12px rgb(3 8 20 / 0.55);
+}
+:root {
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-12: 48px;
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 18px;
+  --radius-xl: 24px;
+  --radius-2xl: 32px;
+  --radius-full: 9999px;
+  --duration-instant: 120ms;
+  --duration-fast: 220ms;
+  --duration-base: 420ms;
+  --duration-slow: 900ms;
+  --duration-beam: 6s;
+  --duration-ambient: 18s;
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --ease-in-quart: cubic-bezier(0.5, 0, 0.75, 0);
+  --blur-glass: 18px;
+  --blur-enter: 8px;
+  --font-display: Unbounded, "Arial Black", system-ui, sans-serif;
+  --font-sans: Onest, ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+  --font-arabic: "Noto Naskh Arabic", Amiri, "Traditional Arabic", serif;
+  --font-kufi: "Reem Kufi", "Noto Kufi Arabic", sans-serif;
+}
+
+:root, [data-palette$="-dark"] { color-scheme: dark; }
+[data-palette$="-light"] { color-scheme: light; }
+html, body { background: var(--background); }
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+
+/* Falak — Muslim Berislam. Every colour from tokens.css. Prefix fk-.
+   .is-hover / .is-active / .is-focus / .is-disabled force states for previews. */
+
+@property --fk-angle { syntax: "<angle>"; inherits: false; initial-value: 0deg; }
+
+html, body { background: var(--background); color: var(--foreground); }
+body { margin: 0; font-family: var(--font-sans); font-size: 15px; line-height: 1.53; -webkit-font-smoothing: antialiased; }
+.fk { font-family: var(--font-sans); font-size: 15px; line-height: 1.53; color: var(--foreground); }
+.fk *, .fk *::before, .fk *::after { box-sizing: border-box; }
+.fk svg.fk-i { width: 18px; height: 18px; flex: none; stroke: currentColor; fill: none; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
+.fk svg.fk-i.sm { width: 14px; height: 14px; }
+.fk svg.fk-i.lg { width: 22px; height: 22px; }
+
+/* ── atmosphere: star grid + two drifting aurora lights ── */
+.fk-ground { position: relative; isolation: isolate; background: var(--background); overflow: hidden; }
+.fk-ground::before { content: ""; position: absolute; inset: 0; z-index: -1; pointer-events: none;
+  background-image: radial-gradient(circle at 1px 1px, var(--grid) 1.2px, transparent 1.6px);
+  background-size: 22px 22px;
+  mask-image: linear-gradient(to bottom, #000 0%, transparent 70%); -webkit-mask-image: linear-gradient(to bottom, #000 0%, transparent 70%); }
+.fk-ground::after { content: ""; position: absolute; z-index: -2; pointer-events: none; width: 140%; height: 70%; left: -20%; top: -18%;
+  background: radial-gradient(40% 50% at 30% 40%, var(--glow), transparent 70%), radial-gradient(35% 45% at 75% 30%, var(--glow-2), transparent 70%);
+  filter: blur(30px); animation: fk-aurora var(--duration-ambient) ease-in-out infinite alternate; }
+@keyframes fk-aurora { from { transform: translate3d(-6%, 0, 0) rotate(-4deg); } to { transform: translate3d(6%, 4%, 0) rotate(4deg); } }
+
+/* preview scaffolding */
+.fk-pv { padding: 20px; display: flex; flex-direction: column; gap: 18px; min-height: 100%; }
+.fk-pv-row { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
+.fk-pv-cap { font: 500 10px/14px var(--font-mono); letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted-foreground); min-width: 84px; }
+.fk-pv-col { width: 100%; max-width: 390px; display: flex; flex-direction: column; gap: 12px; }
+
+/* ── type ── */
+.fk-display { font-family: var(--font-display); font-weight: 600; font-size: 32px; line-height: 36px; letter-spacing: -0.02em; margin: 0; text-wrap: balance; }
+.fk-h1 { font-family: var(--font-display); font-weight: 600; font-size: 24px; line-height: 28px; letter-spacing: -0.015em; margin: 0; }
+.fk-h2 { font-family: var(--font-display); font-weight: 500; font-size: 17px; line-height: 22px; letter-spacing: -0.01em; margin: 0; }
+.fk-h3 { font-weight: 650; font-size: 19px; line-height: 25px; letter-spacing: -0.01em; margin: 0; text-wrap: balance; }
+.fk-title { font-weight: 600; font-size: 15px; line-height: 21px; margin: 0; }
+.fk-small { font-size: 13px; line-height: 19px; }
+.fk-muted { color: var(--muted-foreground); }
+.fk-hud { display: inline-flex; align-items: center; gap: 8px; font: 500 11px/14px var(--font-mono); letter-spacing: 0.14em; text-transform: uppercase; }
+.fk-data { font: 400 12px/16px var(--font-mono); font-variant-numeric: tabular-nums; }
+.fk-grad { background: linear-gradient(100deg, var(--foreground) 20%, var(--primary) 80%); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.fk-arabic { font-family: var(--font-arabic); font-size: 26px; line-height: 52px; direction: rtl; text-align: right; margin: 0; }
+.fk-arabic.md { font-size: 21px; line-height: 40px; }
+.fk-kufi { font-family: var(--font-kufi); font-weight: 600; }
+
+/* ── entrance choreography ── */
+.fk-enter { animation: fk-in var(--duration-base) var(--ease-out-expo) both; animation-delay: calc(var(--i, 0) * 70ms); }
+@keyframes fk-in { from { opacity: 0; transform: translateY(14px) scale(0.985); filter: blur(var(--blur-enter)); } to { opacity: 1; transform: none; filter: none; } }
+.fk-leave-up { animation: fk-out-up var(--duration-base) var(--ease-in-quart) forwards; }
+.fk-leave-side { animation: fk-out-side var(--duration-base) var(--ease-in-quart) forwards; }
+@keyframes fk-out-up { to { opacity: 0; transform: translateY(-18px) scale(0.97); filter: blur(6px); } }
+@keyframes fk-out-side { to { opacity: 0; transform: translateX(28px) scale(0.98); filter: blur(6px); } }
+
+/* ── buttons ── */
+.fk-btn { appearance: none; position: relative; overflow: hidden; display: inline-flex; align-items: center; justify-content: center; gap: 8px; height: 40px; padding: 0 16px; border-radius: var(--radius-md); border: 1px solid transparent; font: 550 13px/1 var(--font-sans); cursor: pointer; text-decoration: none; color: var(--foreground); background: transparent;
+  transition: transform var(--duration-fast) var(--ease-spring), box-shadow var(--duration-fast) var(--ease-out-expo), background-color var(--duration-fast) ease-out, border-color var(--duration-fast) ease-out; }
+.fk-btn.sm { height: 32px; padding: 0 12px; }
+.fk-btn.icon { width: 40px; padding: 0; }
+.fk-btn-primary { background: var(--primary); color: var(--primary-foreground); }
+.fk-btn-primary::after { content: ""; position: absolute; inset: 0; background: linear-gradient(110deg, transparent 30%, oklch(1 0 0 / 0.35) 50%, transparent 70%); transform: translateX(-120%); transition: transform var(--duration-slow) var(--ease-out-expo); }
+.fk-btn-primary:hover::after, .fk-btn-primary.is-hover::after { transform: translateX(120%); }
+.fk-btn-primary:hover, .fk-btn-primary.is-hover { box-shadow: var(--shadow-glow); transform: translateY(-1px); }
+.fk-btn-glass { background: var(--glass); border-color: var(--border); backdrop-filter: blur(var(--blur-glass)); -webkit-backdrop-filter: blur(var(--blur-glass)); }
+.fk-btn-glass:hover, .fk-btn-glass.is-hover { border-color: var(--input); transform: translateY(-1px); }
+.fk-btn-outline { border-color: var(--input); }
+.fk-btn-outline:hover, .fk-btn-outline.is-hover { background: var(--muted); }
+.fk-btn-ghost:hover, .fk-btn-ghost.is-hover { background: var(--muted); }
+.fk-btn:active, .fk-btn.is-active, .fk-pill:active, .fk-pill.is-active { transform: scale(0.96); transition-duration: var(--duration-instant); }
+.fk-btn:focus-visible, .fk-btn.is-focus, .fk-pill:focus-visible, .fk-pill.is-focus, .fk-link:focus-visible,
+.fk-orb:focus-visible, .fk-orb.is-focus, .fk-seg button:focus-visible, .fk-dock a:focus-visible, .fk-dow button:focus-visible, .fk-tpl:focus-visible {
+  outline: 2px solid var(--ring); outline-offset: 2px; box-shadow: 0 0 0 6px var(--glow); }
+.fk-btn:disabled, .fk-btn.is-disabled, .fk-pill:disabled, .fk-pill.is-disabled { opacity: 0.4; pointer-events: none; filter: saturate(0.4); }
+
+/* ripple (bundle.js adds span.fk-ripple on pointerdown) */
+.fk-ripple { position: absolute; border-radius: 50%; pointer-events: none; width: 12px; height: 12px; margin: -6px 0 0 -6px; background: currentColor; opacity: 0.28; animation: fk-ripple 600ms var(--ease-out-expo) forwards; }
+@keyframes fk-ripple { to { transform: scale(24); opacity: 0; } }
+
+/* Dikerjakan / Lewati: equal size, equal motion */
+.fk-pill { appearance: none; position: relative; overflow: hidden; display: inline-flex; align-items: center; gap: 8px; height: 38px; padding: 0 18px; border-radius: var(--radius-full); font: 550 13px/1 var(--font-sans); cursor: pointer; border: 1px solid transparent; color: inherit; background: transparent;
+  transition: transform var(--duration-fast) var(--ease-spring), box-shadow var(--duration-fast) var(--ease-out-expo), background-color var(--duration-fast) ease-out, border-color var(--duration-fast) ease-out; }
+.fk-pill-done { background: var(--accent); color: var(--accent-foreground); }
+.fk-pill-done:hover, .fk-pill-done.is-hover { box-shadow: 0 0 0 1px var(--accent), 0 8px 24px -6px var(--glow-2); transform: translateY(-1px); }
+.fk-pill-skip { border-color: var(--input); }
+.fk-pill-skip:hover, .fk-pill-skip.is-hover { background: var(--muted); transform: translateY(-1px); }
+.fk-holo .fk-pill-skip { border-color: var(--card-inverse-muted); color: var(--card-inverse-foreground); }
+.fk-holo .fk-pill-skip:hover, .fk-holo .fk-pill-skip.is-hover { background: color-mix(in oklch, var(--card-inverse-foreground) 10%, transparent); }
+.fk-holo .fk-pill:focus-visible, .fk-holo .is-focus { outline-color: var(--card-inverse-foreground); }
+.fk-pill .chk path { stroke-dasharray: 24; stroke-dashoffset: 0; }
+.fk-pill.is-done .chk path { animation: fk-draw var(--duration-base) var(--ease-out-expo) both; }
+.fk-pill.is-done::before { content: ""; position: absolute; inset: 0; background: linear-gradient(100deg, transparent 20%, oklch(1 0 0 / 0.55) 50%, transparent 80%); animation: fk-sweep var(--duration-slow) var(--ease-out-expo) both; }
+@keyframes fk-draw { from { stroke-dashoffset: 24; } }
+@keyframes fk-sweep { from { transform: translateX(-110%); } to { transform: translateX(110%); } }
+
+.fk-link { display: inline-flex; align-items: center; gap: 4px; font: 500 12px/16px var(--font-mono); letter-spacing: 0.06em; text-transform: uppercase; color: var(--primary); background: none; border: 0; padding: 0; cursor: pointer; text-decoration: none; }
+.fk-link svg { transition: transform var(--duration-fast) var(--ease-spring); }
+.fk-link:hover svg { transform: translateX(3px); }
+.fk-holo .fk-link { color: var(--card-inverse-foreground); }
+
+/* ── surfaces ── */
+.fk-glass { background: var(--glass); border: 1px solid var(--border); border-radius: var(--radius-lg); backdrop-filter: blur(var(--blur-glass)) saturate(140%); -webkit-backdrop-filter: blur(var(--blur-glass)) saturate(140%); padding: 16px; }
+.fk-card { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 16px; }
+
+/* ── task card ── */
+.fk-task { position: relative; border-radius: var(--radius-xl); padding: 20px; display: flex; flex-direction: column; gap: 10px; isolation: isolate;
+  transition: transform var(--duration-fast) var(--ease-out-expo), box-shadow var(--duration-fast) var(--ease-out-expo); cursor: pointer; }
+.fk-task:hover, .fk-task.is-hover { transform: translateY(-2px); }
+.fk-task-top { display: flex; align-items: center; justify-content: space-between; gap: 8px; }
+.fk-task-sum { margin: 0; font-size: 13px; line-height: 19px; }
+.fk-task-actions { display: flex; align-items: center; gap: 8px; margin-top: 6px; }
+.fk-task-actions .fk-link { margin-left: auto; }
+.fk-tag { display: inline-grid; place-items: center; width: 26px; height: 26px; border-radius: var(--radius-sm); }
+
+/* Akhirat: holo card — rotating conic beam on the edge + khatam field */
+.fk-holo { background: var(--card-inverse); color: var(--card-inverse-foreground); border: 1px solid var(--card-inverse-border); }
+.fk-holo::before { content: ""; position: absolute; inset: -1px; border-radius: inherit; padding: 1.5px; z-index: 1; pointer-events: none;
+  background: conic-gradient(from var(--fk-angle), transparent 0 62%, var(--primary) 76%, var(--accent) 86%, transparent 96%);
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); -webkit-mask-composite: xor; mask-composite: exclude;
+  animation: fk-spin var(--duration-beam) linear infinite; }
+.fk-holo::after { content: ""; position: absolute; inset: 0; border-radius: inherit; z-index: -1; pointer-events: none;
+  background: radial-gradient(120% 90% at 100% 0%, var(--glow), transparent 55%), var(--card-inverse); opacity: 0.9; }
+.fk-holo .fk-khatam { position: absolute; right: -40px; top: -40px; width: 180px; height: 180px; z-index: -1; color: var(--primary); opacity: 0.22; animation: fk-rotate var(--duration-ambient) linear infinite; }
+.fk-holo:hover, .fk-holo.is-hover { box-shadow: var(--shadow-glow); }
+.fk-holo .fk-hud { color: var(--card-inverse-muted); }
+.fk-holo .fk-tag { background: color-mix(in oklch, var(--primary) 18%, transparent); color: var(--primary); }
+.fk-holo .fk-task-sum { color: var(--card-inverse-muted); }
+.fk-holo .fk-task-sum b { color: var(--card-inverse-foreground); font-weight: 600; }
+@keyframes fk-spin { to { --fk-angle: 360deg; } }
+@keyframes fk-rotate { to { transform: rotate(360deg); } }
+.fk-src { color: var(--reward); font: 500 12px/1 var(--font-mono); letter-spacing: 0.02em; white-space: nowrap; }
+.fk-src-ink { color: var(--reward-ink); font: 500 13px/19px var(--font-mono); }
+
+/* Dunia: glass card */
+.fk-dunia { background: var(--glass); border: 1px solid var(--border); backdrop-filter: blur(var(--blur-glass)) saturate(140%); -webkit-backdrop-filter: blur(var(--blur-glass)) saturate(140%); }
+.fk-dunia:hover, .fk-dunia.is-hover { border-color: var(--input); }
+.fk-dunia .fk-hud { color: var(--muted-foreground); }
+.fk-dunia .fk-tag { background: color-mix(in oklch, var(--accent) 20%, transparent); color: var(--foreground); }
+.fk-dunia .fk-task-sum { color: var(--muted-foreground); }
+
+/* ── prayer orbit ── */
+.fk-orbit { position: relative; display: flex; flex-direction: column; gap: 14px; }
+.fk-orbit-dates { display: flex; justify-content: space-between; gap: 12px; }
+.fk-orbit-dates > div { display: flex; flex-direction: column; gap: 2px; }
+.fk-orbit-dates > div:last-child { text-align: right; }
+.fk-orbit-dates .v { font: 600 15px/20px var(--font-display); letter-spacing: -0.01em; }
+.fk-orbit svg.arc { width: 100%; height: auto; overflow: visible; display: block; }
+.fk-orbit .track { fill: none; stroke: var(--input); stroke-width: 1; stroke-dasharray: 2 5; }
+.fk-orbit .prog { fill: none; stroke: var(--primary); stroke-width: 2.5; stroke-linecap: round; filter: drop-shadow(0 0 6px var(--glow)); animation: fk-arc var(--duration-slow) var(--ease-out-expo) both 150ms; }
+@keyframes fk-arc { from { stroke-dashoffset: 100; } }
+.fk-orbit .node { fill: var(--background); stroke: var(--input); stroke-width: 1.5; }
+.fk-orbit .node.past { fill: var(--primary); stroke: var(--primary); }
+.fk-orbit .node.next { stroke: var(--accent); stroke-width: 2; }
+.fk-orbit .sun { fill: var(--primary); }
+.fk-orbit .bloom { fill: var(--glow); transform-box: fill-box; transform-origin: center; animation: fk-pulse 2.4s ease-in-out infinite; }
+@keyframes fk-pulse { 50% { transform: scale(1.7); opacity: 0.35; } }
+.fk-orbit .lbl { font: 500 9.5px var(--font-mono); letter-spacing: 0.1em; fill: var(--muted-foreground); text-transform: uppercase; }
+.fk-orbit .lbl.next { fill: var(--foreground); }
+.fk-orbit .horizon { stroke: var(--border); stroke-width: 1; }
+.fk-count { position: absolute; left: 0; right: 0; bottom: 6px; display: flex; flex-direction: column; align-items: center; gap: 2px; pointer-events: none; }
+.fk-count .t { font: 500 40px/44px var(--font-mono); letter-spacing: -0.03em; font-variant-numeric: tabular-nums; }
+
+/* ── week strip ── */
+.fk-week { position: relative; display: grid; grid-template-columns: repeat(7, 1fr); gap: 4px; }
+.fk-orb { appearance: none; background: none; border: 0; padding: 6px 0; display: flex; flex-direction: column; align-items: center; gap: 6px; color: var(--foreground); cursor: pointer; border-radius: var(--radius-md); position: relative; z-index: 1; }
+.fk-orb .dn { font: 500 10px/12px var(--font-mono); letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted-foreground); }
+.fk-orb .c { width: 40px; height: 40px; border-radius: var(--radius-full); display: grid; place-items: center; font: 600 15px/1 var(--font-display); font-variant-numeric: tabular-nums; border: 1px solid var(--border);
+  transition: transform var(--duration-fast) var(--ease-spring), background-color var(--duration-fast) ease-out, box-shadow var(--duration-fast) ease-out; }
+.fk-orb .h { font: 400 10px/12px var(--font-mono); color: var(--muted-foreground); }
+.fk-orb:hover .c, .fk-orb.is-hover .c { transform: translateY(-2px); border-color: var(--input); }
+.fk-orb.today .c { background: var(--accent); color: var(--accent-foreground); border-color: var(--accent); box-shadow: 0 0 18px -2px var(--glow-2); }
+.fk-orb[aria-selected="true"] .c { box-shadow: 0 0 0 2px var(--background), 0 0 0 4px var(--primary), 0 0 20px var(--glow); transform: scale(1.06); }
+.fk-orb[aria-selected="true"] .dn { color: var(--primary); }
+
+/* ── lists, chips ── */
+.fk-chip { display: inline-flex; align-items: center; gap: 6px; height: 24px; padding: 0 10px; border-radius: var(--radius-full); font: 500 10.5px/1 var(--font-mono); letter-spacing: 0.08em; text-transform: uppercase; background: var(--muted); color: var(--muted-foreground); white-space: nowrap; }
+.fk-chip::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: currentColor; opacity: 0.6; }
+.fk-chip.done { background: color-mix(in oklch, var(--primary) 16%, var(--muted)); color: var(--foreground); }
+.fk-chip.done::before { background: var(--primary); opacity: 1; box-shadow: 0 0 8px var(--glow); }
+.fk-chip.live::before { background: var(--accent); opacity: 1; animation: fk-blink 1.6s ease-in-out infinite; }
+@keyframes fk-blink { 50% { opacity: 0.3; } }
+.fk-list { list-style: none; margin: 0; padding: 4px; border-radius: var(--radius-lg); }
+.fk-row { display: grid; grid-template-columns: 48px 1fr auto; gap: 12px; align-items: center; padding: 12px; border-radius: var(--radius-md); transition: background-color var(--duration-fast) ease-out; }
+.fk-row:hover { background: color-mix(in oklch, var(--muted) 60%, transparent); }
+.fk-row .t { font: 400 12px/16px var(--font-mono); color: var(--muted-foreground); font-variant-numeric: tabular-nums; }
+.fk-row .name { font-weight: 550; display: block; }
+.fk-row .sub { display: block; font: 400 10.5px/14px var(--font-mono); letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted-foreground); }
+.fk-row .end { display: flex; align-items: center; gap: 8px; }
+.fk-check { appearance: none; width: 30px; height: 30px; border-radius: var(--radius-full); border: 1px solid var(--input); background: transparent; display: grid; place-items: center; color: var(--primary-foreground); cursor: pointer; padding: 0;
+  transition: transform var(--duration-fast) var(--ease-spring), background-color var(--duration-fast) ease-out; }
+.fk-check:hover { transform: scale(1.08); border-color: var(--primary); }
+.fk-check.on { background: var(--primary); border-color: var(--primary); box-shadow: 0 0 14px -2px var(--glow); }
+.fk-check.on svg path { stroke-dasharray: 24; animation: fk-draw var(--duration-base) var(--ease-out-expo) both; }
+.fk-check:focus-visible { outline: 2px solid var(--ring); outline-offset: 2px; }
+
+/* ── dua ── */
+.fk-dua { display: flex; flex-direction: column; gap: 10px; position: relative; overflow: hidden; }
+.fk-dua .translit { font-size: 13px; line-height: 19px; font-style: italic; color: var(--muted-foreground); margin: 0; }
+.fk-dua .meaning { margin: 0; font-size: 14px; line-height: 21px; }
+.fk-dua .foot { display: flex; justify-content: space-between; align-items: center; gap: 8px; }
+
+/* ── story ── */
+.fk-story { display: flex; flex-direction: column; gap: 10px; transition: border-color var(--duration-fast) ease-out, box-shadow var(--duration-fast) ease-out; }
+.fk-story:focus-within { border-color: var(--primary); box-shadow: 0 0 0 4px var(--glow); }
+.fk-story textarea { width: 100%; min-height: 120px; resize: vertical; border: 0; outline: 0; background: transparent; color: var(--foreground); font: 400 15px/24px var(--font-sans); padding: 0; caret-color: var(--primary); }
+.fk-story textarea::placeholder { color: var(--muted-foreground); }
+.fk-story .foot { display: flex; justify-content: space-between; align-items: center; }
+.fk-saved { display: inline-flex; align-items: center; gap: 6px; }
+.fk-saved::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: var(--primary); box-shadow: 0 0 8px var(--glow); }
+
+/* ── activity feed (timeline) ── */
+.fk-feed { list-style: none; margin: 0; padding: 0; position: relative; }
+.fk-feed::before { content: ""; position: absolute; left: 63px; top: 12px; bottom: 12px; width: 1px; background: linear-gradient(var(--primary), transparent); opacity: 0.5; }
+.fk-feed li { display: grid; grid-template-columns: 52px 22px 1fr; gap: 0; align-items: center; padding: 8px 0; }
+.fk-feed .t { font: 400 12px/16px var(--font-mono); color: var(--muted-foreground); font-variant-numeric: tabular-nums; }
+.fk-feed .dot { width: 9px; height: 9px; border-radius: 50%; background: var(--primary); box-shadow: 0 0 10px var(--glow); justify-self: center; position: relative; z-index: 1; }
+.fk-feed .dot.skip { background: var(--background); border: 1px solid var(--muted-foreground); box-shadow: none; }
+.fk-feed .x { padding-left: 8px; font-size: 14px; }
+
+/* ── templates / planner ── */
+.fk-tpl-row { display: flex; gap: 12px; overflow-x: auto; padding: 2px 2px 8px; scroll-snap-type: x mandatory; scrollbar-width: none; }
+.fk-tpl { flex: 0 0 156px; scroll-snap-align: start; position: relative; overflow: hidden; display: flex; flex-direction: column; justify-content: space-between; gap: 28px; min-height: 164px; color: var(--foreground); text-decoration: none;
+  transition: transform var(--duration-fast) var(--ease-out-expo), border-color var(--duration-fast) ease-out, box-shadow var(--duration-fast) ease-out; }
+.fk-tpl:hover, .fk-tpl.is-hover { transform: translateY(-3px); border-color: var(--input); box-shadow: var(--shadow-glow); }
+.fk-tpl .ic { width: 36px; height: 36px; border-radius: var(--radius-sm); background: var(--secondary); color: var(--primary); display: grid; place-items: center; }
+.fk-tpl p { margin: 0; }
+.fk-tpl .n { position: absolute; right: 12px; top: 12px; }
+.fk-plan { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.fk-plan .fk-glass { display: flex; flex-direction: column; gap: 10px; min-height: 152px; }
+.fk-plan ul { margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 6px; font-size: 13px; line-height: 18px; }
+.fk-plan li { display: flex; gap: 8px; align-items: baseline; }
+.fk-plan li::before { content: ""; width: 5px; height: 5px; border-radius: 50%; background: var(--primary); flex: none; transform: translateY(-2px); }
+
+/* ── form controls ── */
+.fk-field { display: flex; flex-direction: column; gap: 8px; }
+.fk-label { font: 500 10.5px/14px var(--font-mono); letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted-foreground); }
+.fk-help { font-size: 12px; line-height: 16px; color: var(--muted-foreground); }
+.fk-input, .fk-textarea { width: 100%; height: 46px; padding: 0 14px; border-radius: var(--radius-md); border: 1px solid var(--input); background: var(--card); color: var(--foreground); font: 400 15px/1.4 var(--font-sans); caret-color: var(--primary);
+  transition: border-color var(--duration-fast) ease-out, box-shadow var(--duration-fast) var(--ease-out-expo); }
+.fk-textarea { height: auto; min-height: 96px; padding: 12px 14px; resize: vertical; }
+.fk-input::placeholder, .fk-textarea::placeholder { color: var(--muted-foreground); }
+.fk-input:hover, .fk-input.is-hover { border-color: color-mix(in oklch, var(--input) 60%, var(--foreground)); }
+.fk-input:focus-visible, .fk-input.is-focus, .fk-textarea:focus-visible { outline: none; border-color: var(--ring); box-shadow: 0 0 0 1px var(--ring), 0 0 0 6px var(--glow); }
+.fk-input:disabled, .fk-input.is-disabled { opacity: 0.45; pointer-events: none; }
+.fk-input[aria-invalid="true"] { border-color: var(--destructive); animation: fk-nudge 300ms var(--ease-out-expo); }
+@keyframes fk-nudge { 30% { transform: translateX(-3px); } 60% { transform: translateX(2px); } }
+.fk-error { font-size: 12px; line-height: 16px; color: var(--destructive); }
+.fk-badge { display: inline-flex; align-items: center; height: 22px; padding: 0 8px; border-radius: var(--radius-sm); font: 500 10.5px/1 var(--font-mono); letter-spacing: 0.08em; text-transform: uppercase; background: var(--secondary); color: var(--secondary-foreground); }
+.fk-badge.primary { background: var(--primary); color: var(--primary-foreground); }
+.fk-badge.outline { background: transparent; border: 1px solid var(--input); color: var(--foreground); }
+
+/* segmented with gliding indicator (bundle.js positions .ind) */
+.fk-seg { position: relative; display: inline-flex; padding: 4px; border-radius: var(--radius-md); background: var(--muted); gap: 0; isolation: isolate; }
+.fk-seg .ind { position: absolute; z-index: -1; top: 4px; bottom: 4px; left: 4px; border-radius: 9px; background: var(--card); box-shadow: 0 0 0 1px var(--border), 0 4px 14px -6px var(--glow);
+  transition: transform var(--duration-fast) var(--ease-spring), width var(--duration-fast) var(--ease-spring); }
+.fk-seg button { appearance: none; border: 0; background: transparent; height: 34px; padding: 0 16px; border-radius: 9px; font: 550 13px/1 var(--font-sans); color: var(--muted-foreground); cursor: pointer; display: inline-flex; align-items: center; justify-content: center; gap: 6px; transition: color var(--duration-fast) ease-out; }
+.fk-seg button:hover { color: var(--foreground); }
+.fk-seg button[aria-selected="true"], .fk-seg button[aria-pressed="true"] { color: var(--foreground); }
+.fk-seg.full { display: flex; }
+.fk-seg.full button { flex: 1; }
+.fk-sep { border: 0; height: 1px; background: linear-gradient(90deg, transparent, var(--border) 20%, var(--border) 80%, transparent); margin: 0; }
+
+/* menu */
+.fk-menu { background: var(--popover); color: var(--popover-foreground); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 6px; min-width: 220px; box-shadow: var(--shadow-float); transform-origin: top right; animation: fk-pop var(--duration-fast) var(--ease-out-expo) both; }
+@keyframes fk-pop { from { opacity: 0; transform: scale(0.94) translateY(-4px); } }
+.fk-menu-item { display: flex; align-items: center; gap: 10px; height: 38px; padding: 0 10px; border-radius: 10px; font-size: 14px; cursor: pointer; transition: background-color var(--duration-fast) ease-out; }
+.fk-menu-item:hover, .fk-menu-item.is-hover { background: var(--muted); }
+.fk-menu-item .k { margin-left: auto; }
+.fk-menu-label { padding: 8px 10px 4px; }
+
+/* sheet */
+.fk-scrim { background: var(--scrim); backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px); display: flex; align-items: flex-end; justify-content: center; animation: fk-fade var(--duration-fast) ease-out both; }
+@keyframes fk-fade { from { opacity: 0; } }
+.fk-sheet { background: var(--popover); color: var(--popover-foreground); width: 100%; max-width: 448px; border-radius: var(--radius-2xl) var(--radius-2xl) 0 0; box-shadow: var(--shadow-float); border: 1px solid var(--border); border-bottom: 0; display: flex; flex-direction: column; max-height: 100%; position: relative; overflow: hidden;
+  animation: fk-rise var(--duration-base) var(--ease-out-expo) both; }
+@keyframes fk-rise { from { transform: translateY(40px); opacity: 0; } }
+.fk-sheet::before { content: ""; position: absolute; left: 10%; right: 10%; top: 0; height: 1px; background: linear-gradient(90deg, transparent, var(--primary), var(--accent), transparent); }
+.fk-sheet-head { display: flex; align-items: flex-start; justify-content: space-between; gap: 12px; padding: 20px 20px 12px; }
+.fk-sheet-body { padding: 8px 20px 20px; overflow-y: auto; display: flex; flex-direction: column; gap: 18px; }
+.fk-sheet-foot { display: flex; gap: 10px; padding: 12px 20px 24px; }
+.fk-sheet-foot .fk-btn { flex: 1; }
+.fk-grab { width: 40px; height: 4px; border-radius: var(--radius-full); background: var(--input); margin: 10px auto 0; opacity: 0.6; }
+.fk-cite { padding: 14px 16px; border-radius: var(--radius-md); background: var(--muted); display: flex; flex-direction: column; gap: 4px; }
+
+/* recurrence */
+.fk-dow { display: grid; grid-template-columns: repeat(7, 1fr); gap: 6px; }
+.fk-dow button { appearance: none; height: 40px; border-radius: var(--radius-full); border: 1px solid var(--input); background: transparent; color: var(--foreground); font: 600 12px/1 var(--font-display); cursor: pointer;
+  transition: transform var(--duration-fast) var(--ease-spring), background-color var(--duration-fast) ease-out, box-shadow var(--duration-fast) ease-out; }
+.fk-dow button[aria-pressed="true"] { background: var(--primary); border-color: var(--primary); color: var(--primary-foreground); box-shadow: 0 0 16px -4px var(--glow); transform: scale(1.04); }
+
+/* ── shell: top bar + floating dock ── */
+.fk-top { position: sticky; top: env(safe-area-inset-top, 0px); height: 52px; display: flex; align-items: center; gap: 8px; padding: 0 12px; background: var(--glass); backdrop-filter: blur(var(--blur-glass)); -webkit-backdrop-filter: blur(var(--blur-glass)); border-bottom: 1px solid var(--border); }
+.fk-top .ttl { font: 500 15px/1 var(--font-display); flex: 1; letter-spacing: -0.01em; }
+.fk-dock { position: relative; display: flex; margin: 0 16px calc(12px + env(safe-area-inset-bottom, 0px)); padding: 6px; border-radius: var(--radius-2xl); background: var(--glass); border: 1px solid var(--border); backdrop-filter: blur(var(--blur-glass)) saturate(150%); -webkit-backdrop-filter: blur(var(--blur-glass)) saturate(150%); box-shadow: var(--shadow-float); isolation: isolate; }
+.fk-dock .ind { position: absolute; z-index: -1; top: 6px; bottom: 6px; left: 6px; border-radius: 22px; background: color-mix(in oklch, var(--primary) 16%, transparent); box-shadow: inset 0 0 0 1px color-mix(in oklch, var(--primary) 35%, transparent);
+  transition: transform var(--duration-base) var(--ease-spring), width var(--duration-base) var(--ease-spring); }
+.fk-dock a { flex: 1; display: flex; flex-direction: column; align-items: center; gap: 3px; padding: 8px 0; font: 500 11px/14px var(--font-sans); color: var(--muted-foreground); text-decoration: none; border-radius: 22px; transition: color var(--duration-fast) ease-out; }
+.fk-dock a svg.fk-i { width: 21px; height: 21px; transition: transform var(--duration-fast) var(--ease-spring); }
+.fk-dock a[aria-current="page"] { color: var(--primary); }
+.fk-dock a[aria-current="page"] svg.fk-i { stroke-width: 2.1; transform: translateY(-1px); }
+.fk-dock a:hover { color: var(--foreground); }
+.fk-fab { width: 56px; height: 56px; border-radius: var(--radius-full); background: var(--primary); color: var(--primary-foreground); border: 0; display: grid; place-items: center; box-shadow: var(--shadow-glow); cursor: pointer; position: relative;
+  transition: transform var(--duration-fast) var(--ease-spring); }
+.fk-fab::after { content: ""; position: absolute; inset: -6px; border-radius: inherit; border: 1px solid var(--primary); opacity: 0; animation: fk-halo 2.8s var(--ease-out-expo) infinite; }
+@keyframes fk-halo { 0% { opacity: 0.6; transform: scale(0.9); } 100% { opacity: 0; transform: scale(1.35); } }
+.fk-fab:hover { transform: rotate(90deg) scale(1.05); }
+.fk-fab svg.fk-i { width: 24px; height: 24px; stroke-width: 2; }
+
+/* ── states ── */
+.fk-empty { display: flex; flex-direction: column; align-items: center; text-align: center; gap: 10px; padding: 32px 20px; position: relative; overflow: hidden; }
+.fk-empty .khatam-wrap { width: 72px; height: 72px; position: relative; display: grid; place-items: center; color: var(--primary); }
+.fk-empty .khatam-wrap svg.k { position: absolute; inset: 0; width: 100%; height: 100%; animation: fk-rotate 24s linear infinite; filter: drop-shadow(0 0 10px var(--glow)); }
+.fk-empty p { margin: 0; max-width: 30ch; }
+.fk-skel { position: relative; overflow: hidden; background: var(--muted); border-radius: var(--radius-sm); }
+.fk-skel::after { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, transparent, color-mix(in oklch, var(--primary) 14%, transparent), transparent); transform: translateX(-100%); animation: fk-shimmer 1.6s var(--ease-out-expo) infinite; }
+@keyframes fk-shimmer { to { transform: translateX(100%); } }
+.fk-note { display: flex; gap: 12px; align-items: flex-start; }
+.fk-note .ic { color: var(--accent); margin-top: 2px; }
+.fk-toast { display: inline-flex; align-items: center; gap: 10px; height: 44px; padding: 0 8px 0 16px; border-radius: var(--radius-full); background: var(--popover); border: 1px solid var(--border); box-shadow: var(--shadow-float); font-size: 14px; animation: fk-rise var(--duration-base) var(--ease-spring) both; }
+
+/* avatar with orbiting ring */
+.fk-avatar { width: 76px; height: 76px; border-radius: var(--radius-full); display: grid; place-items: center; font: 600 26px/1 var(--font-display); position: relative; flex: none; background: var(--secondary); color: var(--primary); }
+.fk-avatar::before { content: ""; position: absolute; inset: -4px; border-radius: inherit; background: conic-gradient(from var(--fk-angle), var(--primary), var(--accent), transparent 60%, var(--primary)); -webkit-mask: radial-gradient(farthest-side, transparent calc(100% - 2px), #000 calc(100% - 1.5px)); mask: radial-gradient(farthest-side, transparent calc(100% - 2px), #000 calc(100% - 1.5px)); animation: fk-spin var(--duration-beam) linear infinite; }
+.fk-avatar .cam { position: absolute; right: -2px; bottom: -2px; width: 28px; height: 28px; border-radius: var(--radius-full); background: var(--card); border: 1px solid var(--border); display: grid; place-items: center; color: var(--foreground); }
+
+/* phone mock */
+.fk-phone { width: 390px; min-height: 844px; border-radius: 44px; border: 1px solid var(--border); color: var(--foreground); overflow: hidden; display: flex; flex-direction: column; position: relative; flex: none; }
+.fk-phone-scroll { flex: 1; padding: 36px 16px 20px; display: flex; flex-direction: column; gap: 24px; }
+.fk-phone .fk-dock { position: sticky; bottom: 0; }
+.fk-phone .fk-fab { position: absolute; right: 20px; bottom: 100px; z-index: 2; }
+.fk-sect { display: flex; flex-direction: column; gap: 12px; }
+.fk-sect-head { display: flex; align-items: center; justify-content: space-between; gap: 8px; }
+
+@media (prefers-reduced-motion: reduce) {
+  .fk *, .fk *::before, .fk *::after, .fk-ground::after { animation: none !important; transition-duration: 0ms !important; }
+}
+
+
+.fl { background: var(--background); color: var(--foreground); font-family: var(--font-sans); font-size: 16px; line-height: 1.6; overflow-x: clip; }
+.fl *, .fl *::before, .fl *::after { box-sizing: border-box; }
+.fl-wrap { max-width: 1180px; margin: 0 auto; padding-inline: max(16px, 4vw); }
+.fl a { color: inherit; }
+.fl-nav { position: sticky; isolation: isolate; top: calc(env(safe-area-inset-top, 0px) + 12px); z-index: 20; margin-top: 12px; }
+.fl-nav .bar { display: flex; align-items: center; gap: 20px; height: 60px; padding: 0 8px 0 18px; border-radius: var(--radius-full); background: var(--glass); border: 1px solid var(--border); backdrop-filter: blur(var(--blur-glass)) saturate(150%); -webkit-backdrop-filter: blur(var(--blur-glass)) saturate(150%); box-shadow: var(--shadow-float); }
+.fl-mark { display: inline-flex; align-items: center; gap: 10px; font: 600 15px/1 var(--font-display); letter-spacing: -0.01em; text-decoration: none; }
+.fl-mark .o { width: 30px; height: 30px; border-radius: 50%; display: grid; place-items: center; color: var(--primary-foreground); background: var(--primary); box-shadow: 0 0 18px var(--glow); }
+.fl-links { display: flex; gap: 22px; margin-left: auto; }
+.fl-links a { text-decoration: none; font: 500 11px/1 var(--font-mono); letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted-foreground); transition: color var(--duration-fast) ease-out; }
+.fl-links a:hover { color: var(--foreground); }
+.fl-nav .fk-btn { border-radius: var(--radius-full); }
+
+.fl-hero { position: relative; padding-block: 64px 96px; display: grid; grid-template-columns: 1.05fr 0.95fr; gap: 40px; align-items: center; }
+.fl-h1 { font: 600 clamp(40px, 6vw, 76px)/1.02 var(--font-display); letter-spacing: -0.035em; margin: 20px 0 22px; text-wrap: balance; }
+.fl-lead { font-size: 18px; line-height: 1.65; color: var(--muted-foreground); max-width: 32em; margin: 0 0 32px; }
+.fl-ctas { display: flex; flex-wrap: wrap; gap: 12px; }
+.fl-ctas .fk-btn { height: 52px; padding: 0 24px; border-radius: var(--radius-full); font-size: 15px; }
+.fl-live { margin-top: 36px; display: flex; flex-wrap: wrap; gap: 10px; }
+.fl-live .cell { display: flex; flex-direction: column; gap: 4px; padding: 12px 16px; border-radius: var(--radius-lg); }
+.fl-live .v { font: 500 18px/1 var(--font-mono); font-variant-numeric: tabular-nums; letter-spacing: -0.02em; }
+.fl-stage { position: relative; display: grid; place-items: center; min-height: 640px; }
+.fl-rings { position: absolute; inset: 50% auto auto 50%; width: 620px; height: 620px; translate: -50% -50%; pointer-events: none; }
+.fl-rings span { position: absolute; inset: 0; border-radius: 50%; border: 1px dashed var(--input); opacity: 0.55; animation: fk-rotate 60s linear infinite; }
+.fl-rings span:nth-child(2) { inset: 70px; opacity: 0.4; animation-duration: 42s; animation-direction: reverse; }
+.fl-rings span:nth-child(3) { inset: 140px; border-style: solid; border-color: var(--border); animation: none; }
+.fl-rings i.planet { position: absolute; width: 12px; height: 12px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 16px var(--glow-2); top: -6px; left: calc(50% - 6px); }
+.fl-rings span:nth-child(2) i.planet { background: var(--primary); box-shadow: 0 0 16px var(--glow); width: 9px; height: 9px; top: -4.5px; }
+.fl-stage .fk-khatam { position: absolute; width: 520px; height: 520px; color: var(--primary); opacity: 0.12; animation: fk-rotate var(--duration-ambient) linear infinite; }
+.fl-phone { position: relative; width: 340px; max-width: 100%; border-radius: 44px; padding: 26px 14px 16px; background: color-mix(in oklch, var(--background) 88%, transparent); border: 1px solid var(--border); box-shadow: var(--shadow-float), 0 0 80px -20px var(--glow); display: flex; flex-direction: column; gap: 14px; animation: fl-float 7s ease-in-out infinite; backdrop-filter: blur(6px); }
+@keyframes fl-float { 50% { transform: translateY(-10px); } }
+.fl-phone .fk-orbit { padding: 14px !important; }
+.fl-phone .fk-count .t { font-size: 30px; line-height: 34px; }
+
+.fl-ticker { border-block: 1px solid var(--border); overflow: hidden; background: color-mix(in oklch, var(--background) 70%, var(--card)); }
+.fl-ticker .track { display: flex; width: max-content; animation: fl-marquee 38s linear infinite; }
+.fl-ticker .row { display: flex; gap: 40px; padding: 16px 20px; font: 500 12px/1 var(--font-mono); letter-spacing: 0.16em; text-transform: uppercase; color: var(--muted-foreground); white-space: nowrap; }
+.fl-ticker .row b { color: var(--foreground); font-weight: 500; }
+.fl-ticker .row em { font-style: normal; color: var(--primary); }
+@keyframes fl-marquee { to { transform: translateX(-50%); } }
+
+.fl-sect { padding-block: 112px; position: relative; }
+.fl-head { max-width: 42em; margin-bottom: 48px; display: flex; flex-direction: column; gap: 16px; }
+.fl-h2 { font: 600 clamp(30px, 4vw, 48px)/1.08 var(--font-display); letter-spacing: -0.03em; margin: 0; text-wrap: balance; }
+.fl-head p { margin: 0; color: var(--muted-foreground); font-size: 17px; }
+
+.fl-bento { display: grid; grid-template-columns: repeat(6, 1fr); gap: 16px; }
+.fl-tile { grid-column: span 2; border-radius: var(--radius-xl); padding: 24px; display: flex; flex-direction: column; gap: 18px; position: relative; overflow: hidden; transition: transform var(--duration-fast) var(--ease-out-expo), border-color var(--duration-fast) ease-out, box-shadow var(--duration-fast) ease-out; }
+.fl-tile:hover { transform: translateY(-3px); border-color: var(--input); box-shadow: var(--shadow-glow); }
+.fl-tile.w3 { grid-column: span 3; }
+.fl-tile.w4 { grid-column: span 4; grid-row: span 2; }
+.fl-tile h3 { font: 600 20px/1.25 var(--font-display); letter-spacing: -0.02em; margin: 0; }
+.fl-tile p { margin: 0; color: var(--muted-foreground); font-size: 15px; }
+.fl-tile .demo { flex: 1; display: flex; flex-direction: column; justify-content: center; gap: 12px; }
+.fl-tile .fk-orbit { background: transparent; border: 0; backdrop-filter: none; padding: 0 !important; }
+.fl-sw { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; }
+.fl-sw button { appearance: none; cursor: pointer; border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 0; overflow: hidden; background: var(--card); color: var(--foreground); text-align: left; font: inherit; transition: transform var(--duration-fast) var(--ease-spring); }
+.fl-sw button:hover { transform: translateY(-2px); }
+.fl-sw button[aria-pressed="true"] { outline: 2px solid var(--ring); outline-offset: 3px; box-shadow: 0 0 0 7px var(--glow); }
+.fl-sw .sky { height: 72px; position: relative; }
+.fl-sw .sky i { position: absolute; width: 14px; height: 14px; border-radius: 50%; left: 16px; bottom: 14px; }
+.fl-sw .sky b { position: absolute; width: 10px; height: 10px; border-radius: 50%; left: 36px; bottom: 26px; }
+.fl-sw .lbl { display: block; padding: 10px 12px; font: 500 10.5px/1.3 var(--font-mono); letter-spacing: 0.1em; text-transform: uppercase; }
+
+.fl-steps { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; position: relative; counter-reset: s; }
+.fl-steps::before { content: ""; position: absolute; left: 8%; right: 8%; top: 28px; height: 1px; background: linear-gradient(90deg, transparent, var(--primary), var(--accent), transparent); opacity: 0.6; }
+.fl-steps li { counter-increment: s; display: flex; flex-direction: column; gap: 12px; padding: 0 8px; }
+.fl-steps li::before { content: "0" counter(s); width: 56px; height: 56px; border-radius: 50%; display: grid; place-items: center; font: 500 14px/1 var(--font-mono); background: var(--card-inverse); color: var(--primary); border: 1px solid var(--card-inverse-border); box-shadow: 0 0 24px -4px var(--glow); position: relative; }
+.fl-steps h3 { font: 600 19px/1.3 var(--font-display); letter-spacing: -0.02em; margin: 8px 0 0; }
+.fl-steps p { margin: 0; color: var(--muted-foreground); }
+
+.fl-faq { display: grid; gap: 10px; max-width: 820px; }
+.fl-faq details { border-radius: var(--radius-lg); padding: 0; overflow: hidden; }
+.fl-faq summary { cursor: pointer; list-style: none; padding: 20px 22px; display: flex; justify-content: space-between; align-items: center; gap: 16px; font: 500 16px/1.35 var(--font-display); letter-spacing: -0.01em; }
+.fl-faq summary::-webkit-details-marker { display: none; }
+.fl-faq summary::after { content: ""; width: 10px; height: 10px; border-right: 1.5px solid var(--primary); border-bottom: 1.5px solid var(--primary); transform: rotate(45deg) translateY(-3px); transition: transform var(--duration-fast) var(--ease-spring); flex: none; }
+.fl-faq details[open] summary::after { transform: rotate(-135deg); }
+.fl-faq details[open] { border-color: var(--input); }
+.fl-faq p { margin: 0; padding: 0 22px 22px; color: var(--muted-foreground); max-width: 62ch; }
+
+.fl-cta { margin-bottom: 96px; padding: clamp(36px, 7vw, 88px) clamp(24px, 6vw, 72px); border-radius: var(--radius-2xl); display: grid; grid-template-columns: 1.3fr 1fr; gap: 40px; align-items: center; cursor: default; }
+.fl-cta:hover { transform: none; }
+.fl-cta .fl-h2 { color: var(--card-inverse-foreground); }
+.fl-cta p { color: var(--card-inverse-muted); margin: 16px 0 28px; font-size: 17px; }
+.fl-cta .fk-arabic { color: var(--card-inverse-foreground); }
+.fl-cta .cite { color: var(--card-inverse-muted); text-align: right; font-size: 13px; margin: 0; }
+.fl-cta .fk-khatam { width: 320px; height: 320px; right: -60px; top: -60px; }
+
+.fl-foot { border-top: 1px solid var(--border); padding-block: 32px 48px; }
+.fl-foot .fl-wrap { display: flex; flex-wrap: wrap; gap: 16px 32px; justify-content: space-between; align-items: center; }
+.fl-foot .ctrl { display: flex; gap: 10px; flex-wrap: wrap; }
+
+@media (max-width: 960px) {
+  .fl-hero, .fl-cta { grid-template-columns: 1fr; }
+  .fl-stage { min-height: 560px; }
+  .fl-bento { grid-template-columns: 1fr 1fr; }
+  .fl-tile, .fl-tile.w3 { grid-column: span 1; }
+  .fl-tile.w4 { grid-column: span 2; grid-row: auto; }
+}
+@media (max-width: 640px) {
+  .fl-links { display: none; }
+  .fl-nav .fk-btn { margin-left: auto; }
+  .fl-bento { grid-template-columns: 1fr; }
+  .fl-tile, .fl-tile.w3, .fl-tile.w4 { grid-column: auto; }
+  .fl-steps { grid-template-columns: 1fr; gap: 28px; }
+  .fl-steps::before { display: none; }
+  .fl-sw { grid-template-columns: 1fr 1fr; }
+  .fl-rings { width: 440px; height: 440px; }
+  .fl-stage .fk-khatam { width: 380px; height: 380px; }
+  .fl-sect { padding-block: 72px; }
+  .fl-hero { padding-block: 32px 64px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .fl *, .fl *::before, .fl *::after { animation: none !important; transition-duration: 0ms !important; }
+}
+
+</style>
+<div class="fl fk">
+<header class="fl-nav"><div class="fl-wrap"><div class="bar">
+  <a class="fl-mark" href="#top"><span class="o"><i data-i="orbit" class="sm"></i></span>Muslim Berislam</a>
+  <nav class="fl-links" aria-label="Halaman"><a href="#fitur">Fitur</a><a href="#cara">Cara kerja</a><a href="#tema">Tema</a><a href="#tanya">Tanya</a></nav>
+  <a class="fk-btn fk-btn-primary" href="#mulai">Mulai</a>
+</div></div></header>
+
+<main id="top">
+<div class="fk-ground" style="margin-top:-84px;padding-top:84px"><section class="fl-wrap fl-hero">
+  <div class="fk-enter" style="--i:0">
+    <span class="fk-hud fk-muted"><span class="fk-chip live" style="height:22px">Langsung</span>Pendamping ibadah harian</span>
+    <h1 class="fl-h1">Ibadah harian, <span class="fk-grad">dihitung dari langit.</span></h1>
+    <p class="fl-lead">Muslim Berislam membaca posisi matahari hari ini, lalu menunjukkan satu hal yang perlu kamu kerjakan sekarang — dengan dalilnya, tanpa daftar yang menumpuk.</p>
+    <div class="fl-ctas"><a class="fk-btn fk-btn-primary" href="#mulai">Mulai sebagai tamu<i data-i="arrow-right" class="sm"></i></a><a class="fk-btn fk-btn-glass" href="#fitur">Lihat fiturnya</a></div>
+    <div class="fl-live">
+      <div class="cell fk-glass"><span class="fk-hud fk-muted">Menuju Ashar</span><span class="v" id="cd-hero">01:16:00</span></div>
+      <div class="cell fk-glass"><span class="fk-hud fk-muted">Masehi</span><span class="v">26.07.2025</span></div>
+      <div class="cell fk-glass"><span class="fk-hud fk-muted">Hijriah</span><span class="v">01 Safar 1447</span></div>
+    </div>
+  </div>
+  <div class="fl-stage" aria-label="Contoh tampilan Beranda">
+    <div class="fl-rings" aria-hidden="true"><span><i class="planet"></i></span><span><i class="planet"></i></span><span></span></div>
+    <i data-khatam></i>
+    <div class="fl-phone fk-enter" style="--i:2">
+      <section class="fk-orbit fk-glass fk-enter" style="--i:1;border-radius:var(--radius-xl);padding:18px" aria-label="Waktu sholat hari ini">
+  <div class="fk-orbit-dates">
+    <div><span class="fk-hud fk-muted">Masehi</span><span class="v">Sab, 26 Juli 2025</span></div>
+    <div><span class="fk-hud fk-muted">Hijriah</span><span class="v">1 Safar 1447</span></div>
+  </div>
+  <div style="position:relative">
+    <svg class="arc" viewBox="0 0 340 206" role="img" aria-label="Posisi matahari: 14:05, antara Dzuhur dan Ashar">
+  <line class="horizon" x1="0" y1="176" x2="340" y2="176"/>
+  <path class="track" d="M20 176 A150 150 0 0 1 320 176"/>
+  <path class="prog" pathLength="100" stroke-dasharray="100" d="M20 176 A150 150 0 0 1 238.1 42.4"/>
+  <circle class="node past" cx="20" cy="176" r="5"/><text class="lbl past" x="20" y="196" text-anchor="middle" dominant-baseline="middle">Subuh</text>
+  <circle class="node past" cx="172.7" cy="26" r="5"/><text class="lbl past" x="173" y="10" text-anchor="middle" dominant-baseline="middle">Dzuhur</text>
+  <circle class="node next" cx="271.9" cy="66" r="6"/><text class="lbl next" x="282.8" y="54.2" text-anchor="middle" dominant-baseline="middle">Ashar</text>
+  <circle class="node " cx="314.8" cy="136.7" r="5"/><text class="lbl " x="330.2" y="132.6" text-anchor="middle" dominant-baseline="middle">Maghrib</text>
+  <circle class="node " cx="320" cy="176" r="5"/><text class="lbl " x="320" y="196" text-anchor="middle" dominant-baseline="middle">Isya</text>
+  <circle class="bloom" cx="238.1" cy="42.4" r="12"/>
+  <circle class="sun" cx="238.1" cy="42.4" r="7"/>
+</svg>
+    <div class="fk-count"><span class="fk-hud fk-muted">Menuju Ashar · 15:21</span><span class="t" id="cd-phone">01:16:00</span></div>
+  </div>
+</section>
+      <article class="fk-task fk-holo" aria-label="Task akhirat berikutnya" tabindex="0">
+  <i data-khatam></i>
+  <div class="fk-task-top">
+    <span class="fk-hud"><span class="fk-tag"><i data-i="landmark" class="sm"></i></span>Akhirat</span>
+    <span class="fk-hud">Ashar · 15:21</span>
+  </div>
+  <h3 class="fk-h3">Sholat Ashar berjamaah.</h3>
+  <p class="fk-task-sum">Jaga takbir pertama 40 hari, dicatat <b>2 pembebasan: dari neraka &amp; dari kemunafikan.</b> <span class="fk-src">HR. Tirmidzi no. 241</span></p>
+  <div class="fk-task-actions">
+    <button class="fk-pill fk-pill-done" data-act="done"><i data-i="check" class="sm"></i>Dikerjakan</button>
+    <button class="fk-pill fk-pill-skip" data-act="skip">Lewati dulu</button>
+    <button class="fk-link">Dalil<i data-i="arrow-right" class="sm"></i></button>
+  </div>
+</article>
+    </div>
+  </div>
+</section></div>
+
+<div class="fl-ticker" aria-hidden="true"><div class="track"><div class="row"><span><em>●</em> Subuh <b>04:42</b></span><span>Dzuhur <b>12:00</b></span><span>Ashar <b>15:21</b></span><span>Maghrib <b>17:55</b></span><span>Isya <b>19:08</b></span><span>26.07.2025 <b>·</b> 01 Safar 1447</span><span>Metode <b>KEMENAG</b></span><span>Jakarta <b>−6.2° / 106.8°</b></span></div><div class="row"><span><em>●</em> Subuh <b>04:42</b></span><span>Dzuhur <b>12:00</b></span><span>Ashar <b>15:21</b></span><span>Maghrib <b>17:55</b></span><span>Isya <b>19:08</b></span><span>26.07.2025 <b>·</b> 01 Safar 1447</span><span>Metode <b>KEMENAG</b></span><span>Jakarta <b>−6.2° / 106.8°</b></span></div></div></div>
+
+<section class="fl-sect" id="fitur"><div class="fl-wrap">
+  <div class="fl-head"><span class="fk-hud" style="color:var(--primary)">Fitur</span><h2 class="fl-h2">Instrumen kecil untuk hari yang lurus.</h2><p>Semua yang ada di layar punya satu tugas: membuatmu tahu apa yang berikutnya, lalu memberimu ruang.</p></div>
+  <div class="fl-bento">
+    <article class="fl-tile fk-glass w4"><div><span class="fk-hud fk-muted">01 · Beranda</span></div><h3>Hari sebagai orbit</h3><p>Lima waktu sholat diletakkan di lintasan matahari sesuai jam sebenarnya di kotamu (metode KEMENAG). Titik terang adalah sekarang; hitung mundur menuju waktu berikutnya.</p><div class="demo"><section class="fk-orbit fk-glass fk-enter" style="--i:1;border-radius:var(--radius-xl);padding:18px" aria-label="Waktu sholat hari ini">
+  <div class="fk-orbit-dates">
+    <div><span class="fk-hud fk-muted">Masehi</span><span class="v">Sab, 26 Juli 2025</span></div>
+    <div><span class="fk-hud fk-muted">Hijriah</span><span class="v">1 Safar 1447</span></div>
+  </div>
+  <div style="position:relative">
+    <svg class="arc" viewBox="0 0 340 206" role="img" aria-label="Posisi matahari: 14:05, antara Dzuhur dan Ashar">
+  <line class="horizon" x1="0" y1="176" x2="340" y2="176"/>
+  <path class="track" d="M20 176 A150 150 0 0 1 320 176"/>
+  <path class="prog" pathLength="100" stroke-dasharray="100" d="M20 176 A150 150 0 0 1 238.1 42.4"/>
+  <circle class="node past" cx="20" cy="176" r="5"/><text class="lbl past" x="20" y="196" text-anchor="middle" dominant-baseline="middle">Subuh</text>
+  <circle class="node past" cx="172.7" cy="26" r="5"/><text class="lbl past" x="173" y="10" text-anchor="middle" dominant-baseline="middle">Dzuhur</text>
+  <circle class="node next" cx="271.9" cy="66" r="6"/><text class="lbl next" x="282.8" y="54.2" text-anchor="middle" dominant-baseline="middle">Ashar</text>
+  <circle class="node " cx="314.8" cy="136.7" r="5"/><text class="lbl " x="330.2" y="132.6" text-anchor="middle" dominant-baseline="middle">Maghrib</text>
+  <circle class="node " cx="320" cy="176" r="5"/><text class="lbl " x="320" y="196" text-anchor="middle" dominant-baseline="middle">Isya</text>
+  <circle class="bloom" cx="238.1" cy="42.4" r="12"/>
+  <circle class="sun" cx="238.1" cy="42.4" r="7"/>
+</svg>
+    <div class="fk-count"><span class="fk-hud fk-muted">Menuju Ashar · 15:21</span><span class="t" id="cd-bento">01:16:00</span></div>
+  </div>
+</section></div></article>
+    <article class="fl-tile fk-glass"><span class="fk-hud fk-muted">02 · Akhirat</span><h3>Satu tugas, lengkap dengan dalil</h3><div class="demo" id="holo-demo"></div><p>Coba ketuk Dikerjakan atau Lewati.</p></article>
+    <article class="fl-tile fk-glass"><span class="fk-hud fk-muted">03 · Kalender</span><h3>Masehi dan Hijriah, sama besar</h3><div class="demo"><div class="fk-week" role="tablist" aria-label="Minggu ini">
+  <button class="fk-orb " role="tab" aria-selected="false"><span class="dn">Sen</span><span class="c">21</span><span class="h">26</span></button>
+  <button class="fk-orb " role="tab" aria-selected="false"><span class="dn">Sel</span><span class="c">22</span><span class="h">27</span></button>
+  <button class="fk-orb " role="tab" aria-selected="false"><span class="dn">Rab</span><span class="c">23</span><span class="h">28</span></button>
+  <button class="fk-orb " role="tab" aria-selected="false"><span class="dn">Kam</span><span class="c">24</span><span class="h">29</span></button>
+  <button class="fk-orb " role="tab" aria-selected="false"><span class="dn">Jum</span><span class="c">25</span><span class="h">30</span></button>
+  <button class="fk-orb today" role="tab" aria-selected="false" aria-current="date"><span class="dn">Sab</span><span class="c">26</span><span class="h">1</span></button>
+  <button class="fk-orb " role="tab" aria-selected="true"><span class="dn">Ahd</span><span class="c">27</span><span class="h">2</span></button>
+</div></div></article>
+    <article class="fl-tile fk-glass w3"><span class="fk-hud fk-muted">04 · Dalil</span><h3>Teks utuh, tidak pernah dipotong</h3><div class="demo"><p class="fk-arabic md" dir="rtl" lang="ar" style="color:var(--foreground)">أَحَبُّ الأَعْمَالِ إِلَى اللَّهِ أَدْوَمُهَا وَإِنْ قَلَّ</p><p style="color:var(--foreground)">“Amalan yang paling dicintai Allah adalah yang paling rutin, meskipun sedikit.”</p><span class="fk-src-ink">HR. Bukhari dan Muslim</span></div></article>
+    <article class="fl-tile fk-glass w3"><span class="fk-hud fk-muted">05 · Tanpa rasa bersalah</span><h3>Melewati itu boleh</h3><div class="demo"><div class="fk-task-actions" style="margin:0"><button class="fk-pill fk-pill-done" id="pill-demo"><i data-i="check" class="sm"></i>Dikerjakan</button><button class="fk-pill fk-pill-skip">Lewati dulu</button></div><div class="fk-pv-row"><span class="fk-chip done">Selesai</span><span class="fk-chip">Dilewati</span><span class="fk-chip">Belum</span></div></div><p>Dua pilihan dengan ukuran dan gerak yang sama. Tidak ada merah, tidak ada streak yang putus — yang terlewat bisa ditandai nanti.</p></article>
+  </div>
+</div></section>
+
+<section class="fl-sect" id="cara"><div class="fl-wrap">
+  <div class="fl-head"><span class="fk-hud" style="color:var(--primary)">Cara kerja</span><h2 class="fl-h2">Beberapa detik, beberapa kali sehari.</h2></div>
+  <ol class="fl-steps">
+    <li><h3>Buka saat ada jeda</h3><p>Setelah subuh, di sela kerja, sebelum tidur. Orbit menunjukkan di mana harimu sekarang.</p></li>
+    <li><h3>Kerjakan atau lewati</h3><p>Satu ketukan. Kartu berikutnya masuk dengan tenang; yang terlewat menunggu di daftar harian.</p></li>
+    <li><h3>Tutup dengan cerita</h3><p>Satu-dua kalimat di Profil. Riwayat ibadahmu tersusun sendiri, tanpa skor.</p></li>
+  </ol>
+</div></section>
+
+<section class="fl-sect" id="tema"><div class="fl-wrap">
+  <div class="fl-head"><span class="fk-hud" style="color:var(--primary)">Tema</span><h2 class="fl-h2">Langit malam atau siang, versi Ikhwan atau Akhwat.</h2><p>Mint dan biru langit untuk Ikhwan, anggrek dan aprikot untuk Akhwat. Pilih satu — seluruh halaman ini ikut berganti.</p></div>
+  <div class="fl-sw"><button data-set-g="ikhwan" data-set-m="dark" aria-label="Pakai tema Ikhwan · Malam"><span class="sky" style="background:oklch(0.16 0.025 230)"><i style="background:oklch(0.85 0.14 172)"></i><b style="background:oklch(0.8 0.12 220)"></b></span><span class="lbl">Ikhwan · Malam</span></button><button data-set-g="akhwat" data-set-m="dark" aria-label="Pakai tema Akhwat · Malam"><span class="sky" style="background:oklch(0.16 0.03 330)"><i style="background:oklch(0.83 0.12 350)"></i><b style="background:oklch(0.84 0.1 55)"></b></span><span class="lbl">Akhwat · Malam</span></button><button data-set-g="ikhwan" data-set-m="light" aria-label="Pakai tema Ikhwan · Siang"><span class="sky" style="background:oklch(0.975 0.008 200)"><i style="background:oklch(0.47 0.1 182)"></i><b style="background:oklch(0.87 0.12 172)"></b></span><span class="lbl">Ikhwan · Siang</span></button><button data-set-g="akhwat" data-set-m="light" aria-label="Pakai tema Akhwat · Siang"><span class="sky" style="background:oklch(0.975 0.008 340)"><i style="background:oklch(0.5 0.15 350)"></i><b style="background:oklch(0.87 0.09 55)"></b></span><span class="lbl">Akhwat · Siang</span></button></div>
+</div></section>
+
+<section class="fl-sect" id="tanya"><div class="fl-wrap">
+  <div class="fl-head"><span class="fk-hud" style="color:var(--primary)">Tanya jawab</span><h2 class="fl-h2">Yang sering ditanyakan.</h2></div>
+  <div class="fl-faq">
+    <details class="fk-glass" open><summary>Apakah harus membuat akun?</summary><p>Tidak. Kamu langsung masuk sebagai tamu dan semua fitur bisa dipakai. Tambahkan email dan kata sandi di Profil kapan saja — seluruh data tamu tetap tersimpan.</p></details>
+    <details class="fk-glass"><summary>Dari mana jadwal sholatnya?</summary><p>Dari layanan Aladhan dengan metode KEMENAG, berdasarkan kota dan negara di profilmu. Jika layanan tidak bisa dihubungi, aplikasi memakai waktu perkiraan dan memberi tahu kamu.</p></details>
+    <details class="fk-glass"><summary>Bagaimana kalau aku melewatkan sesuatu?</summary><p>Buka "Semua task hari ini" dan tandai kapan saja. Tidak ada streak yang putus dan tidak ada pengingat yang menyalahkan.</p></details>
+    <details class="fk-glass"><summary>Apakah animasinya bisa dimatikan?</summary><p>Ya. Aplikasi mengikuti pengaturan "kurangi gerakan" di perangkatmu: cahaya, orbit, dan transisi berhenti, isinya tetap sama.</p></details>
+    <details class="fk-glass"><summary>Bahasa apa saja yang tersedia?</summary><p>Bahasa Indonesia, English, dan Bahasa Melayu.</p></details>
+  </div>
+</div></section>
+
+<section class="fl-wrap" id="mulai"><div class="fl-cta fk-task fk-holo">
+  <i data-khatam></i>
+  <div><span class="fk-hud">Mulai hari ini</span><h2 class="fl-h2" style="margin-top:16px">Satu langkah kecil, di waktu yang tepat.</h2><p>Tanpa daftar, tanpa iklan. Buka, kerjakan, tenang.</p><a class="fk-btn fk-btn-primary" href="#top" style="height:52px;padding:0 24px;border-radius:var(--radius-full)">Mulai sebagai tamu<i data-i="arrow-right" class="sm"></i></a></div>
+  <div><p class="fk-arabic" dir="rtl" lang="ar">فَإِنَّ مَعَ الْعُسْرِ يُسْرًا</p><p class="cite">“Karena sesungguhnya bersama kesulitan ada kemudahan.” — QS. Al-Insyirah: 5</p></div>
+</div></section>
+</main>
+
+<footer class="fl-foot"><div class="fl-wrap">
+  <span class="fk-data fk-muted">MUSLIM BERISLAM · FALAK</span>
+  <div class="ctrl">
+    <div class="fk-seg" aria-label="Gender"><button data-set-g="ikhwan">Ikhwan</button><button data-set-g="akhwat">Akhwat</button></div>
+    <div class="fk-seg" aria-label="Mode"><button data-set-m="dark"><i data-i="moon" class="sm"></i>Malam</button><button data-set-m="light"><i data-i="sun" class="sm"></i>Siang</button></div>
+  </div>
+</div></footer>
+</div>
+<script>
+/* @ds-bundle: {"format":4,"namespace":"Falak","components":[]} */
+(function () {
+  // Lucide paths (ISC licence).
+  var P = {
+    landmark: '<path d="M10 18v-7"/><path d="M11.12 2.198a2 2 0 0 1 1.76.006l7.866 3.847c.476.233.31.949-.22.949H3.474c-.53 0-.695-.716-.22-.949z"/><path d="M14 18v-7"/><path d="M18 18v-7"/><path d="M3 22h18"/><path d="M6 18v-7"/>',
+    activity: '<path d="M22 12h-4l-3 9L9 3l-3 9H2"/>',
+    leaf: '<path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"/><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/>',
+    orbit: '<circle cx="12" cy="12" r="3"/><circle cx="19" cy="5" r="2"/><circle cx="5" cy="19" r="2"/><path d="M10.4 21.9a10 10 0 0 0 9.941-15.416"/><path d="M13.5 2.1a10 10 0 0 0-9.841 15.416"/>',
+    'notebook-pen': '<path d="M13.4 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-7.4"/><path d="M2 6h4"/><path d="M2 10h4"/><path d="M2 14h4"/><path d="M2 18h4"/><path d="M21.378 5.626a1 1 0 1 0-3.004-3.004l-5.01 5.012a2 2 0 0 0-.506.854l-.837 2.87a.5.5 0 0 0 .62.62l2.87-.837a2 2 0 0 0 .854-.506z"/>',
+    user: '<path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/>',
+    plus: '<path d="M5 12h14"/><path d="M12 5v14"/>',
+    check: '<path d="M20 6 9 17l-5-5"/>',
+    clock: '<circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/>',
+    'arrow-left': '<path d="m12 19-7-7 7-7"/><path d="M19 12H5"/>',
+    'arrow-right': '<path d="M5 12h14"/><path d="m12 5 7 7-7 7"/>',
+    x: '<path d="M18 6 6 18"/><path d="m6 6 12 12"/>',
+    'book-open': '<path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/>',
+    moon: '<path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/>',
+    sun: '<circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/>',
+    languages: '<path d="m5 8 6 6"/><path d="m4 14 6-6 2-3"/><path d="M2 5h12"/><path d="M7 2h1"/><path d="m22 22-5-10-5 10"/><path d="M14 18h6"/>',
+    camera: '<path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z"/><circle cx="12" cy="13" r="3"/>',
+    'pen-line': '<path d="M12 20h9"/><path d="M16.376 3.622a1 1 0 0 1 3.002 3.002L7.368 18.635a2 2 0 0 1-.855.506l-2.872.838a.5.5 0 0 1-.62-.62l.838-2.872a2 2 0 0 1 .506-.854z"/>',
+    'refresh-cw': '<path d="M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8"/><path d="M21 3v5h-5"/><path d="M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16"/><path d="M8 16H3v5"/>',
+    'cloud-off': '<path d="m2 2 20 20"/><path d="M5.782 5.782A7 7 0 0 0 9 19h8.5a4.5 4.5 0 0 0 1.307-.193"/><path d="M21.532 16.5A4.5 4.5 0 0 0 17.5 10h-1.79A7.008 7.008 0 0 0 10 5.07"/>',
+    minus: '<path d="M5 12h14"/>',
+    'rotate-ccw': '<path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/>',
+    'hand-heart': '<path d="M11 14h2a2 2 0 1 0 0-4h-3c-.6 0-1.1.2-1.4.6L3 16"/><path d="m7 20 1.6-1.4c.3-.4.8-.6 1.4-.6h4c1.1 0 2.1-.4 2.8-1.2l4.6-4.4a2 2 0 0 0-2.75-2.91l-4.2 3.9"/><path d="m2 15 6 6"/><path d="M19.5 8.5c.7-.7 1.5-1.6 1.5-2.7A2.73 2.73 0 0 0 16 4a2.78 2.78 0 0 0-5 1.8c0 1.2.8 2 1.5 2.8L16 12Z"/>',
+    'skip-forward': '<path d="m6 4 10 8-10 8V4Z"/><path d="M19 5v14"/>'
+  };
+  function icon(name, cls) {
+    var body = P[name] || '';
+    if (name === 'check') body = '<path d="M20 6 9 17l-5-5"/>';
+    return '<svg class="fk-i ' + (cls || '') + '" viewBox="0 0 24 24" aria-hidden="true">' + body + '</svg>';
+  }
+  // 8-point khatam (two squares at 45°) nested three deep — the system's geometry.
+  function khatam(cls) {
+    var s = '';
+    [40, 28, 16].forEach(function (r, i) {
+      var w = r * 2;
+      s += '<rect x="' + (50 - r) + '" y="' + (50 - r) + '" width="' + w + '" height="' + w + '" opacity="' + (1 - i * 0.25) + '"/>' +
+           '<rect x="' + (50 - r) + '" y="' + (50 - r) + '" width="' + w + '" height="' + w + '" transform="rotate(45 50 50)" opacity="' + (1 - i * 0.25) + '"/>';
+    });
+    return '<svg class="' + (cls || 'fk-khatam') + '" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="0.8" aria-hidden="true">' + s + '<circle cx="50" cy="50" r="46" stroke-dasharray="1 3"/></svg>';
+  }
+  function icons(root) {
+    (root || document).querySelectorAll('i[data-i]').forEach(function (el) {
+      var n = el.getAttribute('data-i');
+      el.outerHTML = icon(n, el.className + (n === 'check' ? ' chk' : ''));
+    });
+    (root || document).querySelectorAll('i[data-khatam]').forEach(function (el) { el.outerHTML = khatam(el.className || 'fk-khatam'); });
+  }
+  // Gliding indicator for .fk-seg and .fk-dock: positions .ind under the active child.
+  function glide(root) {
+    (root || document).querySelectorAll('.fk-seg, .fk-dock').forEach(function (g) {
+      var ind = g.querySelector('.ind');
+      if (!ind) { ind = document.createElement('span'); ind.className = 'ind'; g.prepend(ind); }
+      var items = g.querySelectorAll('button, a');
+      function place() {
+        var a = g.querySelector('[aria-selected="true"], [aria-pressed="true"], [aria-current="page"]');
+        if (!a) { ind.style.opacity = 0; return; }
+        ind.style.opacity = 1;
+        ind.style.width = a.offsetWidth + 'px';
+        ind.style.transform = 'translateX(' + (a.offsetLeft - parseFloat(getComputedStyle(ind).left)) + 'px)';
+      }
+      items.forEach(function (b) {
+        b.addEventListener('click', function (e) {
+          if (b.tagName === 'A') e.preventDefault();
+          items.forEach(function (x) {
+            ['aria-selected', 'aria-pressed'].forEach(function (k) { if (x.hasAttribute(k)) x.setAttribute(k, x === b ? 'true' : 'false'); });
+            if (x.tagName === 'A') { if (x === b) x.setAttribute('aria-current', 'page'); else x.removeAttribute('aria-current'); }
+          });
+          place();
+        });
+      });
+      place();
+      if (document.fonts && document.fonts.ready) document.fonts.ready.then(place);
+    });
+  }
+  // Toggle buttons (day-of-week, check circles, week orbs).
+  function toggles(root) {
+    (root || document).querySelectorAll('.fk-dow button').forEach(function (b) {
+      b.addEventListener('click', function () { b.setAttribute('aria-pressed', b.getAttribute('aria-pressed') === 'true' ? 'false' : 'true'); });
+    });
+    (root || document).querySelectorAll('.fk-check').forEach(function (b) {
+      b.addEventListener('click', function () {
+        var on = b.classList.toggle('on');
+        b.innerHTML = on ? icon('check', 'sm chk') : '';
+        var chip = b.parentNode.querySelector('.fk-chip');
+        if (chip) { chip.dataset.prev = chip.dataset.prev || chip.textContent; chip.className = 'fk-chip' + (on ? ' done' : ''); chip.textContent = on ? 'Selesai' : chip.dataset.prev === 'Selesai' ? 'Belum' : chip.dataset.prev; }
+      });
+    });
+    (root || document).querySelectorAll('.fk-week').forEach(function (w) {
+      var orbs = w.querySelectorAll('.fk-orb');
+      orbs.forEach(function (o) { o.addEventListener('click', function () { orbs.forEach(function (x) { x.setAttribute('aria-selected', x === o ? 'true' : 'false'); }); }); });
+    });
+  }
+  // Countdown in HH:MM:SS, ticking once a second.
+  function countdown(el, seconds) {
+    function f(n) { return (n < 10 ? '0' : '') + n; }
+    function tick() {
+      var s = Math.max(0, seconds);
+      el.textContent = f(Math.floor(s / 3600)) + ':' + f(Math.floor(s % 3600 / 60)) + ':' + f(s % 60);
+      seconds--;
+    }
+    tick(); return setInterval(tick, 1000);
+  }
+  // Ripple on press for pills and buttons.
+  document.addEventListener('pointerdown', function (e) {
+    var t = e.target.closest && e.target.closest('.fk-pill, .fk-btn');
+    if (!t || matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    var r = t.getBoundingClientRect(), s = document.createElement('span');
+    s.className = 'fk-ripple'; s.style.left = (e.clientX - r.left) + 'px'; s.style.top = (e.clientY - r.top) + 'px';
+    t.appendChild(s); setTimeout(function () { s.remove(); }, 650);
+  });
+  // Task queue demo: Dikerjakan / Lewati advance to the next task with the same motion weight.
+  function taskDemo(slot, tasks, render) {
+    var i = 0;
+    function mount() {
+      slot.innerHTML = tasks.length > i ? render(tasks[i]) : render(null);
+      icons(slot);
+      var card = slot.firstElementChild; card.classList.add('fk-enter');
+      slot.querySelectorAll('[data-act]').forEach(function (b) {
+        b.addEventListener('click', function (e) {
+          e.stopPropagation();
+          var act = b.getAttribute('data-act');
+          if (act === 'reset') { i = 0; mount(); return; }
+          if (act === 'done') b.classList.add('is-done');
+          setTimeout(function () {
+            card.classList.remove('fk-enter');
+            card.classList.add(act === 'done' ? 'fk-leave-up' : 'fk-leave-side');
+            setTimeout(function () { i++; mount(); }, 420);
+          }, act === 'done' ? 520 : 60);
+        });
+      });
+    }
+    mount();
+  }
+  function boot(root) { icons(root); glide(root); toggles(root); }
+  window.Falak = { icon: icon, icons: icons, khatam: khatam, glide: glide, toggles: toggles, countdown: countdown, taskDemo: taskDemo, boot: boot, paths: P };
+})();
+
+Falak.boot();
+(function(){
+  var ATTR="data-palette", root=document.documentElement;
+  function viewerMode(){var t=root.getAttribute('data-theme');if(t==='dark'||t==='light')return t;try{return matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';}catch(e){return 'light';}}
+  var cur=root.getAttribute(ATTR)||'';
+  var gender=/akhwat/.test(cur)?'akhwat':'ikhwan';
+  var mode=viewerMode();
+  try{var s=JSON.parse(localStorage.getItem('mb.landing')||'null');if(s){gender=s.g||gender;}}catch(e){}
+  function apply(){
+    root.setAttribute(ATTR,gender+'-'+mode);
+    root.style.colorScheme=mode;
+    document.querySelectorAll('[data-set-g]').forEach(function(b){b.setAttribute('aria-pressed',b.getAttribute('data-set-g')===gender?'true':'false');});
+    document.querySelectorAll('[data-set-m]').forEach(function(b){b.setAttribute('aria-pressed',b.getAttribute('data-set-m')===mode?'true':'false');});
+    try{localStorage.setItem('mb.landing',JSON.stringify({g:gender,m:mode}));}catch(e){}
+    document.querySelectorAll('.fk-seg').forEach(function(g){var ind=g.querySelector('.ind'),a=g.querySelector('[aria-pressed="true"],[aria-selected="true"]');if(!ind||!a)return;ind.style.width=a.offsetWidth+'px';ind.style.transform='translateX('+(a.offsetLeft-parseFloat(getComputedStyle(ind).left))+'px)';});
+  }
+  document.addEventListener('click',function(e){
+    var g=e.target.closest&&e.target.closest('[data-set-g]'), m=e.target.closest&&e.target.closest('[data-set-m]');
+    if(g){gender=g.getAttribute('data-set-g');apply();}
+    if(m){mode=m.getAttribute('data-set-m');apply();}
+  });
+  new MutationObserver(function(){var v=viewerMode();if(v!==mode){mode=v;apply();}}).observe(root,{attributes:true,attributeFilter:['data-theme']});
+  apply();
+})();
+
+Falak.countdown(document.getElementById('cd-hero'), 4560);
+Falak.countdown(document.getElementById('cd-phone'), 4560);
+Falak.countdown(document.getElementById('cd-bento'), 4560);
+(function(){
+  var T="<article class=\"fk-task fk-holo\" aria-label=\"Task akhirat berikutnya\" tabindex=\"0\">\n  <i data-khatam></i>\n  <div class=\"fk-task-top\">\n    <span class=\"fk-hud\"><span class=\"fk-tag\"><i data-i=\"landmark\" class=\"sm\"></i></span>Akhirat</span>\n    <span class=\"fk-hud\">Ashar · 15:21</span>\n  </div>\n  <h3 class=\"fk-h3\">Sholat Ashar berjamaah.</h3>\n  <p class=\"fk-task-sum\">Jaga takbir pertama 40 hari, dicatat <b>2 pembebasan: dari neraka &amp; dari kemunafikan.</b> <span class=\"fk-src\">HR. Tirmidzi no. 241</span></p>\n  <div class=\"fk-task-actions\">\n    <button class=\"fk-pill fk-pill-done\" data-act=\"done\"><i data-i=\"check\" class=\"sm\"></i>Dikerjakan</button>\n    <button class=\"fk-pill fk-pill-skip\" data-act=\"skip\">Lewati dulu</button>\n    <button class=\"fk-link\">Dalil<i data-i=\"arrow-right\" class=\"sm\"></i></button>\n  </div>\n</article>";
+  var Q=[['Sholat Ashar berjamaah.','Ashar · 15:21'],['Dzikir petang.','Setelah Ashar'],['Sholat Maghrib.','Maghrib · 17:55']];
+  Falak.taskDemo(document.getElementById('holo-demo'),Q,function(t){
+    if(!t) return '<div class="fk-empty" style="padding:16px"><div class="khatam-wrap"><i data-khatam class="k"></i><i data-i="check"></i></div><p class="fk-title">Alhamdulillah, semua sudah.</p><button class="fk-btn fk-btn-glass sm" data-act="reset">Ulangi</button></div>';
+    return T.replace('Sholat Ashar berjamaah.',t[0]).replace('Ashar · 15:21',t[1]);
+  });
+  var p=document.getElementById('pill-demo');
+  p.addEventListener('click',function(){p.classList.remove('is-done');void p.offsetWidth;p.classList.add('is-done');});
+})();
+</script>

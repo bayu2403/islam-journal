@@ -1,0 +1,229 @@
+const fs = require('fs');
+const tokcss = require('../tokcss.js');
+const palette = require('../palette.js');
+const tok = JSON.parse(fs.readFileSync('project/tokens.json', 'utf8'));
+const bundleCss = fs.readFileSync('project/components/bundle.css', 'utf8').replace(/^@import[^\n]*\n/, '');
+const bundleJs = fs.readFileSync('project/components/bundle.js', 'utf8');
+const FONTS = 'https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500&family=Lora:ital,wght@0,500;0,600;0,700;1,500&display=swap';
+
+const css = `
+.ql { background: var(--background); color: var(--foreground); font-family: var(--font-sans); font-size: 15px; line-height: 1.6; }
+.ql *, .ql *::before, .ql *::after { box-sizing: border-box; }
+.ql-wrap { max-width: 1120px; margin: 0 auto; padding-inline: max(16px, 4vw); }
+.ql a { color: inherit; }
+.ql-nav { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 10; background: color-mix(in oklch, var(--background) 92%, transparent); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); border-bottom: 1px solid var(--border); }
+.ql-nav .ql-wrap { display: flex; align-items: center; gap: 24px; height: 64px; }
+.ql-mark { font: 700 19px/1 var(--font-serif); text-decoration: none; display: inline-flex; align-items: center; gap: 10px; }
+.ql-mark .dot { width: 26px; height: 26px; border-radius: 9px 9px 13px 13px; background: var(--card-inverse); display: grid; place-items: center; color: var(--card-inverse-foreground); }
+.ql-links { display: flex; gap: 24px; margin-left: auto; font-size: 14px; }
+.ql-links a { text-decoration: none; color: var(--muted-foreground); }
+.ql-links a:hover { color: var(--foreground); }
+.ql-nav .mb-btn { margin-left: 8px; }
+.ql-hero { padding-block: 72px 88px; display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 56px; align-items: center; }
+.ql-eyebrow { font: 600 11px/14px var(--font-sans); letter-spacing: 0.14em; text-transform: uppercase; color: var(--primary); display: inline-flex; gap: 10px; align-items: center; }
+.ql-eyebrow::before { content: ""; width: 24px; height: 1px; background: currentColor; }
+.ql-h1 { font: 700 clamp(38px, 5.4vw, 60px)/1.08 var(--font-serif); letter-spacing: -0.015em; margin: 18px 0 20px; text-wrap: balance; }
+.ql-h1 em { font-style: italic; font-weight: 500; color: var(--primary); }
+.ql-lead { font-size: 18px; line-height: 1.6; color: var(--muted-foreground); max-width: 34em; margin: 0 0 32px; }
+.ql-ctas { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
+.ql-note { margin-top: 18px; font-size: 13px; color: var(--muted-foreground); }
+.ql-dates { display: flex; gap: 18px; margin-top: 36px; padding-top: 20px; border-top: 1px solid var(--border); font-size: 13px; color: var(--muted-foreground); flex-wrap: wrap; }
+.ql-dates b { display: block; font: 600 16px/1.3 var(--font-serif); color: var(--foreground); }
+.ql-phone-wrap { display: flex; justify-content: center; }
+.ql-phone { width: 360px; max-width: 100%; border-radius: 36px; border: 1px solid var(--border); background: var(--background); padding: 28px 16px 20px; display: flex; flex-direction: column; gap: 16px; box-shadow: 0 30px 60px -30px color-mix(in oklch, var(--foreground) 35%, transparent); }
+.ql-sect { padding-block: 88px; border-top: 1px solid var(--border); }
+.ql-sect-head { max-width: 40em; margin-bottom: 44px; }
+.ql-h2 { font: 700 clamp(28px, 3.4vw, 38px)/1.15 var(--font-serif); margin: 14px 0 12px; text-wrap: balance; letter-spacing: -0.01em; }
+.ql-sect-head p { color: var(--muted-foreground); margin: 0; font-size: 16px; }
+.ql-princ { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+.ql-princ article { display: flex; flex-direction: column; gap: 16px; }
+.ql-princ .demo { min-height: 188px; display: flex; flex-direction: column; justify-content: center; }
+.ql-princ h3 { font: 700 20px/1.3 var(--font-serif); margin: 0; }
+.ql-princ p { margin: 0; color: var(--muted-foreground); }
+.ql-feat { display: grid; grid-template-columns: repeat(3, 1fr); border-top: 1px solid var(--border); border-left: 1px solid var(--border); }
+.ql-feat div { padding: 28px 24px; border-right: 1px solid var(--border); border-bottom: 1px solid var(--border); display: flex; flex-direction: column; gap: 10px; }
+.ql-feat .ic { width: 36px; height: 36px; border-radius: var(--radius-md); background: var(--secondary); color: var(--secondary-foreground); display: grid; place-items: center; }
+.ql-feat h3 { font: 600 16px/1.35 var(--font-sans); margin: 4px 0 0; }
+.ql-feat p { margin: 0; font-size: 14px; color: var(--muted-foreground); }
+.ql-steps { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; counter-reset: s; }
+.ql-steps li { counter-increment: s; display: flex; flex-direction: column; gap: 10px; }
+.ql-steps li::before { content: counter(s); font: 700 44px/1 var(--font-serif); color: var(--primary); }
+.ql-steps h3 { font: 700 19px/1.3 var(--font-serif); margin: 0; }
+.ql-steps p { margin: 0; color: var(--muted-foreground); }
+.ql-pal { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center; }
+.ql-swatches { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; }
+.ql-sw { border-radius: var(--radius-xl); border: 1px solid var(--border); overflow: hidden; background: var(--card); text-align: left; padding: 0; cursor: pointer; font: inherit; color: inherit; }
+.ql-sw[aria-pressed="true"] { outline: 2px solid var(--ring); outline-offset: 3px; }
+.ql-sw .bars { display: flex; height: 64px; }
+.ql-sw .bars span { flex: 1; }
+.ql-sw .lbl { display: block; padding: 12px 14px; font-size: 13px; font-weight: 500; }
+.ql-faq { max-width: 760px; }
+.ql-faq details { border-bottom: 1px solid var(--border); padding: 20px 0; }
+.ql-faq summary { cursor: pointer; list-style: none; display: flex; justify-content: space-between; gap: 16px; font: 600 17px/1.4 var(--font-serif); }
+.ql-faq summary::-webkit-details-marker { display: none; }
+.ql-faq summary::after { content: "+"; font: 400 22px/1 var(--font-sans); color: var(--muted-foreground); transition: transform var(--duration-fast) ease-out; }
+.ql-faq details[open] summary::after { transform: rotate(45deg); }
+.ql-faq p { margin: 12px 0 0; color: var(--muted-foreground); max-width: 60ch; }
+.ql-cta { margin-block: 24px 88px; background: var(--secondary); color: var(--secondary-foreground); border-radius: var(--radius-4xl); padding: clamp(32px, 6vw, 72px); display: grid; grid-template-columns: 1.4fr 1fr; gap: 32px; align-items: center; }
+.ql-cta .ql-h2 { margin-top: 0; }
+.ql-cta p { margin: 0; }
+.ql-cta .mb-arabic { text-align: right; color: var(--secondary-foreground); }
+.ql-foot { border-top: 1px solid var(--border); padding-block: 32px 48px; font-size: 13px; color: var(--muted-foreground); }
+.ql-foot .ql-wrap { display: flex; flex-wrap: wrap; gap: 16px 32px; justify-content: space-between; align-items: center; }
+.ql-switch { display: flex; gap: 8px; flex-wrap: wrap; }
+@media (max-width: 880px) {
+  .ql-hero, .ql-pal, .ql-cta { grid-template-columns: 1fr; }
+  .ql-princ, .ql-feat, .ql-steps { grid-template-columns: 1fr; }
+  .ql-links { display: none; }
+  .ql-nav .mb-btn { margin-left: auto; }
+  .ql-hero { padding-block: 40px 56px; }
+  .ql-sect { padding-block: 56px; }
+}
+@media (min-width: 881px) and (max-width: 1040px) { .ql-feat { grid-template-columns: repeat(2, 1fr); } }
+`;
+
+const swatch = (id, name) => {
+  const c = n => { const t = tok.color.tokens.find(x => x.name === n); return t.value[id]; };
+  return `<button class="ql-sw" data-set-g="${id.split('-')[0]}" data-set-m="${id.split('-')[1]}" aria-label="Pakai tema ${name}"><span class="bars"><span style="background:${c('background')}"></span><span style="background:${c('primary')}"></span><span style="background:${c('accent')}"></span><span style="background:${c('card-inverse')}"></span><span style="background:${c('reward')}"></span></span><span class="lbl">${name}</span></button>`;
+};
+
+const body = `<div class="ql mb">
+<header class="ql-nav"><div class="ql-wrap">
+  <a class="ql-mark" href="#top"><span class="dot"><i data-i="landmark" class="sm"></i></span>Muslim Berislam</a>
+  <nav class="ql-links" aria-label="Halaman"><a href="#prinsip">Prinsip</a><a href="#fitur">Fitur</a><a href="#cara">Cara kerja</a><a href="#tanya">Tanya jawab</a></nav>
+  <a class="mb-btn mb-btn-primary" href="#mulai">Mulai sekarang</a>
+</div></header>
+
+<main id="top">
+<section class="ql-wrap ql-hero">
+  <div>
+    <span class="ql-eyebrow">Pendamping ibadah harian</span>
+    <h1 class="ql-h1">Satu langkah kecil, <em>di waktu yang tepat.</em></h1>
+    <p class="ql-lead">Muslim Berislam menunjukkan satu hal saja yang perlu kamu kerjakan sekarang — diurutkan menurut waktu sholat yang sebenarnya, lengkap dengan dalilnya. Tanpa daftar panjang, tanpa rasa bersalah.</p>
+    <div class="ql-ctas"><a class="mb-btn mb-btn-primary lg" href="#mulai">Mulai sebagai tamu</a><a class="mb-btn mb-btn-outline lg" href="#cara">Lihat cara kerjanya</a></div>
+    <p class="ql-note">Tanpa daftar akun. Simpan dengan email kapan saja — catatanmu ikut pindah.</p>
+    <div class="ql-dates"><span><b>Sabtu, 26 Juli 2025</b>Masehi</span><span><b>1 Safar 1447 H</b>Hijriah</span><span><b>Ashar · 15:21</b>Sholat berikutnya</span></div>
+  </div>
+  <div class="ql-phone-wrap"><div class="ql-phone" aria-label="Contoh tampilan Beranda">
+    <div><h2 class="mb-display" style="font-size:24px;line-height:30px">Assalamu'alaikum, Jessica</h2><p class="mb-small mb-muted" style="margin:4px 0 0">Ayo mulai hari dengan berdoa.</p></div>
+    <section class="mb-panel" style="padding:16px">
+      <div class="mb-dates"><div class="mb-date"><span class="n" style="font-size:32px;line-height:32px">26</span><span class="m">Juli 2025</span></div><hr><div class="mb-date hijri"><span class="n" style="font-size:32px;line-height:32px">1</span><span class="m">Safar 1447</span></div></div>
+      <article class="mb-task mb-task-akhirat" style="padding:16px">
+        <div class="mb-task-top"><span class="mb-eyebrow"><span class="mb-eyebrow-chip"><i data-i="landmark" class="sm"></i></span>Akhirat</span><span class="mb-task-time">Ashar · 15:21</span></div>
+        <h3 class="mb-h3">Sholat Ashar berjamaah.</h3>
+        <p class="mb-task-sum">Jaga takbir pertama 40 hari, dicatat <b>2 pembebasan.</b> <span class="mb-src">(HR. Tirmidzi no. 241)</span></p>
+        <div class="mb-task-actions"><button class="mb-pill mb-pill-done"><i data-i="check" class="sm"></i>Dikerjakan</button><button class="mb-pill mb-pill-skip">Lewati dulu</button></div>
+      </article>
+      <article class="mb-task mb-task-dunia" style="padding:16px">
+        <div class="mb-task-top"><span class="mb-eyebrow"><span class="mb-eyebrow-chip"><i data-i="activity" class="sm"></i></span>Dunia</span><span class="mb-task-time">16:30</span></div>
+        <h3 class="mb-h3">Olahraga 30 menit.</h3>
+      </article>
+    </section>
+  </div></div>
+</section>
+
+<section class="ql-sect" id="prinsip"><div class="ql-wrap">
+  <div class="ql-sect-head"><span class="ql-eyebrow">Prinsip</span><h2 class="ql-h2">Dibuat untuk ketenangan, bukan untuk dikejar.</h2><p>Aplikasi ibadah tidak perlu terasa seperti game. Tiga hal ini kami jaga di setiap layar.</p></div>
+  <div class="ql-princ">
+    <article><div class="demo mb-card" style="gap:10px;display:flex;flex-direction:column">
+      <span class="mb-eyebrow mb-muted">Sekarang</span><p class="mb-title">Sholat Ashar berjamaah</p><p class="mb-small mb-muted" style="margin:0">Berikutnya: Dzikir petang, lalu Maghrib 17:55.</p></div>
+      <h3>Satu tugas pada satu waktu</h3><p>Beranda hanya menampilkan tugas berikutnya, diurutkan oleh jadwal sholat — bukan dinding daftar yang menunggu dicentang.</p></article>
+    <article><div class="demo mb-card" style="gap:8px;display:flex;flex-direction:column">
+      <p class="mb-arabic md" dir="rtl" lang="ar" style="font-size:20px;line-height:36px">كُتِبَتْ لَهُ بَرَاءَتَانِ</p><p class="mb-small" style="margin:0">“…dicatat baginya dua pembebasan.”</p><p class="mb-small" style="margin:0"><span class="mb-src-ink">HR. Tirmidzi no. 241</span></p></div>
+      <h3>Dalil utuh, bukan potongan</h3><p>Setiap amalan akhirat membawa hadits lengkap — teks Arab, terjemahan, dan sumbernya. Tidak pernah dipotong demi tata letak.</p></article>
+    <article><div class="demo mb-card" style="gap:12px;display:flex;flex-direction:column;align-items:flex-start">
+      <div class="mb-task-actions" style="margin:0"><button class="mb-pill mb-pill-done"><i data-i="check" class="sm"></i>Dikerjakan</button><button class="mb-pill mb-pill-skip">Lewati dulu</button></div><span class="mb-chip">Dilewati</span></div>
+      <h3>Melewati itu boleh</h3><p>"Lewati dulu" sama besarnya dengan "Dikerjakan". Tidak ada warna merah, tidak ada streak yang putus. Kamu bisa menandainya nanti.</p></article>
+  </div>
+</div></section>
+
+<section class="ql-sect" id="fitur"><div class="ql-wrap">
+  <div class="ql-sect-head"><span class="ql-eyebrow">Fitur</span><h2 class="ql-h2">Semua yang dibutuhkan untuk hari yang lurus.</h2></div>
+  <div class="ql-feat">
+    <div><span class="ic"><i data-i="clock"></i></span><h3>Jadwal sholat sesuai kotamu</h3><p>Dihitung dengan metode KEMENAG untuk kota di profilmu. Tetap berjalan dengan waktu perkiraan saat offline.</p></div>
+    <div><span class="ic"><i data-i="book-open"></i></span><h3>Masehi dan Hijriah berdampingan</h3><p>Setiap tanggal ditampilkan dalam dua kalender, sama besar. Tidak ada yang jadi catatan kaki.</p></div>
+    <div><span class="ic"><i data-i="landmark"></i></span><h3>Template ibadah bersumber</h3><p>Solat fardhu, tahajud, dzikir pagi-petang — masing-masing dengan manfaat singkat dan dalil sahih.</p></div>
+    <div><span class="ic"><i data-i="activity"></i></span><h3>Todo dunia di tempat yang sama</h3><p>Olahraga, pekerjaan, keluarga. Atur jam dan hari ulangnya, tampil di sela jadwal ibadah.</p></div>
+    <div><span class="ic"><i data-i="pen-line"></i></span><h3>Cerita hari ini</h3><p>Satu halaman jurnal per hari untuk bersyukur dan merenung. Tersimpan otomatis.</p></div>
+    <div><span class="ic"><i data-i="rotate-ccw"></i></span><h3>Doa sesuai waktu</h3><p>Rekomendasi doa berganti mengikuti waktu — pagi, siang, petang, malam — lengkap dengan artinya.</p></div>
+  </div>
+</div></section>
+
+<section class="ql-sect" id="cara"><div class="ql-wrap">
+  <div class="ql-sect-head"><span class="ql-eyebrow">Cara kerja</span><h2 class="ql-h2">Beberapa detik, beberapa kali sehari.</h2></div>
+  <ol class="ql-steps">
+    <li><h3>Buka saat ada jeda</h3><p>Setelah subuh, di sela kerja, atau sebelum tidur. Beranda langsung menunjukkan satu hal berikutnya.</p></li>
+    <li><h3>Kerjakan atau lewati</h3><p>Ketuk salah satu. Kartu berikutnya muncul dengan tenang. Yang terlewat bisa ditandai belakangan.</p></li>
+    <li><h3>Tutup hari dengan cerita</h3><p>Tulis satu-dua kalimat di Profil. Riwayat ibadahmu tersusun sendiri, tanpa angka yang menghakimi.</p></li>
+  </ol>
+</div></section>
+
+<section class="ql-sect" id="tema"><div class="ql-wrap ql-pal">
+  <div><span class="ql-eyebrow">Tema</span><h2 class="ql-h2">Ikhwan atau Akhwat, terang atau gelap.</h2><p class="ql-lead" style="margin:0">Empat palet dengan struktur yang sama: zamrud dan emas untuk Ikhwan, plum dan sampanye untuk Akhwat. Coba ganti — halaman ini ikut berubah.</p></div>
+  <div class="ql-swatches">${swatch('ikhwan-light', 'Ikhwan · Terang')}${swatch('ikhwan-dark', 'Ikhwan · Gelap')}${swatch('akhwat-light', 'Akhwat · Terang')}${swatch('akhwat-dark', 'Akhwat · Gelap')}</div>
+</div></section>
+
+<section class="ql-sect" id="tanya"><div class="ql-wrap">
+  <div class="ql-sect-head"><span class="ql-eyebrow">Tanya jawab</span><h2 class="ql-h2">Yang sering ditanyakan.</h2></div>
+  <div class="ql-faq">
+    <details open><summary>Apakah harus membuat akun?</summary><p>Tidak. Kamu langsung masuk sebagai tamu dan semua fitur bisa dipakai. Kapan pun mau, tambahkan email dan kata sandi di Profil — seluruh data tamu tetap tersimpan.</p></details>
+    <details><summary>Dari mana jadwal sholatnya?</summary><p>Dari layanan Aladhan dengan metode KEMENAG, berdasarkan kota dan negara di profilmu. Jika layanan tidak bisa dihubungi, aplikasi memakai waktu perkiraan dan memberi tahu kamu.</p></details>
+    <details><summary>Bagaimana kalau aku melewatkan sesuatu?</summary><p>Tidak apa-apa. Buka "Semua task hari ini" dan tandai kapan saja. Tidak ada streak yang putus dan tidak ada pengingat yang menyalahkan.</p></details>
+    <details><summary>Apakah hadits yang ditampilkan dipotong?</summary><p>Di kartu hanya ada ringkasan manfaat dan sumbernya. Ketuk kartu untuk membaca dalil lengkap: teks Arab, terjemahan, dan rujukan.</p></details>
+    <details><summary>Bahasa apa saja yang tersedia?</summary><p>Bahasa Indonesia, English, dan Bahasa Melayu.</p></details>
+  </div>
+</div></section>
+
+<section class="ql-wrap" id="mulai"><div class="ql-cta">
+  <div><h2 class="ql-h2">Mulai dari satu langkah hari ini.</h2><p>Tanpa daftar, tanpa iklan yang mengejar. Buka, kerjakan, tenang.</p><div class="ql-ctas" style="margin-top:24px"><a class="mb-btn mb-btn-primary lg" href="#top">Mulai sebagai tamu</a></div></div>
+  <div><p class="mb-arabic" dir="rtl" lang="ar">أَحَبُّ الأَعْمَالِ إِلَى اللَّهِ أَدْوَمُهَا وَإِنْ قَلَّ</p><p class="mb-small" style="text-align:right;margin:0">“Amalan yang paling dicintai Allah adalah yang paling rutin, meskipun sedikit.” — HR. Bukhari dan Muslim</p></div>
+</div></section>
+</main>
+
+<footer class="ql-foot"><div class="ql-wrap">
+  <span>Muslim Berislam · The Quiet Ritual</span>
+  <div class="ql-switch">
+    <div class="mb-seg" aria-label="Gender"><button data-set-g="ikhwan">Ikhwan</button><button data-set-g="akhwat">Akhwat</button></div>
+    <div class="mb-seg" aria-label="Mode"><button data-set-m="light"><i data-i="sun" class="sm"></i>Terang</button><button data-set-m="dark"><i data-i="moon" class="sm"></i>Gelap</button></div>
+  </div>
+</div></footer>
+</div>`;
+
+// Preview inside the design system (tokens + bundle preloaded by the frame).
+fs.mkdirSync('project/components/LandingPage', { recursive: true });
+fs.writeFileSync('project/components/LandingPage/preview.html', `<!-- @dsCard group="Screens" height=4000 width=1280 page -->
+<!doctype html>
+<html lang="id">
+<head><meta charset="utf-8"><title>LandingPage</title><style>${css}</style></head>
+<body>
+${body}
+<script>
+MB.icons();
+${palette('data-theme', false)}
+</script>
+</body>
+</html>
+`);
+
+// Standalone page.
+fs.writeFileSync('landing-quiet-ritual.html', `<title>Muslim Berislam</title>
+<meta name="description" content="Pendamping ibadah harian yang tenang: satu tugas pada satu waktu, diurutkan jadwal sholat.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="${FONTS}">
+<style>
+${tokcss(tok, 'data-palette')}
+[data-palette$="-dark"] { color-scheme: dark; }
+html, body { background: var(--background); }
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+${bundleCss}
+${css}
+</style>
+${body}
+<script>
+${bundleJs}
+MB.icons();
+${palette('data-palette', true)}
+</script>
+`);
+console.log('quiet landing ok', fs.statSync('landing-quiet-ritual.html').size);

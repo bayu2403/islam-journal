@@ -1,0 +1,21 @@
+<!-- @dsCard group="Beranda" height=560 -->
+<!doctype html>
+<html lang="id">
+<head><meta charset="utf-8"><title>TaskCard</title></head>
+<body>
+<div class="fk fk-ground fk-pv"><div class="fk-pv-col">
+<div id="a"></div>
+<div id="d"></div>
+</div></div>
+<script>
+Falak.boot();
+
+var A=[{title:'Sholat Ashar berjamaah.',time:'Ashar · 15:21'},{title:'Dzikir petang.',time:'Setelah Ashar'},{title:'Sholat Maghrib.',time:'Maghrib · 17:55'}];
+var D=[{title:'Olahraga 30 menit.',time:'16:30',sum:'Badan bugar, mood naik — energi buat ibadah pun ikut penuh.'},{title:'Setor laporan mingguan.',time:'',sum:'Selesaikan sebelum Maghrib, biar malam lebih tenang.'}];
+var AK="<article class=\"fk-task fk-holo\" aria-label=\"Task akhirat berikutnya\" tabindex=\"0\">\n  <i data-khatam></i>\n  <div class=\"fk-task-top\">\n    <span class=\"fk-hud\"><span class=\"fk-tag\"><i data-i=\"landmark\" class=\"sm\"></i></span>Akhirat</span>\n    <span class=\"fk-hud\">Ashar · 15:21</span>\n  </div>\n  <h3 class=\"fk-h3\">Sholat Ashar berjamaah.</h3>\n  <p class=\"fk-task-sum\">Jaga takbir pertama 40 hari, dicatat <b>2 pembebasan: dari neraka &amp; dari kemunafikan.</b> <span class=\"fk-src\">HR. Tirmidzi no. 241</span></p>\n  <div class=\"fk-task-actions\">\n    <button class=\"fk-pill fk-pill-done\" data-act=\"done\"><i data-i=\"check\" class=\"sm\"></i>Dikerjakan</button>\n    <button class=\"fk-pill fk-pill-skip\" data-act=\"skip\">Lewati dulu</button>\n    <button class=\"fk-link\">Dalil<i data-i=\"arrow-right\" class=\"sm\"></i></button>\n  </div>\n</article>", DU="<article class=\"fk-task fk-dunia\" aria-label=\"Task dunia berikutnya\" tabindex=\"0\">\n  <div class=\"fk-task-top\">\n    <span class=\"fk-hud\"><span class=\"fk-tag\"><i data-i=\"activity\" class=\"sm\"></i></span>Dunia</span>\n    <span class=\"fk-hud\">16:30</span>\n  </div>\n  <h3 class=\"fk-h3\">Olahraga 30 menit.</h3>\n  <p class=\"fk-task-sum\">Badan bugar, mood naik — energi buat ibadah pun ikut penuh.</p>\n  <div class=\"fk-task-actions\">\n    <button class=\"fk-pill fk-pill-done\" data-act=\"done\"><i data-i=\"check\" class=\"sm\"></i>Dikerjakan</button>\n    <button class=\"fk-pill fk-pill-skip\" data-act=\"skip\">Lewati dulu</button>\n  </div>\n</article>";
+function empty(){return '<div class="fk-empty fk-glass" style="border-radius:var(--radius-xl)"><div class="khatam-wrap"><i data-khatam class="k"></i><i data-i="check"></i></div><p class="fk-title">Alhamdulillah, semua sudah.</p><button class="fk-btn fk-btn-glass sm" data-act="reset">Ulangi demo</button></div>';}
+Falak.taskDemo(document.getElementById('a'),A,function(t){return t?AK.replace('Sholat Ashar berjamaah.',t.title).replace('Ashar · 15:21',t.time):empty();});
+Falak.taskDemo(document.getElementById('d'),D,function(t){return t?DU.replace('Olahraga 30 menit.',t.title).replace('16:30',t.time).replace('Badan bugar, mood naik — energi buat ibadah pun ikut penuh.',t.sum):empty();});
+</script>
+</body>
+</html>

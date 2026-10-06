@@ -1,0 +1,32 @@
+<!-- @dsCard group="Beranda" height=360 -->
+<!doctype html>
+<html lang="id">
+<head><meta charset="utf-8"><title>PrayerOrbit</title></head>
+<body>
+<div class="fk fk-ground fk-pv"><div class="fk-pv-col"><section class="fk-orbit fk-glass fk-enter" style="--i:1;border-radius:var(--radius-xl);padding:18px" aria-label="Waktu sholat hari ini">
+  <div class="fk-orbit-dates">
+    <div><span class="fk-hud fk-muted">Masehi</span><span class="v">Sab, 26 Juli 2025</span></div>
+    <div><span class="fk-hud fk-muted">Hijriah</span><span class="v">1 Safar 1447</span></div>
+  </div>
+  <div style="position:relative">
+    <svg class="arc" viewBox="0 0 340 206" role="img" aria-label="Posisi matahari: 14:05, antara Dzuhur dan Ashar">
+  <line class="horizon" x1="0" y1="176" x2="340" y2="176"/>
+  <path class="track" d="M20 176 A150 150 0 0 1 320 176"/>
+  <path class="prog" pathLength="100" stroke-dasharray="100" d="M20 176 A150 150 0 0 1 238.1 42.4"/>
+  <circle class="node past" cx="20" cy="176" r="5"/><text class="lbl past" x="20" y="196" text-anchor="middle" dominant-baseline="middle">Subuh</text>
+  <circle class="node past" cx="172.7" cy="26" r="5"/><text class="lbl past" x="173" y="10" text-anchor="middle" dominant-baseline="middle">Dzuhur</text>
+  <circle class="node next" cx="271.9" cy="66" r="6"/><text class="lbl next" x="282.8" y="54.2" text-anchor="middle" dominant-baseline="middle">Ashar</text>
+  <circle class="node " cx="314.8" cy="136.7" r="5"/><text class="lbl " x="330.2" y="132.6" text-anchor="middle" dominant-baseline="middle">Maghrib</text>
+  <circle class="node " cx="320" cy="176" r="5"/><text class="lbl " x="320" y="196" text-anchor="middle" dominant-baseline="middle">Isya</text>
+  <circle class="bloom" cx="238.1" cy="42.4" r="12"/>
+  <circle class="sun" cx="238.1" cy="42.4" r="7"/>
+</svg>
+    <div class="fk-count"><span class="fk-hud fk-muted">Menuju Ashar · 15:21</span><span class="t" id="cd">01:16:00</span></div>
+  </div>
+</section></div></div>
+<script>
+Falak.boot();
+Falak.countdown(document.getElementById('cd'), 4560);
+</script>
+</body>
+</html>

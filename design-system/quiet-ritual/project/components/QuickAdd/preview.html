@@ -1,0 +1,22 @@
+<!-- @dsCard group="Jurnal" height=640 -->
+<!doctype html>
+<html lang="id">
+<head><meta charset="utf-8"><title>QuickAdd</title></head>
+<body>
+<div class="mb" style="height:640px;display:flex;flex-direction:column"><div class="mb-scrim" style="flex:1;padding-top:24px">
+<form class="mb-sheet" role="dialog" aria-modal="true" aria-labelledby="qa" onsubmit="event.preventDefault()">
+  <div class="mb-grab"></div>
+  <div class="mb-sheet-head"><h2 class="mb-h1" id="qa">Tambah todo dunia</h2><button type="button" class="mb-btn mb-btn-ghost icon" aria-label="Tutup"><i data-i="x"></i></button></div>
+  <div class="mb-sheet-body">
+    <div class="mb-field"><label class="mb-label" for="qa-t">Judul</label><input class="mb-input" id="qa-t" value="Olahraga 30 menit"></div>
+    <div class="mb-field"><label class="mb-label" for="qa-w">Waktu <span class="mb-muted">(opsional)</span></label><input class="mb-input" id="qa-w" type="time" value="16:30"></div>
+    <div class="mb-field"><span class="mb-label" id="rp">Ulangi</span>
+      <div class="mb-seg full" role="tablist" aria-labelledby="rp"><button type="button" role="tab" aria-selected="false">Setiap hari</button><button type="button" role="tab" aria-selected="true">Hari tertentu</button></div>
+      <div class="mb-dow" aria-label="Pilih hari"><button type="button" aria-pressed="true" aria-label="Senin">S</button><button type="button" aria-pressed="false" aria-label="Selasa">S</button><button type="button" aria-pressed="true" aria-label="Rabu">R</button><button type="button" aria-pressed="false" aria-label="Kamis">K</button><button type="button" aria-pressed="true" aria-label="Jumat">J</button><button type="button" aria-pressed="false" aria-label="Sabtu">S</button><button type="button" aria-pressed="false" aria-label="Ahad">A</button></div>
+      <span class="mb-help">Senin, Rabu, Jumat</span></div>
+  </div>
+  <div class="mb-sheet-foot"><button type="button" class="mb-btn mb-btn-outline lg">Batal</button><button class="mb-btn mb-btn-primary lg">Simpan</button></div>
+</form></div></div>
+<script>MB.icons();</script>
+</body>
+</html>

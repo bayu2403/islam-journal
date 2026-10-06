@@ -1,0 +1,23 @@
+<!-- @dsCard group="Foundations" height=420 -->
+<!doctype html>
+<html lang="id">
+<head><meta charset="utf-8"><title>Motion</title><style>.mv{display:flex;flex-direction:column;gap:12px;align-items:flex-start}.box{width:56px;height:56px;border-radius:16px;background:var(--primary);box-shadow:0 0 24px var(--glow)}</style></head>
+<body>
+<div class="fk fk-ground fk-pv">
+<div class="fk-pv-row" style="align-items:stretch">
+  <div class="fk-glass mv" style="flex:1;min-width:160px"><span class="fk-hud fk-muted">Enter · 420ms expo</span><div class="box fk-enter" id="m1"></div><button class="fk-btn fk-btn-glass sm" data-replay="m1">Putar</button></div>
+  <div class="fk-glass mv" style="flex:1;min-width:160px"><span class="fk-hud fk-muted">Exit up · done</span><div class="box" id="m2"></div><button class="fk-btn fk-btn-glass sm" data-out="m2" data-c="fk-leave-up">Putar</button></div>
+  <div class="fk-glass mv" style="flex:1;min-width:160px"><span class="fk-hud fk-muted">Exit side · skip</span><div class="box" id="m3"></div><button class="fk-btn fk-btn-glass sm" data-out="m3" data-c="fk-leave-side">Putar</button></div>
+</div>
+<div class="fk-pv-row" style="align-items:stretch">
+  <div class="fk-task fk-holo" style="flex:1;min-width:200px;min-height:130px;cursor:default"><i data-khatam></i><span class="fk-hud">Beam · 6s</span><span class="fk-small" style="color:var(--card-inverse-muted)">Conic light on the Akhirat edge</span></div>
+  <div class="fk-glass mv" style="flex:1;min-width:200px"><span class="fk-hud fk-muted">Ambient · 18s</span><div class="fk-ground" style="height:80px;border-radius:12px;border:1px solid var(--border)"></div></div>
+</div>
+</div>
+<script>
+Falak.boot();
+document.querySelectorAll('[data-replay]').forEach(function(b){b.onclick=function(){var e=document.getElementById(b.dataset.replay);e.classList.remove('fk-enter');void e.offsetWidth;e.classList.add('fk-enter');};});
+document.querySelectorAll('[data-out]').forEach(function(b){b.onclick=function(){var e=document.getElementById(b.dataset.out);e.className='box '+b.dataset.c;setTimeout(function(){e.className='box fk-enter';},700);};});
+</script>
+</body>
+</html>

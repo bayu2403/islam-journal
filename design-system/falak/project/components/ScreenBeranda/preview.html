@@ -1,0 +1,289 @@
+<!-- @dsCard group="Screens" height=1060 width=1760 page -->
+<!doctype html>
+<html lang="id">
+<head><meta charset="utf-8"><title>ScreenBeranda</title><style>.wall{display:flex;gap:28px;padding:28px;align-items:flex-start;background:var(--background)}.cap{font:500 11px/14px var(--font-mono);letter-spacing:.14em;text-transform:uppercase;color:var(--muted-foreground);margin:0 0 10px}</style></head>
+<body>
+<div class="fk wall">
+<div data-theme="ikhwan-dark" class="fk"><p class="cap">Ikhwan · Malam</p><div class="fk-phone fk-ground"><div class="fk-phone-scroll">
+  <header class="fk-enter" style="--i:0;display:flex;flex-direction:column;gap:8px">
+  <span class="fk-hud fk-muted">14:05 · Sabtu</span>
+  <h1 class="fk-display">Assalamu'alaikum, <span class="fk-grad">Jessica</span></h1>
+</header>
+  <section class="fk-orbit fk-glass fk-enter" style="--i:1;border-radius:var(--radius-xl);padding:18px" aria-label="Waktu sholat hari ini">
+  <div class="fk-orbit-dates">
+    <div><span class="fk-hud fk-muted">Masehi</span><span class="v">Sab, 26 Juli 2025</span></div>
+    <div><span class="fk-hud fk-muted">Hijriah</span><span class="v">1 Safar 1447</span></div>
+  </div>
+  <div style="position:relative">
+    <svg class="arc" viewBox="0 0 340 206" role="img" aria-label="Posisi matahari: 14:05, antara Dzuhur dan Ashar">
+  <line class="horizon" x1="0" y1="176" x2="340" y2="176"/>
+  <path class="track" d="M20 176 A150 150 0 0 1 320 176"/>
+  <path class="prog" pathLength="100" stroke-dasharray="100" d="M20 176 A150 150 0 0 1 238.1 42.4"/>
+  <circle class="node past" cx="20" cy="176" r="5"/><text class="lbl past" x="20" y="196" text-anchor="middle" dominant-baseline="middle">Subuh</text>
+  <circle class="node past" cx="172.7" cy="26" r="5"/><text class="lbl past" x="173" y="10" text-anchor="middle" dominant-baseline="middle">Dzuhur</text>
+  <circle class="node next" cx="271.9" cy="66" r="6"/><text class="lbl next" x="282.8" y="54.2" text-anchor="middle" dominant-baseline="middle">Ashar</text>
+  <circle class="node " cx="314.8" cy="136.7" r="5"/><text class="lbl " x="330.2" y="132.6" text-anchor="middle" dominant-baseline="middle">Maghrib</text>
+  <circle class="node " cx="320" cy="176" r="5"/><text class="lbl " x="320" y="196" text-anchor="middle" dominant-baseline="middle">Isya</text>
+  <circle class="bloom" cx="238.1" cy="42.4" r="12"/>
+  <circle class="sun" cx="238.1" cy="42.4" r="7"/>
+</svg>
+    <div class="fk-count"><span class="fk-hud fk-muted">Menuju Ashar · 15:21</span><span class="t" id="cd0">01:16:00</span></div>
+  </div>
+</section>
+  <section class="fk-sect fk-enter" style="--i:2">
+    <div class="fk-sect-head"><h2 class="fk-h2">Berikutnya</h2><a class="fk-link" href="#">Semua task<i data-i="arrow-right" class="sm"></i></a></div>
+    <article class="fk-task fk-holo" aria-label="Task akhirat berikutnya" tabindex="0">
+  <i data-khatam></i>
+  <div class="fk-task-top">
+    <span class="fk-hud"><span class="fk-tag"><i data-i="landmark" class="sm"></i></span>Akhirat</span>
+    <span class="fk-hud">Ashar · 15:21</span>
+  </div>
+  <h3 class="fk-h3">Sholat Ashar berjamaah.</h3>
+  <p class="fk-task-sum">Jaga takbir pertama 40 hari, dicatat <b>2 pembebasan: dari neraka &amp; dari kemunafikan.</b> <span class="fk-src">HR. Tirmidzi no. 241</span></p>
+  <div class="fk-task-actions">
+    <button class="fk-pill fk-pill-done" data-act="done"><i data-i="check" class="sm"></i>Dikerjakan</button>
+    <button class="fk-pill fk-pill-skip" data-act="skip">Lewati dulu</button>
+    <button class="fk-link">Dalil<i data-i="arrow-right" class="sm"></i></button>
+  </div>
+</article>
+    <article class="fk-task fk-dunia" aria-label="Task dunia berikutnya" tabindex="0">
+  <div class="fk-task-top">
+    <span class="fk-hud"><span class="fk-tag"><i data-i="activity" class="sm"></i></span>Dunia</span>
+    <span class="fk-hud">16:30</span>
+  </div>
+  <h3 class="fk-h3">Olahraga 30 menit.</h3>
+  <p class="fk-task-sum">Badan bugar, mood naik — energi buat ibadah pun ikut penuh.</p>
+  <div class="fk-task-actions">
+    <button class="fk-pill fk-pill-done" data-act="done"><i data-i="check" class="sm"></i>Dikerjakan</button>
+    <button class="fk-pill fk-pill-skip" data-act="skip">Lewati dulu</button>
+  </div>
+</article>
+  </section>
+  <div class="fk-enter" style="--i:3"><article class="fk-dua fk-glass" aria-label="Rekomendasi doa">
+  <div class="fk-sect-head"><span class="fk-hud fk-muted">Doa · waktu siang</span></div>
+  <p class="fk-arabic md" dir="rtl" lang="ar">رَبَّنَا آتِنَا فِي الدُّنْيَا حَسَنَةً وَفِي الْآخِرَةِ حَسَنَةً وَقِنَا عَذَابَ النَّارِ</p>
+  
+  <p class="meaning">Ya Tuhan kami, berilah kami kebaikan di dunia dan kebaikan di akhirat, dan lindungilah kami dari azab neraka.</p>
+  <span class="fk-data fk-muted">QS. AL-BAQARAH : 201</span>
+</article></div>
+</div>
+<button class="fk-fab" aria-label="Tambah todo dunia"><i data-i="plus"></i></button>
+<nav class="fk-dock" aria-label="Navigasi utama">
+  <a href="#" aria-current="page"><i data-i="orbit"></i>Beranda</a>
+  <a href="#"><i data-i="notebook-pen"></i>Jurnal</a>
+  <a href="#"><i data-i="user"></i>Profil</a>
+</nav></div></div>
+<div data-theme="akhwat-dark" class="fk"><p class="cap">Akhwat · Malam</p><div class="fk-phone fk-ground"><div class="fk-phone-scroll">
+  <header class="fk-enter" style="--i:0;display:flex;flex-direction:column;gap:8px">
+  <span class="fk-hud fk-muted">14:05 · Sabtu</span>
+  <h1 class="fk-display">Assalamu'alaikum, <span class="fk-grad">Jessica</span></h1>
+</header>
+  <section class="fk-orbit fk-glass fk-enter" style="--i:1;border-radius:var(--radius-xl);padding:18px" aria-label="Waktu sholat hari ini">
+  <div class="fk-orbit-dates">
+    <div><span class="fk-hud fk-muted">Masehi</span><span class="v">Sab, 26 Juli 2025</span></div>
+    <div><span class="fk-hud fk-muted">Hijriah</span><span class="v">1 Safar 1447</span></div>
+  </div>
+  <div style="position:relative">
+    <svg class="arc" viewBox="0 0 340 206" role="img" aria-label="Posisi matahari: 14:05, antara Dzuhur dan Ashar">
+  <line class="horizon" x1="0" y1="176" x2="340" y2="176"/>
+  <path class="track" d="M20 176 A150 150 0 0 1 320 176"/>
+  <path class="prog" pathLength="100" stroke-dasharray="100" d="M20 176 A150 150 0 0 1 238.1 42.4"/>
+  <circle class="node past" cx="20" cy="176" r="5"/><text class="lbl past" x="20" y="196" text-anchor="middle" dominant-baseline="middle">Subuh</text>
+  <circle class="node past" cx="172.7" cy="26" r="5"/><text class="lbl past" x="173" y="10" text-anchor="middle" dominant-baseline="middle">Dzuhur</text>
+  <circle class="node next" cx="271.9" cy="66" r="6"/><text class="lbl next" x="282.8" y="54.2" text-anchor="middle" dominant-baseline="middle">Ashar</text>
+  <circle class="node " cx="314.8" cy="136.7" r="5"/><text class="lbl " x="330.2" y="132.6" text-anchor="middle" dominant-baseline="middle">Maghrib</text>
+  <circle class="node " cx="320" cy="176" r="5"/><text class="lbl " x="320" y="196" text-anchor="middle" dominant-baseline="middle">Isya</text>
+  <circle class="bloom" cx="238.1" cy="42.4" r="12"/>
+  <circle class="sun" cx="238.1" cy="42.4" r="7"/>
+</svg>
+    <div class="fk-count"><span class="fk-hud fk-muted">Menuju Ashar · 15:21</span><span class="t" id="cd1">01:16:00</span></div>
+  </div>
+</section>
+  <section class="fk-sect fk-enter" style="--i:2">
+    <div class="fk-sect-head"><h2 class="fk-h2">Berikutnya</h2><a class="fk-link" href="#">Semua task<i data-i="arrow-right" class="sm"></i></a></div>
+    <article class="fk-task fk-holo" aria-label="Task akhirat berikutnya" tabindex="0">
+  <i data-khatam></i>
+  <div class="fk-task-top">
+    <span class="fk-hud"><span class="fk-tag"><i data-i="landmark" class="sm"></i></span>Akhirat</span>
+    <span class="fk-hud">Ashar · 15:21</span>
+  </div>
+  <h3 class="fk-h3">Sholat Ashar berjamaah.</h3>
+  <p class="fk-task-sum">Jaga takbir pertama 40 hari, dicatat <b>2 pembebasan: dari neraka &amp; dari kemunafikan.</b> <span class="fk-src">HR. Tirmidzi no. 241</span></p>
+  <div class="fk-task-actions">
+    <button class="fk-pill fk-pill-done" data-act="done"><i data-i="check" class="sm"></i>Dikerjakan</button>
+    <button class="fk-pill fk-pill-skip" data-act="skip">Lewati dulu</button>
+    <button class="fk-link">Dalil<i data-i="arrow-right" class="sm"></i></button>
+  </div>
+</article>
+    <article class="fk-task fk-dunia" aria-label="Task dunia berikutnya" tabindex="0">
+  <div class="fk-task-top">
+    <span class="fk-hud"><span class="fk-tag"><i data-i="activity" class="sm"></i></span>Dunia</span>
+    <span class="fk-hud">16:30</span>
+  </div>
+  <h3 class="fk-h3">Olahraga 30 menit.</h3>
+  <p class="fk-task-sum">Badan bugar, mood naik — energi buat ibadah pun ikut penuh.</p>
+  <div class="fk-task-actions">
+    <button class="fk-pill fk-pill-done" data-act="done"><i data-i="check" class="sm"></i>Dikerjakan</button>
+    <button class="fk-pill fk-pill-skip" data-act="skip">Lewati dulu</button>
+  </div>
+</article>
+  </section>
+  <div class="fk-enter" style="--i:3"><article class="fk-dua fk-glass" aria-label="Rekomendasi doa">
+  <div class="fk-sect-head"><span class="fk-hud fk-muted">Doa · waktu siang</span></div>
+  <p class="fk-arabic md" dir="rtl" lang="ar">رَبَّنَا آتِنَا فِي الدُّنْيَا حَسَنَةً وَفِي الْآخِرَةِ حَسَنَةً وَقِنَا عَذَابَ النَّارِ</p>
+  
+  <p class="meaning">Ya Tuhan kami, berilah kami kebaikan di dunia dan kebaikan di akhirat, dan lindungilah kami dari azab neraka.</p>
+  <span class="fk-data fk-muted">QS. AL-BAQARAH : 201</span>
+</article></div>
+</div>
+<button class="fk-fab" aria-label="Tambah todo dunia"><i data-i="plus"></i></button>
+<nav class="fk-dock" aria-label="Navigasi utama">
+  <a href="#" aria-current="page"><i data-i="orbit"></i>Beranda</a>
+  <a href="#"><i data-i="notebook-pen"></i>Jurnal</a>
+  <a href="#"><i data-i="user"></i>Profil</a>
+</nav></div></div>
+<div data-theme="ikhwan-light" class="fk"><p class="cap">Ikhwan · Siang</p><div class="fk-phone fk-ground"><div class="fk-phone-scroll">
+  <header class="fk-enter" style="--i:0;display:flex;flex-direction:column;gap:8px">
+  <span class="fk-hud fk-muted">14:05 · Sabtu</span>
+  <h1 class="fk-display">Assalamu'alaikum, <span class="fk-grad">Jessica</span></h1>
+</header>
+  <section class="fk-orbit fk-glass fk-enter" style="--i:1;border-radius:var(--radius-xl);padding:18px" aria-label="Waktu sholat hari ini">
+  <div class="fk-orbit-dates">
+    <div><span class="fk-hud fk-muted">Masehi</span><span class="v">Sab, 26 Juli 2025</span></div>
+    <div><span class="fk-hud fk-muted">Hijriah</span><span class="v">1 Safar 1447</span></div>
+  </div>
+  <div style="position:relative">
+    <svg class="arc" viewBox="0 0 340 206" role="img" aria-label="Posisi matahari: 14:05, antara Dzuhur dan Ashar">
+  <line class="horizon" x1="0" y1="176" x2="340" y2="176"/>
+  <path class="track" d="M20 176 A150 150 0 0 1 320 176"/>
+  <path class="prog" pathLength="100" stroke-dasharray="100" d="M20 176 A150 150 0 0 1 238.1 42.4"/>
+  <circle class="node past" cx="20" cy="176" r="5"/><text class="lbl past" x="20" y="196" text-anchor="middle" dominant-baseline="middle">Subuh</text>
+  <circle class="node past" cx="172.7" cy="26" r="5"/><text class="lbl past" x="173" y="10" text-anchor="middle" dominant-baseline="middle">Dzuhur</text>
+  <circle class="node next" cx="271.9" cy="66" r="6"/><text class="lbl next" x="282.8" y="54.2" text-anchor="middle" dominant-baseline="middle">Ashar</text>
+  <circle class="node " cx="314.8" cy="136.7" r="5"/><text class="lbl " x="330.2" y="132.6" text-anchor="middle" dominant-baseline="middle">Maghrib</text>
+  <circle class="node " cx="320" cy="176" r="5"/><text class="lbl " x="320" y="196" text-anchor="middle" dominant-baseline="middle">Isya</text>
+  <circle class="bloom" cx="238.1" cy="42.4" r="12"/>
+  <circle class="sun" cx="238.1" cy="42.4" r="7"/>
+</svg>
+    <div class="fk-count"><span class="fk-hud fk-muted">Menuju Ashar · 15:21</span><span class="t" id="cd2">01:16:00</span></div>
+  </div>
+</section>
+  <section class="fk-sect fk-enter" style="--i:2">
+    <div class="fk-sect-head"><h2 class="fk-h2">Berikutnya</h2><a class="fk-link" href="#">Semua task<i data-i="arrow-right" class="sm"></i></a></div>
+    <article class="fk-task fk-holo" aria-label="Task akhirat berikutnya" tabindex="0">
+  <i data-khatam></i>
+  <div class="fk-task-top">
+    <span class="fk-hud"><span class="fk-tag"><i data-i="landmark" class="sm"></i></span>Akhirat</span>
+    <span class="fk-hud">Ashar · 15:21</span>
+  </div>
+  <h3 class="fk-h3">Sholat Ashar berjamaah.</h3>
+  <p class="fk-task-sum">Jaga takbir pertama 40 hari, dicatat <b>2 pembebasan: dari neraka &amp; dari kemunafikan.</b> <span class="fk-src">HR. Tirmidzi no. 241</span></p>
+  <div class="fk-task-actions">
+    <button class="fk-pill fk-pill-done" data-act="done"><i data-i="check" class="sm"></i>Dikerjakan</button>
+    <button class="fk-pill fk-pill-skip" data-act="skip">Lewati dulu</button>
+    <button class="fk-link">Dalil<i data-i="arrow-right" class="sm"></i></button>
+  </div>
+</article>
+    <article class="fk-task fk-dunia" aria-label="Task dunia berikutnya" tabindex="0">
+  <div class="fk-task-top">
+    <span class="fk-hud"><span class="fk-tag"><i data-i="activity" class="sm"></i></span>Dunia</span>
+    <span class="fk-hud">16:30</span>
+  </div>
+  <h3 class="fk-h3">Olahraga 30 menit.</h3>
+  <p class="fk-task-sum">Badan bugar, mood naik — energi buat ibadah pun ikut penuh.</p>
+  <div class="fk-task-actions">
+    <button class="fk-pill fk-pill-done" data-act="done"><i data-i="check" class="sm"></i>Dikerjakan</button>
+    <button class="fk-pill fk-pill-skip" data-act="skip">Lewati dulu</button>
+  </div>
+</article>
+  </section>
+  <div class="fk-enter" style="--i:3"><article class="fk-dua fk-glass" aria-label="Rekomendasi doa">
+  <div class="fk-sect-head"><span class="fk-hud fk-muted">Doa · waktu siang</span></div>
+  <p class="fk-arabic md" dir="rtl" lang="ar">رَبَّنَا آتِنَا فِي الدُّنْيَا حَسَنَةً وَفِي الْآخِرَةِ حَسَنَةً وَقِنَا عَذَابَ النَّارِ</p>
+  
+  <p class="meaning">Ya Tuhan kami, berilah kami kebaikan di dunia dan kebaikan di akhirat, dan lindungilah kami dari azab neraka.</p>
+  <span class="fk-data fk-muted">QS. AL-BAQARAH : 201</span>
+</article></div>
+</div>
+<button class="fk-fab" aria-label="Tambah todo dunia"><i data-i="plus"></i></button>
+<nav class="fk-dock" aria-label="Navigasi utama">
+  <a href="#" aria-current="page"><i data-i="orbit"></i>Beranda</a>
+  <a href="#"><i data-i="notebook-pen"></i>Jurnal</a>
+  <a href="#"><i data-i="user"></i>Profil</a>
+</nav></div></div>
+<div data-theme="akhwat-light" class="fk"><p class="cap">Akhwat · Siang</p><div class="fk-phone fk-ground"><div class="fk-phone-scroll">
+  <header class="fk-enter" style="--i:0;display:flex;flex-direction:column;gap:8px">
+  <span class="fk-hud fk-muted">14:05 · Sabtu</span>
+  <h1 class="fk-display">Assalamu'alaikum, <span class="fk-grad">Jessica</span></h1>
+</header>
+  <section class="fk-orbit fk-glass fk-enter" style="--i:1;border-radius:var(--radius-xl);padding:18px" aria-label="Waktu sholat hari ini">
+  <div class="fk-orbit-dates">
+    <div><span class="fk-hud fk-muted">Masehi</span><span class="v">Sab, 26 Juli 2025</span></div>
+    <div><span class="fk-hud fk-muted">Hijriah</span><span class="v">1 Safar 1447</span></div>
+  </div>
+  <div style="position:relative">
+    <svg class="arc" viewBox="0 0 340 206" role="img" aria-label="Posisi matahari: 14:05, antara Dzuhur dan Ashar">
+  <line class="horizon" x1="0" y1="176" x2="340" y2="176"/>
+  <path class="track" d="M20 176 A150 150 0 0 1 320 176"/>
+  <path class="prog" pathLength="100" stroke-dasharray="100" d="M20 176 A150 150 0 0 1 238.1 42.4"/>
+  <circle class="node past" cx="20" cy="176" r="5"/><text class="lbl past" x="20" y="196" text-anchor="middle" dominant-baseline="middle">Subuh</text>
+  <circle class="node past" cx="172.7" cy="26" r="5"/><text class="lbl past" x="173" y="10" text-anchor="middle" dominant-baseline="middle">Dzuhur</text>
+  <circle class="node next" cx="271.9" cy="66" r="6"/><text class="lbl next" x="282.8" y="54.2" text-anchor="middle" dominant-baseline="middle">Ashar</text>
+  <circle class="node " cx="314.8" cy="136.7" r="5"/><text class="lbl " x="330.2" y="132.6" text-anchor="middle" dominant-baseline="middle">Maghrib</text>
+  <circle class="node " cx="320" cy="176" r="5"/><text class="lbl " x="320" y="196" text-anchor="middle" dominant-baseline="middle">Isya</text>
+  <circle class="bloom" cx="238.1" cy="42.4" r="12"/>
+  <circle class="sun" cx="238.1" cy="42.4" r="7"/>
+</svg>
+    <div class="fk-count"><span class="fk-hud fk-muted">Menuju Ashar · 15:21</span><span class="t" id="cd3">01:16:00</span></div>
+  </div>
+</section>
+  <section class="fk-sect fk-enter" style="--i:2">
+    <div class="fk-sect-head"><h2 class="fk-h2">Berikutnya</h2><a class="fk-link" href="#">Semua task<i data-i="arrow-right" class="sm"></i></a></div>
+    <article class="fk-task fk-holo" aria-label="Task akhirat berikutnya" tabindex="0">
+  <i data-khatam></i>
+  <div class="fk-task-top">
+    <span class="fk-hud"><span class="fk-tag"><i data-i="landmark" class="sm"></i></span>Akhirat</span>
+    <span class="fk-hud">Ashar · 15:21</span>
+  </div>
+  <h3 class="fk-h3">Sholat Ashar berjamaah.</h3>
+  <p class="fk-task-sum">Jaga takbir pertama 40 hari, dicatat <b>2 pembebasan: dari neraka &amp; dari kemunafikan.</b> <span class="fk-src">HR. Tirmidzi no. 241</span></p>
+  <div class="fk-task-actions">
+    <button class="fk-pill fk-pill-done" data-act="done"><i data-i="check" class="sm"></i>Dikerjakan</button>
+    <button class="fk-pill fk-pill-skip" data-act="skip">Lewati dulu</button>
+    <button class="fk-link">Dalil<i data-i="arrow-right" class="sm"></i></button>
+  </div>
+</article>
+    <article class="fk-task fk-dunia" aria-label="Task dunia berikutnya" tabindex="0">
+  <div class="fk-task-top">
+    <span class="fk-hud"><span class="fk-tag"><i data-i="activity" class="sm"></i></span>Dunia</span>
+    <span class="fk-hud">16:30</span>
+  </div>
+  <h3 class="fk-h3">Olahraga 30 menit.</h3>
+  <p class="fk-task-sum">Badan bugar, mood naik — energi buat ibadah pun ikut penuh.</p>
+  <div class="fk-task-actions">
+    <button class="fk-pill fk-pill-done" data-act="done"><i data-i="check" class="sm"></i>Dikerjakan</button>
+    <button class="fk-pill fk-pill-skip" data-act="skip">Lewati dulu</button>
+  </div>
+</article>
+  </section>
+  <div class="fk-enter" style="--i:3"><article class="fk-dua fk-glass" aria-label="Rekomendasi doa">
+  <div class="fk-sect-head"><span class="fk-hud fk-muted">Doa · waktu siang</span></div>
+  <p class="fk-arabic md" dir="rtl" lang="ar">رَبَّنَا آتِنَا فِي الدُّنْيَا حَسَنَةً وَفِي الْآخِرَةِ حَسَنَةً وَقِنَا عَذَابَ النَّارِ</p>
+  
+  <p class="meaning">Ya Tuhan kami, berilah kami kebaikan di dunia dan kebaikan di akhirat, dan lindungilah kami dari azab neraka.</p>
+  <span class="fk-data fk-muted">QS. AL-BAQARAH : 201</span>
+</article></div>
+</div>
+<button class="fk-fab" aria-label="Tambah todo dunia"><i data-i="plus"></i></button>
+<nav class="fk-dock" aria-label="Navigasi utama">
+  <a href="#" aria-current="page"><i data-i="orbit"></i>Beranda</a>
+  <a href="#"><i data-i="notebook-pen"></i>Jurnal</a>
+  <a href="#"><i data-i="user"></i>Profil</a>
+</nav></div></div>
+</div>
+<script>
+Falak.boot();
+[0,1,2,3].forEach(function(i){Falak.countdown(document.getElementById('cd'+i),4560);});
+</script>
+</body>
+</html>
