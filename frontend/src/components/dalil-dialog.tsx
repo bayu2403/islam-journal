@@ -9,6 +9,7 @@ export type DalilTask = {
   dalil: string | null;
 };
 
+// Falak dalil sheet. Hadith text is religious content — rendered verbatim, never truncated.
 export default function DalilDialog({
   task,
   open,
@@ -24,14 +25,14 @@ export default function DalilDialog({
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
-      <DialogContent className="max-w-sm">
+      <DialogContent>
         <DialogHeader>
-          <DialogTitle>{t("dalilTitle")}</DialogTitle>
+          <span className="fk-hud" style={{ color: "var(--primary)" }}>{t("dalilTitle")}</span>
+          <DialogTitle>{title}</DialogTitle>
         </DialogHeader>
-        <p className="text-sm font-semibold">{title}</p>
-        <p className="whitespace-pre-line text-sm text-muted-foreground">
-          {task?.dalil ?? ""}
-        </p>
+        <div className="fk-cite">
+          <p className="m-0 whitespace-pre-line text-[15px] leading-6">{task?.dalil ?? ""}</p>
+        </div>
       </DialogContent>
     </Dialog>
   );

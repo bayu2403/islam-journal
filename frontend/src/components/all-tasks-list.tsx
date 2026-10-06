@@ -2,9 +2,8 @@
 
 import { useState } from "react";
 import { useTranslations } from "next-intl";
-import { ChevronDown, ChevronUp } from "lucide-react";
-import QuickAdd from "@/components/quick-add";
-import { Badge } from "@/components/ui/badge";
+import { Check, ChevronDown } from "lucide-react";
+import { cn } from "@/lib/utils";
 
 export type AllTasksTask = {
   schedule_id: string;
@@ -15,83 +14,65 @@ export type AllTasksTask = {
   effTime: string | null;
 };
 
+// "Semua task hari ini" — late-check anything skipped or missed.
 export default function AllTasksList({
   tasks,
   onToggle,
-  onAdded,
 }: {
   tasks: AllTasksTask[];
   onToggle: (task: AllTasksTask) => void;
-  onAdded: () => void;
 }) {
   const t = useTranslations("Dashboard");
   const sys = useTranslations();
   const [open, setOpen] = useState(true);
 
   return (
-    <div>
-      <div className="flex items-center justify-between">
-        <button
-          type="button"
-          onClick={() => setOpen((o) => !o)}
-          className="flex items-center gap-1 text-sm font-medium text-foreground"
-          aria-expanded={open}
-        >
-          {open ? <ChevronUp className="h-4 w-4" /> : <ChevronDown className="h-4 w-4" />}
-          {t("allTasks")}
+    <section className="fk-sect">
+      <div className="fk-sect-head">
+        <h2 className="fk-h2">{t("allTasks")}</h2>
+        <button type="button" onClick={() => setOpen((o) => !o)} className="fk-link" aria-expanded={open}>
+          {tasks.filter((x) => x.status === "done").length}/{tasks.length}
+          <ChevronDown
+            className="fk-i sm"
+            style={{ transform: open ? "rotate(180deg)" : undefined, transition: "transform var(--duration-fast) var(--ease-spring)" }}
+          />
         </button>
-        <QuickAdd onAdded={onAdded} />
       </div>
 
       {open &&
         (tasks.length === 0 ? (
-          <p className="mt-3 text-sm text-muted-foreground">{t("noTasks")}</p>
+          <p className="fk-small fk-muted m-0">{t("noTasks")}</p>
         ) : (
-          <ul className="mt-3 space-y-2">
+          <ul className="fk-list fk-glass" style={{ padding: 4 }}>
             {tasks.map((task) => {
               const title = task.is_system_title ? sys(task.title) : task.title;
+              const done = task.status === "done";
               const statusLabel =
-                task.status === "done"
-                  ? t("statusDone")
-                  : task.status === "skipped"
-                    ? t("statusSkipped")
-                    : t("statusPending");
+                done ? t("statusDone") : task.status === "skipped" ? t("statusSkipped") : t("statusPending");
               return (
-                <li
-                  key={task.schedule_id}
-                  className="flex items-center gap-3 rounded-lg border bg-card p-3"
-                >
-                  <input
-                    type="checkbox"
-                    checked={task.status === "done"}
-                    onChange={() => onToggle(task)}
-                    className="h-5 w-5 accent-[var(--primary)]"
-                  />
-                  <div className="min-w-0 flex-1">
-                    <p className="truncate text-sm font-medium">{title}</p>
-                    <div className="mt-1 flex items-center gap-2">
-                      <span className="text-xs text-muted-foreground">{task.effTime ?? "—"}</span>
-                      <Badge variant="outline" className="text-[10px]">
-                        {t(task.category)}
-                      </Badge>
-                    </div>
-                  </div>
-                  <Badge
-                    variant={
-                      task.status === "done"
-                        ? "default"
-                        : task.status === "skipped"
-                          ? "secondary"
-                          : "outline"
-                    }
-                  >
-                    {statusLabel}
-                  </Badge>
+                <li key={task.schedule_id} className="fk-row">
+                  <span className="t">{task.effTime ?? "—"}</span>
+                  <span className="min-w-0">
+                    <span className={cn("name truncate", done && "fk-muted")}>{title}</span>
+                    <span className="sub">{t(task.category)}</span>
+                  </span>
+                  <span className="end">
+                    <span className={cn("fk-chip", done && "done")}>{statusLabel}</span>
+                    <button
+                      type="button"
+                      className={cn("fk-check", done && "on")}
+                      aria-pressed={done}
+                      aria-label={title}
+                      onClick={() => onToggle(task)}
+                    >
+                      {done && <Check className="fk-i sm" />}
+                    </button>
+                  </span>
                 </li>
               );
             })}
           </ul>
         ))}
-    </div>
+    </section>
   );
 }

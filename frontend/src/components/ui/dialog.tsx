@@ -31,7 +31,7 @@ function DialogOverlay({
     <DialogPrimitive.Backdrop
       data-slot="dialog-overlay"
       className={cn(
-        "fixed inset-0 isolate z-50 bg-black/10 duration-100 supports-backdrop-filter:backdrop-blur-xs data-open:animate-in data-open:fade-in-0 data-closed:animate-out data-closed:fade-out-0",
+        "fixed inset-0 isolate z-50 bg-[var(--scrim)] backdrop-blur-[6px] duration-200 data-open:animate-in data-open:fade-in-0 data-closed:animate-out data-closed:fade-out-0",
         className
       )}
       {...props}
@@ -53,7 +53,8 @@ function DialogContent({
       <DialogPrimitive.Popup
         data-slot="dialog-content"
         className={cn(
-          "fixed top-1/2 left-1/2 z-50 grid w-full max-w-[calc(100%-2rem)] -translate-x-1/2 -translate-y-1/2 gap-4 rounded-xl bg-popover p-4 text-sm text-popover-foreground ring-1 ring-foreground/10 duration-100 outline-none sm:max-w-sm data-open:animate-in data-open:fade-in-0 data-open:zoom-in-95 data-closed:animate-out data-closed:fade-out-0 data-closed:zoom-out-95",
+          // Falak bottom sheet: rises from the bottom of the phone column, gradient hairline on top.
+          "fk-sheet fixed inset-x-0 bottom-0 z-50 mx-auto grid max-h-[88dvh] gap-4 overflow-y-auto px-5 pt-7 pb-[max(1.5rem,env(safe-area-inset-bottom))] text-sm outline-none data-closed:animate-out data-closed:fade-out-0 data-closed:slide-out-to-bottom-10",
           className
         )}
         {...props}
@@ -65,7 +66,7 @@ function DialogContent({
             render={
               <Button
                 variant="ghost"
-                className="absolute top-2 right-2"
+                className="absolute top-4 right-4"
                 size="icon-sm"
               />
             }
@@ -102,7 +103,7 @@ function DialogFooter({
     <div
       data-slot="dialog-footer"
       className={cn(
-        "-mx-4 -mb-4 flex flex-col-reverse gap-2 rounded-b-xl border-t bg-muted/50 p-4 sm:flex-row sm:justify-end",
+        "flex gap-2.5 pt-2 *:flex-1",
         className
       )}
       {...props}
@@ -122,7 +123,7 @@ function DialogTitle({ className, ...props }: DialogPrimitive.Title.Props) {
     <DialogPrimitive.Title
       data-slot="dialog-title"
       className={cn(
-        "text-base leading-none font-medium",
+        "font-display text-2xl leading-7 font-semibold tracking-[-0.015em] pr-8",
         className
       )}
       {...props}

@@ -4,12 +4,12 @@ import { useState } from "react";
 import { Plus } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { api, todayStr } from "@/lib/api";
-import { Button } from "@/components/ui/button";
 import {
   Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger, DialogFooter,
 } from "@/components/ui/dialog";
 import { Input } from "@/components/ui/input";
 
+// Falak FAB → quick-add sheet (dunia, today only).
 export default function QuickAdd({ onAdded }: { onAdded: () => void }) {
   const t = useTranslations("Dashboard");
   const [open, setOpen] = useState(false);
@@ -40,24 +40,31 @@ export default function QuickAdd({ onAdded }: { onAdded: () => void }) {
 
   return (
     <Dialog open={open} onOpenChange={setOpen}>
-      <DialogTrigger render={<Button size="icon" className="rounded-full shadow-md" aria-label={t("quickAddTitle")} />}>
-        <Plus className="h-5 w-5" />
+      <DialogTrigger render={<button type="button" className="fk-fab pointer-events-auto" aria-label={t("quickAddTitle")} />}>
+        <Plus className="fk-i" />
       </DialogTrigger>
-      <DialogContent className="max-w-sm">
+      <DialogContent>
         <DialogHeader>
+          <span className="fk-hud fk-muted">{t("dunia")}</span>
           <DialogTitle>{t("quickAddTitle")}</DialogTitle>
         </DialogHeader>
-        <Input
-          autoFocus
-          value={title}
-          onChange={(e) => setTitle(e.target.value)}
-          onKeyDown={(e) => e.key === "Enter" && submit()}
-          placeholder={t("quickAddPlaceholder")}
-        />
-        <p className="text-xs text-muted-foreground">{t("quickAddHint")}</p>
+        <div className="fk-field">
+          <Input
+            autoFocus
+            value={title}
+            onChange={(e) => setTitle(e.target.value)}
+            onKeyDown={(e) => e.key === "Enter" && submit()}
+            placeholder={t("quickAddPlaceholder")}
+          />
+          <span className="fk-help">{t("quickAddHint")}</span>
+        </div>
         <DialogFooter>
-          <Button variant="outline" onClick={() => setOpen(false)}>{t("cancel")}</Button>
-          <Button onClick={submit} disabled={busy || !title.trim()}>{t("add")}</Button>
+          <button type="button" className="fk-btn fk-btn-outline" onClick={() => setOpen(false)}>
+            {t("cancel")}
+          </button>
+          <button type="button" className="fk-btn fk-btn-primary" onClick={submit} disabled={busy || !title.trim()}>
+            {t("add")}
+          </button>
         </DialogFooter>
       </DialogContent>
     </Dialog>

@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono, Lora } from "next/font/google";
+import { JetBrains_Mono, Noto_Naskh_Arabic, Onest, Unbounded } from "next/font/google";
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages, getTranslations, setRequestLocale } from "next-intl/server";
 import { notFound } from "next/navigation";
@@ -7,19 +7,13 @@ import { routing } from "../../../i18n/routing";
 import "../globals.css";
 import { AuthProvider } from "@/components/auth-provider";
 import { ThemeProvider } from "@/components/theme-provider";
-import BottomNav from "@/components/bottom-nav";
+import FalakEffects from "@/components/falak/effects";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
-
-const lora = Lora({ variable: "--font-lora", subsets: ["latin"] });
+// Falak type: Unbounded (display), Onest (interface), JetBrains Mono (HUD), Noto Naskh Arabic.
+const unbounded = Unbounded({ variable: "--font-unbounded", subsets: ["latin"], weight: ["400", "500", "600", "700"] });
+const onest = Onest({ variable: "--font-onest", subsets: ["latin"] });
+const jetbrains = JetBrains_Mono({ variable: "--font-jetbrains", subsets: ["latin"], weight: ["400", "500"] });
+const naskh = Noto_Naskh_Arabic({ variable: "--font-naskh", subsets: ["arabic"], weight: ["400", "500"] });
 
 type Props = {
   children: React.ReactNode;
@@ -54,7 +48,7 @@ export default async function LocaleLayout({ children, params }: Props) {
   return (
     <html
       lang={locale}
-      className={`${geistSans.variable} ${geistMono.variable} ${lora.variable} h-full antialiased`}
+      className={`${unbounded.variable} ${onest.variable} ${jetbrains.variable} ${naskh.variable} h-full antialiased`}
       suppressHydrationWarning
     >
       <head>
@@ -64,14 +58,12 @@ export default async function LocaleLayout({ children, params }: Props) {
           }}
         />
       </head>
-      <body className="min-h-dvh flex flex-col bg-muted/30">
+      <body className="min-h-dvh bg-background">
         <NextIntlClientProvider locale={locale} messages={messages}>
           <AuthProvider>
             <ThemeProvider>
-              <div className="mx-auto flex min-h-dvh w-full max-w-md flex-col border-x bg-background shadow-sm">
-                <main className="flex flex-1 flex-col">{children}</main>
-                <BottomNav />
-              </div>
+              <FalakEffects />
+              {children}
             </ThemeProvider>
           </AuthProvider>
         </NextIntlClientProvider>

@@ -2,11 +2,11 @@
 
 import { useState } from "react";
 import { useTranslations } from "next-intl";
-import { Button } from "@/components/ui/button";
 import {
   Dialog, DialogContent, DialogHeader, DialogTitle, DialogFooter,
 } from "@/components/ui/dialog";
 import { Input } from "@/components/ui/input";
+import Segmented from "@/components/falak/segmented";
 
 export type Recurrence =
   | { recurrence: "once"; once_date: string }
@@ -19,6 +19,8 @@ function tomorrowStr(): string {
   return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, "0")}-${String(d.getDate()).padStart(2, "0")}`;
 }
 
+type Mode = "tomorrow" | "daily" | "weekly" | "date";
+
 export default function RecurrencePicker({
   open, onClose, onPick,
 }: {
@@ -27,7 +29,7 @@ export default function RecurrencePicker({
   onPick: (r: Recurrence) => void;
 }) {
   const t = useTranslations("Journal");
-  const [mode, setMode] = useState<"tomorrow" | "daily" | "weekly" | "date">("tomorrow");
+  const [mode, setMode] = useState<Mode>("tomorrow");
   const [days, setDays] = useState<number[]>([]);
   const [date, setDate] = useState(tomorrowStr());
 
@@ -39,45 +41,37 @@ export default function RecurrencePicker({
     onClose();
   }
 
-  const modes = [
-    { id: "tomorrow", label: t("tomorrow") },
-    { id: "daily", label: t("daily") },
-    { id: "weekly", label: t("weekly") },
-    { id: "date", label: t("pickDate") },
-  ] as const;
-
   return (
     <Dialog open={open} onOpenChange={(o) => !o && onClose()}>
-      <DialogContent className="max-w-sm">
+      <DialogContent>
         <DialogHeader>
           <DialogTitle>{t("recurrenceTitle")}</DialogTitle>
         </DialogHeader>
-        <div className="grid grid-cols-2 gap-2">
-          {modes.map((m) => (
-            <Button
-              key={m.id}
-              variant={mode === m.id ? "default" : "outline"}
-              size="sm"
-              onClick={() => setMode(m.id)}
-            >
-              {m.label}
-            </Button>
-          ))}
-        </div>
+        <Segmented<Mode>
+          full
+          label={t("recurrenceTitle")}
+          value={mode}
+          onChange={setMode}
+          options={[
+            { value: "tomorrow", label: t("tomorrow") },
+            { value: "daily", label: t("daily") },
+            { value: "weekly", label: t("weekly") },
+            { value: "date", label: t("pickDate") },
+          ]}
+        />
         {mode === "weekly" && (
-          <div className="flex flex-wrap gap-1.5">
-            {[0, 1, 2, 3, 4, 5, 6].map((d) => (
-              <Button
+          <div className="fk-dow">
+            {[1, 2, 3, 4, 5, 6, 0].map((d) => (
+              <button
                 key={d}
-                size="sm"
-                variant={days.includes(d) ? "default" : "outline"}
-                className="w-11"
+                type="button"
+                aria-pressed={days.includes(d)}
                 onClick={() =>
                   setDays((prev) => (prev.includes(d) ? prev.filter((x) => x !== d) : [...prev, d]))
                 }
               >
                 {t(`days.${d}`)}
-              </Button>
+              </button>
             ))}
           </div>
         )}
@@ -85,9 +79,14 @@ export default function RecurrencePicker({
           <Input type="date" value={date} onChange={(e) => setDate(e.target.value)} />
         )}
         <DialogFooter>
-          <Button onClick={confirm} disabled={mode === "weekly" && days.length === 0}>
+          <button
+            type="button"
+            className="fk-btn fk-btn-primary"
+            onClick={confirm}
+            disabled={mode === "weekly" && days.length === 0}
+          >
             {t("activate")}
-          </Button>
+          </button>
         </DialogFooter>
       </DialogContent>
     </Dialog>

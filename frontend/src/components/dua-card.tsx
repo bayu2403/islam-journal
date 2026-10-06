@@ -3,7 +3,6 @@
 import { useEffect, useState } from "react";
 import { useLocale, useTranslations } from "next-intl";
 import { api } from "@/lib/api";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 type Dua = {
   arabic: string;
@@ -21,7 +20,7 @@ export function categoryForHour(hour: number, w: Windows): string {
   return "night"; // wraps evening-end → morning-start
 }
 
-export default function DuaCard({ windows }: { windows: Windows }) {
+export default function DuaCard({ windows, style }: { windows: Windows; style?: React.CSSProperties }) {
   const t = useTranslations("Dashboard");
   const cat = useTranslations("Dua");
   const locale = useLocale();
@@ -38,20 +37,15 @@ export default function DuaCard({ windows }: { windows: Windows }) {
   if (error || !dua) return null;
 
   return (
-    <Card className="bg-secondary text-secondary-foreground">
-      <CardHeader className="pb-2">
-        <CardTitle className="flex items-center justify-between text-sm font-medium text-muted-foreground">
-          {t("duaOfTheMoment")}
-          <span className="rounded-full bg-accent px-2 py-0.5 text-xs text-accent-foreground">
-            {cat(dua.time_category === "any" ? category : dua.time_category)}
-          </span>
-        </CardTitle>
-      </CardHeader>
-      <CardContent className="space-y-3">
-        <p dir="rtl" lang="ar" className="text-right text-2xl leading-loose">{dua.arabic}</p>
-        <p className="text-sm italic text-muted-foreground">{dua.latin}</p>
-        <p className="text-sm">{dua.translations[locale] ?? dua.translations.id}</p>
-      </CardContent>
-    </Card>
+    <article className="fk-dua fk-glass fk-enter" style={style} aria-label={t("duaOfTheMoment")}>
+      <div className="fk-sect-head">
+        <span className="fk-hud fk-muted">
+          {t("duaOfTheMoment")} · {cat(dua.time_category === "any" ? category : dua.time_category)}
+        </span>
+      </div>
+      <p className="fk-arabic md" dir="rtl" lang="ar">{dua.arabic}</p>
+      <p className="translit">{dua.latin}</p>
+      <p className="meaning">{dua.translations[locale] ?? dua.translations.id}</p>
+    </article>
   );
 }

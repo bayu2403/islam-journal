@@ -1,11 +1,12 @@
 "use client";
 
-import { Home, NotebookPen, User } from "lucide-react";
+import { NotebookPen, Orbit, User } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { Link, usePathname } from "../../i18n/routing";
+import { useGlide } from "@/components/falak/use-glide";
 
 const tabs = [
-  { href: "/", key: "dashboard", icon: Home },
+  { href: "/", key: "dashboard", icon: Orbit },
   { href: "/journal", key: "journal", icon: NotebookPen },
   { href: "/profile", key: "profile", icon: User },
 ] as const;
@@ -13,26 +14,22 @@ const tabs = [
 export default function BottomNav() {
   const t = useTranslations("Nav");
   const pathname = usePathname();
+  const ref = useGlide<HTMLElement>(pathname);
 
   return (
-    <nav className="sticky bottom-0 z-40 border-t bg-card/95 backdrop-blur supports-[backdrop-filter]:bg-card/80">
-      <div className="mx-auto flex max-w-md">
+    <div className="sticky bottom-0 z-40 pt-2">
+      <nav ref={ref} className="fk-dock" aria-label={t("main")}>
+        <span className="ind" aria-hidden="true" />
         {tabs.map(({ href, key, icon: Icon }) => {
           const active = pathname === href;
           return (
-            <Link
-              key={key}
-              href={href}
-              className={`flex flex-1 flex-col items-center gap-0.5 py-2.5 text-xs transition-colors ${
-                active ? "text-primary font-medium" : "text-muted-foreground hover:text-foreground"
-              }`}
-            >
-              <Icon className="h-5 w-5" strokeWidth={active ? 2.4 : 1.8} />
+            <Link key={key} href={href} aria-current={active ? "page" : undefined}>
+              <Icon className="fk-i" strokeWidth={active ? 2.1 : 1.6} />
               {t(key)}
             </Link>
           );
         })}
-      </div>
-    </nav>
+      </nav>
+    </div>
   );
 }

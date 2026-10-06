@@ -1,7 +1,9 @@
 "use client";
 
+import { useEffect, useRef, useState } from "react";
 import { useTranslations } from "next-intl";
-import { Landmark, Sparkles } from "lucide-react";
+import { ArrowRight, Check, Landmark, Sparkles } from "lucide-react";
+import Khatam from "@/components/falak/khatam";
 import { cn } from "@/lib/utils";
 
 export type TaskCardTask = {
@@ -26,40 +28,53 @@ function splitSummary(summary: string): { benefit: string; source: string | null
   return { benefit: summary.slice(0, idx).trim(), source: summary.slice(idx).trim() };
 }
 
+const reduced = () => typeof window !== "undefined" && matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+// Falak task card. Akhirat = holo card (rotating beam + khatam), Dunia = glass.
+// Dikerjakan / Lewati play the same-weight exit (up vs. side) before onAction,
+// so the parent should key this by schedule_id to replay the entrance.
 export default function TaskCard({
   task,
   variant,
   emptyMessage,
+  timeLabel,
   onAction,
   onOpen,
 }: {
   task: TaskCardTask | null;
   variant: "akhirat" | "dunia";
   emptyMessage: string;
+  timeLabel?: string | null;
   onAction: (status: "done" | "skipped") => void;
-  onOpen: () => void;
+  onOpen?: () => void;
 }) {
   const t = useTranslations("Dashboard");
   const sys = useTranslations();
   const isAkhirat = variant === "akhirat";
   const Icon = isAkhirat ? Landmark : Sparkles;
-  const accentClass = isAkhirat ? "text-reward" : "text-primary";
+  const [doneFx, setDoneFx] = useState(false);
+  const [leaving, setLeaving] = useState<"up" | "side" | null>(null);
+  const timers = useRef<ReturnType<typeof setTimeout>[]>([]);
 
-  const wrapperClass = cn(
-    "rounded-2xl p-5 ring-1 ring-foreground/10",
-    isAkhirat
-      ? "bg-card-inverse text-card-inverse-foreground"
-      : "bg-card text-card-foreground",
-  );
+  useEffect(() => {
+    const pending = timers.current;
+    return () => pending.forEach(clearTimeout);
+  }, []);
+
+  const cardClass = cn("fk-task", isAkhirat ? "fk-holo" : "fk-dunia");
 
   if (!task) {
     return (
-      <div className={cn(wrapperClass, "flex min-h-[8rem] flex-col items-center justify-center gap-2 text-center")}>
-        <Icon className={cn("h-5 w-5", accentClass)} />
-        <span className={cn("text-[11px] font-semibold uppercase tracking-wide", accentClass)}>
-          {t(variant)}
-        </span>
-        <p className="text-sm opacity-70">{emptyMessage}</p>
+      <div className={cn(cardClass, "fk-enter cursor-default")}>
+        {isAkhirat && <Khatam />}
+        <div className="fk-empty" style={{ padding: "12px 8px" }}>
+          <div className="khatam-wrap">
+            <Khatam className="k" />
+            <Check className="fk-i" />
+          </div>
+          <span className="fk-hud">{t(variant)}</span>
+          <p className="fk-small">{emptyMessage}</p>
+        </div>
       </div>
     );
   }
@@ -67,54 +82,93 @@ export default function TaskCard({
   const title = task.is_system_title ? sys(task.title) : task.title;
   const { benefit, source } = task.summary ? splitSummary(task.summary) : { benefit: "", source: null };
 
+  function act(status: "done" | "skipped") {
+    if (leaving) return;
+    if (reduced()) {
+      onAction(status);
+      return;
+    }
+    if (status === "done") setDoneFx(true);
+    timers.current.push(
+      setTimeout(
+        () => {
+          setLeaving(status === "done" ? "up" : "side");
+          timers.current.push(setTimeout(() => onAction(status), 420));
+        },
+        status === "done" ? 520 : 60,
+      ),
+    );
+  }
+
   return (
-    <div
-      role="button"
-      tabIndex={0}
+    <article
+      tabIndex={onOpen ? 0 : undefined}
+      aria-label={`${t(variant)}: ${title}`}
       onClick={onOpen}
       onKeyDown={(e) => {
-        if (e.key === "Enter" || e.key === " ") {
+        if (onOpen && e.target === e.currentTarget && (e.key === "Enter" || e.key === " ")) {
           e.preventDefault();
           onOpen();
         }
       }}
-      className={cn(wrapperClass, "cursor-pointer transition-transform active:scale-[0.99]")}
+      className={cn(
+        cardClass,
+        leaving === "up" ? "fk-leave-up" : leaving === "side" ? "fk-leave-side" : "fk-enter",
+        !onOpen && "cursor-default",
+      )}
     >
-      <div className="flex items-center gap-1.5">
-        <Icon className={cn("h-3.5 w-3.5", accentClass)} />
-        <span className={cn("text-[11px] font-semibold uppercase tracking-wide", accentClass)}>
+      {isAkhirat && <Khatam />}
+      <div className="fk-task-top">
+        <span className="fk-hud">
+          <span className="fk-tag">
+            <Icon className="fk-i sm" />
+          </span>
           {t(variant)}
         </span>
+        {timeLabel && <span className="fk-hud">{timeLabel}</span>}
       </div>
-      <h3 className="mt-2 line-clamp-2 text-lg font-bold leading-snug">{title}</h3>
+      <h3 className="fk-h3 line-clamp-2">{title}</h3>
       {benefit && (
-        <p className="mt-1 line-clamp-2 text-sm opacity-90">
-          {benefit}
-          {source && <span className={cn("italic opacity-80", accentClass)}> {source}</span>}
+        <p className="fk-task-sum line-clamp-3">
+          {benefit} {source && <span className="fk-src">{source}</span>}
         </p>
       )}
-      <div className="mt-4 flex items-center gap-2">
+      <div className="fk-task-actions">
         <button
           type="button"
+          className={cn("fk-pill fk-pill-done", doneFx && "is-done")}
           onClick={(e) => {
             e.stopPropagation();
-            onAction("done");
+            act("done");
           }}
-          className="h-8 rounded-full bg-accent px-4 text-xs font-medium text-accent-foreground"
         >
+          <Check className="fk-i sm chk" />
           {t("dikerjakan")}
         </button>
         <button
           type="button"
+          className="fk-pill fk-pill-skip"
           onClick={(e) => {
             e.stopPropagation();
-            onAction("skipped");
+            act("skipped");
           }}
-          className="h-8 rounded-full border border-current/30 px-4 text-xs opacity-80"
         >
           {t("lewati")}
         </button>
+        {isAkhirat && task.dalil && onOpen && (
+          <button
+            type="button"
+            className="fk-link"
+            onClick={(e) => {
+              e.stopPropagation();
+              onOpen();
+            }}
+          >
+            {t("dalil")}
+            <ArrowRight className="fk-i sm" />
+          </button>
+        )}
       </div>
-    </div>
+    </article>
   );
 }

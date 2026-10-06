@@ -5,11 +5,12 @@ import { useLocale, useTranslations } from "next-intl";
 import { useAuth } from "@/components/auth-provider";
 import { api, todayStr, todayDow } from "@/lib/api";
 import { usePrayerTimes, type PrayerTimes } from "@/lib/use-prayer-times";
-import { formatHijri } from "@/lib/hijri";
 import DuaCard from "@/components/dua-card";
 import TaskCard from "@/components/task-card";
 import AllTasksList, { type AllTasksTask } from "@/components/all-tasks-list";
 import DalilDialog from "@/components/dalil-dialog";
+import QuickAdd from "@/components/quick-add";
+import PrayerOrbit, { useNow } from "@/components/falak/prayer-orbit";
 
 type Profile = {
   display_name: string | null;
@@ -35,11 +36,15 @@ function effTimeOf(task: TodayTask, prayerTimes: PrayerTimes | null): string | n
   return task.time ? task.time.slice(0, 5) : null;
 }
 
+const enter = (i: number) => ({ "--i": i }) as React.CSSProperties;
+
 export default function DashboardPage() {
   const t = useTranslations("Dashboard");
+  const prayer = useTranslations("Prayer");
   const locale = useLocale();
   const { session, loading } = useAuth();
   const prayerTimes = usePrayerTimes();
+  const now = useNow();
   const [profile, setProfile] = useState<Profile | null>(null);
   const [tasks, setTasks] = useState<TodayTask[] | null>(null);
   const [dialogTask, setDialogTask] = useState<TodayTask | null>(null);
@@ -101,73 +106,73 @@ export default function DashboardPage() {
   function categoryEmptyMessage(cat: "akhirat" | "dunia") {
     return sorted.some((x) => x.category === cat) ? t("allDone") : t("noTasks");
   }
+  function timeLabel(task: (typeof sorted)[number] | null) {
+    if (!task?.effTime) return null;
+    return task.prayer_key ? `${prayer(task.prayer_key)} · ${task.effTime}` : task.effTime;
+  }
 
   const akhiratCurrent = categoryCurrent("akhirat");
   const duniaCurrent = categoryCurrent("dunia");
 
-  const now = new Date();
-  const dayNum = new Intl.DateTimeFormat(locale, { day: "numeric" }).format(now);
-  const month = new Intl.DateTimeFormat(locale, { month: "long" }).format(now);
-  const weekday = new Intl.DateTimeFormat(locale, { weekday: "long" }).format(now);
-  const year = new Intl.DateTimeFormat(locale, { year: "numeric" }).format(now);
-  const hijri = formatHijri(now, locale);
+  const clock = now
+    ? `${new Intl.DateTimeFormat(locale, { hour: "2-digit", minute: "2-digit" }).format(now)} · ${new Intl.DateTimeFormat(locale, { weekday: "long" }).format(now)}`
+    : " ";
 
   function handleAllTasksToggle(task: AllTasksTask) {
     setStatus(task.schedule_id, task.status === "done" ? "pending" : "done");
   }
 
   return (
-    <div className="flex flex-1 flex-col gap-6 p-4 pb-6">
-      <div>
-        <h1 className="font-serif text-2xl font-semibold leading-snug">
-          {t("assalamu", { name })} 🌼
+    <div className="flex flex-1 flex-col gap-6 px-4 pt-9 pb-4">
+      <header className="fk-enter flex flex-col gap-2" style={enter(0)}>
+        <span className="fk-hud fk-muted">{clock}</span>
+        <h1 className="fk-display">
+          {t("greeting")} <span className="fk-grad">{name}</span>
         </h1>
-        <p className="text-sm text-muted-foreground">{t("startDay")}</p>
-      </div>
+        <p className="fk-small fk-muted m-0">{t("startDay")}</p>
+      </header>
 
-      <DuaCard windows={windows} />
+      <PrayerOrbit times={prayerTimes} className="fk-enter" style={enter(1)} />
 
-      <div>
-        <h2 className="mb-3 font-serif text-xl font-bold">{t("todayPlanTitle")}</h2>
-        <div className="rounded-3xl bg-accent/40 p-4">
-          <div className="flex items-start justify-between">
-            <div>
-              <div className="text-5xl leading-none font-bold">{dayNum}</div>
-              <div className="mt-1 text-lg font-medium">{month}</div>
+      {session && (
+        <>
+          <section className="fk-sect fk-enter" style={enter(2)}>
+            <div className="fk-sect-head">
+              <h2 className="fk-h2">{t("next")}</h2>
             </div>
-            <div className="text-right">
-              <div className="text-sm font-medium">{weekday}</div>
-              <div className="text-sm text-muted-foreground">{year}</div>
-            </div>
+            <TaskCard
+              key={akhiratCurrent?.schedule_id ?? "akhirat-empty"}
+              task={akhiratCurrent}
+              variant="akhirat"
+              timeLabel={timeLabel(akhiratCurrent)}
+              emptyMessage={categoryEmptyMessage("akhirat")}
+              onAction={(status) => akhiratCurrent && setStatus(akhiratCurrent.schedule_id, status)}
+              onOpen={akhiratCurrent?.dalil ? () => setDialogTask(akhiratCurrent) : undefined}
+            />
+            <TaskCard
+              key={duniaCurrent?.schedule_id ?? "dunia-empty"}
+              task={duniaCurrent}
+              variant="dunia"
+              timeLabel={timeLabel(duniaCurrent)}
+              emptyMessage={categoryEmptyMessage("dunia")}
+              onAction={(status) => duniaCurrent && setStatus(duniaCurrent.schedule_id, status)}
+              onOpen={duniaCurrent?.dalil ? () => setDialogTask(duniaCurrent) : undefined}
+            />
+          </section>
+
+          <div className="fk-enter" style={enter(3)}>
+            <AllTasksList tasks={sorted} onToggle={handleAllTasksToggle} />
           </div>
-          <p className="mt-2 text-xs text-muted-foreground">{hijri}</p>
+        </>
+      )}
 
-          {session && (
-            <>
-              <div className="mt-4 space-y-3">
-                <TaskCard
-                  task={akhiratCurrent}
-                  variant="akhirat"
-                  emptyMessage={categoryEmptyMessage("akhirat")}
-                  onAction={(status) => akhiratCurrent && setStatus(akhiratCurrent.schedule_id, status)}
-                  onOpen={() => akhiratCurrent && setDialogTask(akhiratCurrent)}
-                />
-                <TaskCard
-                  task={duniaCurrent}
-                  variant="dunia"
-                  emptyMessage={categoryEmptyMessage("dunia")}
-                  onAction={(status) => duniaCurrent && setStatus(duniaCurrent.schedule_id, status)}
-                  onOpen={() => duniaCurrent && setDialogTask(duniaCurrent)}
-                />
-              </div>
+      <DuaCard windows={windows} style={enter(4)} />
 
-              <div className="mt-4">
-                <AllTasksList tasks={sorted} onToggle={handleAllTasksToggle} onAdded={loadTasks} />
-              </div>
-            </>
-          )}
+      {session && (
+        <div className="pointer-events-none sticky bottom-[96px] z-30 -mt-2 flex justify-end pr-1">
+          <QuickAdd onAdded={loadTasks} />
         </div>
-      </div>
+      )}
 
       <DalilDialog
         task={dialogTask}

@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import { useLocale } from "next-intl";
 import { hijriDay } from "@/lib/hijri";
 import { cn } from "@/lib/utils";
@@ -14,11 +15,13 @@ function startOfWeekMonday(d: Date): Date {
   return monday;
 }
 
+// Falak week orbs: gregorian day in the orb, hijri day beneath.
 export default function WeekStrip() {
   const locale = useLocale();
   const today = new Date();
   const monday = startOfWeekMonday(today);
   const weekdayFmt = new Intl.DateTimeFormat(locale, { weekday: "short" });
+  const [selected, setSelected] = useState(today.toDateString());
 
   const days = Array.from({ length: 7 }, (_, i) => {
     const d = new Date(monday);
@@ -27,28 +30,22 @@ export default function WeekStrip() {
   });
 
   return (
-    <div className="grid grid-cols-7 gap-1.5">
+    <div className="fk-week" role="tablist">
       {days.map((d) => {
         const isToday = d.toDateString() === today.toDateString();
         return (
-          <div key={d.toISOString()} className="flex flex-col items-center gap-1.5">
-            <span className="text-[10px] font-medium uppercase text-muted-foreground">
-              {weekdayFmt.format(d)}
-            </span>
-            <div
-              className={cn(
-                "flex flex-col items-center justify-center rounded-full",
-                isToday
-                  ? "h-11 w-11 bg-accent text-accent-foreground shadow-sm"
-                  : "h-9 w-9 bg-muted/60 text-foreground",
-              )}
-            >
-              <span className={cn("leading-none font-bold", isToday ? "text-base" : "text-sm")}>
-                {d.getDate()}
-              </span>
-              <span className="text-[9px] leading-none opacity-70">{hijriDay(d, locale)}</span>
-            </div>
-          </div>
+          <button
+            key={d.toISOString()}
+            type="button"
+            role="tab"
+            aria-selected={selected === d.toDateString()}
+            onClick={() => setSelected(d.toDateString())}
+            className={cn("fk-orb", isToday && "today")}
+          >
+            <span className="dn">{weekdayFmt.format(d)}</span>
+            <span className="c">{d.getDate()}</span>
+            <span className="h">{hijriDay(d, locale)}</span>
+          </button>
         );
       })}
     </div>
