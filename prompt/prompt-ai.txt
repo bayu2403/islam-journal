@@ -1,0 +1,60 @@
+Buatkan aplikasi mobile-first PWA bernama "Muslim Berislam" — Islamic spiritual & productivity app.
+
+Tech stack: Next.js + shadcn/ui + Tailwind CSS + Lucide Icons + next-intl (i18n), backend pakai Express + Supabase/Postgres.
+
+Buat file-file yang diperlukan termasuk schema SQL dan seed data.
+
+## Spesifikasi
+
+### Tema
+Ada 2 mode gender: Ikhwan & Akhwat. Masing-masing punya light mode dan dark mode sendiri dengan warna berbeda.
+tentukan warna yang elegan dan kesan mewah professional
+Tema diatur via CSS variables yang berganti sesuai gender + dark mode preference user.
+
+### Layout
+- Mobile-first, centered di layar besar
+- Bottom navigation sticky: Dashboard | Jurnal | Profil (3 menu)
+- Top bar tipis untuk judul halaman
+
+### Halaman 1: Dashboard
+- Header: "Selamat datang, [Nama]"
+- ada card "Sudahkah berdoa hari ini?"
+- Kartu doa harian: tampil random sesuai waktu (pagi 5-10, siang 10-15, sore 15-18, malam 18-5), ada teks Arab + latin + terjemahan. Waktu doa bisa diatur per user (beda kota beda jam).
+- Tombol "+" quick add todo (one-time, tidak jadi template)
+- Todo list hari ini dengan checkbox (centang = selesai). Empty state: "Belum ada rencana hari ini" + tombol ke Jurnal.
+
+### Halaman 2: Jurnal
+- disini rencana ada bermacam macam jurnal, tapi sekarang hanya 1 saja yaitu todo
+- bentuk jurnal nanti semacam card yang bisa d klik untuk masuk jurnal
+yang sekarang todo, jika diklik akan muncul:
+- ada System templates (pre-created): "Rutinitas Subuh" (tahajud, subuh, dzikir pagi, baca quran), "Rutinitas Malam" (maghrib, dzikir petang, isya, doa tidur), dan item individual. user bisa menambahkan todo untuk esok hari, dan esok harinya akan muncul todo tersebut dihalaman depan.
+- user bisa milih todo nya untuk esok, atau kapanpun, missal hanya untuk hari jumat saja, atau hari minggu saja, atau selalu muncul tiap hari
+- Template pribadi / custom todo, jadi user bisa membuat todo sendiri di halaman ini, bedanya dengan di halaman depan adalah jika user buat disini bisa d pakai berulang2 hingga dihapus: menampilkan template yang pernah user buat sendiri
+
+### Halaman 3: Profil
+- Nama user, foto
+- Pilih gender (Ikhwan/Akhwat) — mengubah tema
+- Toggle dark mode
+- Pilih bahasa (Indonesia/English/Melayu)
+- Atur lokasi/kota (penyesuaian waktu doa)
+- Logout
+- user tidak harus login bisa pakai guest mode dulu untuk coba semua fitur, atur saja apa2 yang bisa guest mode dan yang harus login
+
+### Database Tables
+- buat necessary table
+- Buat indexes untuk query umum.
+
+### Seed Data
+Buat seed untuk:
+- 8 doa: doa bangun tidur, doa sebelum makan, doa belajar, dzikir petang, doa maghrib, doa tidur, doa orang tua, doa masuk masjid — masing-masing dengan Arab, latin, terjemahan ID/EN/MS
+- System templates: "Rutinitas Subuh" (4 item) dan "Rutinitas Malam" (4 item)
+- 4 item individual: Shalat Dhuha, Tilawah Quran, Shalat Tahajud, Bersedekah
+
+### Component Documentation
+Buat dokumentasi komponen di file terpisah (component-docs.md) yang mencakup semua komponen yang digunakan, ini untuk digunakan oleh future developer atau AI
+
+### Catatan
+- Awalnya user tidak punya todo — tampilkan empty state
+- Quick add dari Dashboard one-time, tidak jadi template
+- System templates tidak bisa diedit user
+- Semua teks harus pake useTranslations() untuk i18n

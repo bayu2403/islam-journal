@@ -1,0 +1,13 @@
+UI reference : E:\Practice\001\ui_ref
+revisi:
+1. design berbeda, wording berbeda tolong perhatikan ui_ref dengan seksama
+2. butuh 2 penanggalan, masehi dan hijriah
+3. gambar 1a adalah gambar untuk design beranda
+4. gamvar 1b adalah gambar utk design card d beranda itu untuk todo akhirat dan dunia, jadi formatnya: Task todonya dan ringkasan manfaat / hadist nya, kemudian ada tombol dikerjakan dan lewati, dikerjakan berarti sudah dikerjakan, di lewati berarti tidak dikerjakan dan akan lanjut ke next todo, nah bila card d click akan tertampil full hadistnya atau dalil2 nya dan dapat pahala apa saja sesuai dengan dalil shahih
+5. jadi todo list ini tampil 1 task at a time, sesuai urutan jam, untuk akhirat, user tidak bisa membuat todo secara custom, semua berasal dari template, untuk sekarang seed data untuk solat fardhu, dan solat sunnah, jadi butuh untuk list semua solat fardhu dan sunnah yang ada yang berlandaskan hadist shahih, untuk solat fardu, todo ada 1 yaitu solat fardhu 5 Waktu, d jurnal akan seperti itu tapi nanti pada beranda akan jadi 5 task dengan solat subuh - isyak dengan masing2 waktunya
+6. todo list untuk dunia pun sama tampil sesuai Waktu dan 1 at a time tapi khusus ini bisa tambah custom sendiri seperti sekarang di halaman beranda dan jurnal
+7. tolong ui style dan font buat sebagus 1b
+8. untuk profil tampilan nya seperti di design 3 
+9. tampilan jurnal seperti design 2, disitu ada tanggalan, tolong highlight tanggal hari ini baik masehi / hijriah
+10. rencana esok hari ada 2, yaitu akhirat dan dunia, Ketika klik akhirat akan tampil card2 amalan akhirat yang bisa ditambahkan untuk dikerjakan sesuai design sekarang, begitupun untuk dunia, bedanya sekarang ada jam nya untuk kapan dia tampil
+11. buat semua yang dibutuhkan untuk fitur2 diatas, termasuk perubahan table nya, beri saya query untuk alter table atau create table dan insert table

@@ -1,0 +1,48 @@
+- generic [ref=e1]:
+  - generic [ref=e2]:
+    - main [ref=e3]:
+      - heading [level=1] [ref=e48]: Selamat datang, Sahabat
+      - generic [ref=e21]:
+        - generic [ref=e23]: Sudahkah berdoa hari ini?
+        - generic [ref=e24]:
+          - generic [ref=e26]:
+            - text: Doa untukmu
+            - generic [ref=e27]: Pagi
+          - generic [ref=e28]:
+            - paragraph [ref=e29]: الْحَمْدُ لِلَّهِ الَّذِي أَحْيَانَا بَعْدَ مَا أَمَاتَنَا وَإِلَيْهِ النُّشُورُ
+            - paragraph [ref=e30]: Alhamdulillahilladzi ahyana ba'da ma amatana wa ilaihin nusyur
+            - paragraph [ref=e31]: Segala puji bagi Allah yang telah menghidupkan kami setelah mematikan kami, dan kepada-Nya kami dibangkitkan.
+        - generic [ref=e32]:
+          - heading [level=2] [ref=e49]: Rencana hari ini
+          - button [expanded] [ref=e50]:
+            - img
+        - generic [ref=e35]:
+          - paragraph [ref=e36]: Belum ada rencana hari ini
+          - button [ref=e51] [cursor=pointer]: Buka Jurnal
+    - navigation [ref=e4]:
+      - generic [ref=e5]:
+        - link [ref=e52] [cursor=pointer]:
+          - /url: /id
+          - img [ref=e7]
+          - text: Beranda
+        - link [ref=e53] [cursor=pointer]:
+          - /url: /id/journal
+          - img [ref=e11]
+          - text: Jurnal
+        - link [ref=e54] [cursor=pointer]:
+          - /url: /id/profile
+          - img [ref=e15]
+          - text: Profil
+  - button "Open Next.js Dev Tools" [ref=e43] [cursor=pointer]:
+    - img [ref=e44]
+  - alert [ref=e47]
+  - dialog "Tambah cepat" [ref=e58]:
+    - heading "Tambah cepat" [level=2] [ref=e60]
+    - textbox "Apa rencanamu hari ini?" [active] [ref=e61]: Baca Al-Kahfi
+    - paragraph [ref=e62]: Hanya untuk hari ini — tidak jadi template
+    - generic [ref=e63]:
+      - button "Batal" [ref=e64]
+      - button "Tambah" [ref=e68]
+    - button "Close" [ref=e65]:
+      - img
+      - generic [ref=e66]: Close

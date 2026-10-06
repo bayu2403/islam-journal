@@ -1,0 +1,74 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - main [ref=e3]:
+      - heading "Todo" [level=1] [ref=e39]
+      - generic [ref=e7]:
+        - generic [ref=e40]:
+          - heading "Template bawaan" [level=2] [ref=e41]
+          - generic [ref=e42]:
+            - generic [ref=e43]:
+              - generic [ref=e44]: Rutinitas Subuh
+              - button "Jadwalkan" [ref=e45]:
+                - img
+                - text: Jadwalkan
+            - generic [ref=e46]:
+              - paragraph [ref=e47]: • Shalat Tahajud
+              - paragraph [ref=e48]: • Shalat Subuh
+              - paragraph [ref=e49]: • Dzikir Pagi
+              - paragraph [ref=e50]: • Baca Quran
+          - generic [ref=e51]:
+            - generic [ref=e52]:
+              - generic [ref=e53]: Rutinitas Malam
+              - button "Jadwalkan" [ref=e54]:
+                - img
+                - text: Jadwalkan
+            - generic [ref=e55]:
+              - paragraph [ref=e56]: • Shalat Maghrib
+              - paragraph [ref=e57]: • Dzikir Petang
+              - paragraph [ref=e58]: • Shalat Isya
+              - paragraph [ref=e59]: • Doa Tidur
+          - generic [ref=e61]:
+            - generic [ref=e62]: Shalat Dhuha
+            - button "Jadwalkan" [ref=e63]:
+              - img
+              - text: Jadwalkan
+          - generic [ref=e65]:
+            - generic [ref=e66]: Tilawah Quran
+            - button "Jadwalkan" [ref=e67]:
+              - img
+              - text: Jadwalkan
+          - generic [ref=e69]:
+            - generic [ref=e70]: Shalat Tahajud
+            - button "Jadwalkan" [ref=e71]:
+              - img
+              - text: Jadwalkan
+          - generic [ref=e73]:
+            - generic [ref=e74]: Bersedekah
+            - button "Jadwalkan" [ref=e75]:
+              - img
+              - text: Jadwalkan
+        - generic [ref=e76]:
+          - heading "Template saya" [level=2] [ref=e77]
+          - generic [ref=e78]:
+            - generic [ref=e80]: Buat template
+            - generic [ref=e81]:
+              - textbox "Nama template" [ref=e82]
+              - textbox "Daftar kegiatan (satu per baris)" [ref=e83]
+              - button "Simpan" [disabled]
+    - navigation [ref=e15]:
+      - generic [ref=e16]:
+        - link "Beranda" [ref=e17] [cursor=pointer]:
+          - /url: /id
+          - img [ref=e18]
+          - text: Beranda
+        - link "Jurnal" [ref=e21] [cursor=pointer]:
+          - /url: /id/journal
+          - img [ref=e22]
+          - text: Jurnal
+        - link "Profil" [ref=e25] [cursor=pointer]:
+          - /url: /id/profile
+          - img [ref=e26]
+          - text: Profil
+  - button "Open Next.js Dev Tools" [ref=e34] [cursor=pointer]:
+    - img [ref=e35]
+  - alert [ref=e38]
